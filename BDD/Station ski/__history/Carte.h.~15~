@@ -1,0 +1,27 @@
+//---------------------------------------------------------------------------
+
+#ifndef Unit3H
+#define Unit3H
+//---------------------------------------------------------------------------
+
+
+class Carte
+{
+	public:
+	   Carte(int adresse);
+	  ~Carte();
+	  bool getEtat();
+	  int lecture_analog(int channel);
+	  bool connexion();
+
+
+	private:
+
+	 int adr;
+
+	  bool etat;
+
+
+};
+
+ #endif

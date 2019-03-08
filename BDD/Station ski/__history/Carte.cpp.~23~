@@ -1,0 +1,59 @@
+//------------------------------------------------------------------------------
+
+#pragma hdrstop
+#include "Carte.h"
+#include "K8055D.h"
+
+//------------------------------------------------------------------------------
+#pragma package(smart_init)
+
+//------------------------------------------------------------------------------
+
+  Carte::Carte(int adresse)
+  {
+
+   adr=adresse;            // adresse de la carte donnée en paramètre
+
+
+  }
+  Carte::~Carte()
+  {
+   CloseDevice;         // commande pour fermer la connexion
+  }
+//------------------------------------------------------------------------------
+
+  bool Carte::connexion()
+  {
+
+	int var=OpenDevice(adr);   //ouvre la connexion
+	if(var==-1)                 //si l'etat est à -1, la carte n'est pas connectée
+	 etat=false;
+	 else
+	 etat=true;              //sinon la carte est connectée
+
+	return etat;
+
+  }
+
+//------------------------------------------------------------------------------
+
+ bool Carte::getEtat()
+  {
+
+   return etat;             //retourne l'etat de la carte
+
+  }
+
+//------------------------------------------------------------------------------
+
+  int Carte::lecture_analog(int channel)
+  {
+   int res;
+	res=ReadAnalogChannel(channel);           //res retourne une valeur entre 0 et 255
+	res=res*90/255;                           //90 car la carte étudie entre -30°C et 60°C
+	res=res-30;                               //car elle va jusqu'à -30°C
+
+	return res;
+  }
+
+//------------------------------------------------------------------------------

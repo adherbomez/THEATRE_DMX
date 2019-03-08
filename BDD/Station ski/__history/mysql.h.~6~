@@ -1,0 +1,29 @@
+//---------------------------------------------------------------------------
+
+#ifndef SQLH
+#define SQLH
+#define __WIN__
+#include "mysql.h"
+
+class MySQL
+{
+  private :
+		bool a_etat;
+		MYSQL*SQL_G;
+
+  public :
+		MySQL();
+		~MySQL();
+		bool Connexion(String adresse, String id, String mdp, String table);
+		void Deconnexion();
+		bool getEtat();
+		TStringList	Lecture(string);
+		bool Enregistrer(string);
+
+
+};
+
+
+//---------------------------------------------------------------------------
+#endif
+

@@ -1,0 +1,31 @@
+//---------------------------------------------------------------------------
+
+#ifndef SQLH
+#define SQLH
+#include <vcl.h>
+#define __WIN__
+#include "include/mysql.h"
+
+class MySQL
+{
+  private :
+		bool Etat;
+		MYSQL*SQL;   //objet de la classe
+
+  public :
+		MySQL();
+		//~MySQL();
+		bool connexion(String adresse, String id, String mdp, String table);  //etabli la connexion à la BDD
+		bool deconnexion();   //se deconnecte de la BDD
+		bool getEtat();       //retourne l'etat de la BDD
+		//TStringList Lecture(String req);
+		bool Enregistrer(float temp);   //enregistre les température dans la BDD
+
+
+
+};
+
+
+//---------------------------------------------------------------------------
+#endif
+

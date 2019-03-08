@@ -1,0 +1,65 @@
+//------------------------------------------------------------------------------
+
+#pragma hdrstop
+
+#include "BDDmysql.h"
+//------------------------------------------------------------------------------
+#pragma package(smart_init)
+
+//------------------------------------------------------------------------------
+
+ MySQL ::MySQL()
+ {
+	 SQL = mysql_init(NULL);       //initialise la connexion
+ }
+
+//------------------------------------------------------------------------------
+
+bool MySQL :: connexion(String adresse, String id, String mdp, String table)
+ {
+
+	 if (!mysql_real_connect(SQL, "127.0.0.1", "root", "", "stationski", 0, NULL, 0))
+	 {                                                        //si la connexion échoue
+	   Etat=false;
+	 }
+	 else
+	 {
+	   Etat=true;
+	 }
+
+	 return Etat;
+ }
+
+//------------------------------------------------------------------------------
+
+bool MySQL :: deconnexion()
+ {
+
+	mysql_close(SQL);
+ }
+
+//------------------------------------------------------------------------------
+
+ bool MySQL :: getEtat()
+ {
+   return Etat;         //retourne etat
+ }
+
+//------------------------------------------------------------------------------
+
+bool MySQL::Enregistrer(float temp)
+{
+	 String S="INSERT INTO `temperature`(`temperature`) VALUES (";
+	 S+=temp;
+	 S+=")" ;
+	 char *req=new char[S.Length()+1];
+	 wcstombs(req,S.c_str(),S.Length()+1);
+     mysql_query(SQL,"SELECT NOW()");
+	 mysql_query(SQL,req);
+
+
+	//enregistre les températures dans la BDD
+
+}
+
+

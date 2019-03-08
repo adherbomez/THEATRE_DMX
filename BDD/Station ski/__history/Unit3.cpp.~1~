@@ -1,0 +1,32 @@
+//---------------------------------------------------------------------------
+
+#pragma hdrstop
+
+
+#include "K8055D.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+#include "Carte.h"
+
+  carte::carte(int adr)
+  {
+
+  var=OpenDevice(adr);
+
+  }
+  carte::~carte()
+  {
+   CloseDevice;
+  }
+
+  carte::getEtat()
+  {
+
+  }
+  carte::lecture_analog(int port)
+  {
+	data = ReadAnalogChannel(port);
+	data=90/255*data;
+	data=data-30;
+  }
+

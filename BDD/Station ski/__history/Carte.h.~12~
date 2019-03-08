@@ -1,0 +1,31 @@
+//---------------------------------------------------------------------------
+
+#ifndef Unit3H
+#define Unit3H
+
+#include "K8055D.h"
+
+//---------------------------------------------------------------------------
+
+
+class Carte
+{
+	public:
+	  Carte();
+	  ~Carte();
+	  int getEtat();
+	  int lecture_analog();
+	  int connexion();
+
+
+
+
+	private:
+	int var;
+	int adr;
+	int data;
+	int channel;
+
+
+};
+ #endif

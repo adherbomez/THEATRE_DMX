@@ -1,0 +1,31 @@
+//---------------------------------------------------------------------------
+
+#ifndef mysqlH
+#define mysqlH
+//---------------------------------------------------------------------------
+#endif
+
+
+class MySql
+{
+
+	public:
+
+	Mysql();
+	~Mysql();
+	getEtat();
+	Lecture();
+	Enregistrer();
+	connexion();
+	void deconnexion();
+
+
+
+	private:
+
+
+
+
+
+
+}
