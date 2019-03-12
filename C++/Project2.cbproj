@@ -46,6 +46,8 @@
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
+        <ILINK_LibraryPath>TCPServer\;SequenceUsedEquipement\;Sequence\;Scene\;Property\;Programme\;Manager\;Equipement\;TrameManager\;UsedEquipement\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <IncludePath>TCPServer\;SequenceUsedEquipement\;Sequence\;Scene\;Property\;Programme\;Manager\;Equipement\;TrameManager\;UsedEquipement\;$(IncludePath)</IncludePath>
         <ProjectType>CppVCLApplication</ProjectType>
         <Icon_MainIcon>$(BDS)\bin\cbuilder_PROJECTICON.ico</Icon_MainIcon>
         <Multithreaded>true</Multithreaded>
@@ -110,59 +112,74 @@
         <BCC_PCHName_Clang>Project2PCH1.h</BCC_PCHName_Clang>
     </PropertyGroup>
     <ItemGroup>
-        <CppCompile Include="Equipement.cpp">
-            <DependentOn>Equipement.h</DependentOn>
-            <BuildOrder>4</BuildOrder>
+        <CppCompile Include="Equipement\Equipement.cpp">
+            <BuildOrder>15</BuildOrder>
         </CppCompile>
-        <CppCompile Include="IHM.cpp">
-            <Form>Form1</Form>
-            <FormType>dfm</FormType>
-            <DependentOn>IHM.h</DependentOn>
-            <BuildOrder>2</BuildOrder>
+        <None Include="Equipement\Equipement.h">
+            <BuildOrder>16</BuildOrder>
+        </None>
+        <CppCompile Include="Manager\Manager.cpp">
+            <BuildOrder>17</BuildOrder>
         </CppCompile>
-        <CppCompile Include="Manager.cpp">
-            <DependentOn>Manager.h</DependentOn>
-            <BuildOrder>11</BuildOrder>
+        <None Include="Manager\Manager.h">
+            <BuildOrder>18</BuildOrder>
+        </None>
+        <CppCompile Include="Programme\Programme.cpp">
+            <BuildOrder>19</BuildOrder>
         </CppCompile>
-        <CppCompile Include="Programme.cpp">
-            <DependentOn>Programme.h</DependentOn>
-            <BuildOrder>10</BuildOrder>
-        </CppCompile>
+        <None Include="Programme\Programme.h">
+            <BuildOrder>20</BuildOrder>
+        </None>
         <CppCompile Include="Project2.cpp">
             <BuildOrder>0</BuildOrder>
         </CppCompile>
         <PCHCompile Include="Project2PCH1.h">
             <BuildOrder>1</BuildOrder>
         </PCHCompile>
-        <CppCompile Include="Property.cpp">
-            <DependentOn>Property.h</DependentOn>
-            <BuildOrder>3</BuildOrder>
+        <CppCompile Include="Property\Property.cpp">
+            <DependentOn>Property\Property.h</DependentOn>
+            <BuildOrder>21</BuildOrder>
         </CppCompile>
-        <CppCompile Include="Scene.cpp">
-            <DependentOn>Scene.h</DependentOn>
-            <BuildOrder>9</BuildOrder>
+        <None Include="Property\Property.h">
+            <BuildOrder>21</BuildOrder>
+        </None>
+        <CppCompile Include="Scene\Scene.cpp">
+            <BuildOrder>23</BuildOrder>
         </CppCompile>
-        <CppCompile Include="Sequence.cpp">
-            <DependentOn>Sequence.h</DependentOn>
-            <BuildOrder>8</BuildOrder>
+        <None Include="Scene\Scene.h">
+            <BuildOrder>22</BuildOrder>
+        </None>
+        <CppCompile Include="SequenceUsedEquipement\SequenceUsedEquipement.cpp">
+            <BuildOrder>27</BuildOrder>
         </CppCompile>
-        <CppCompile Include="SequenceUsedEquipement.cpp">
-            <DependentOn>SequenceUsedEquipement.h</DependentOn>
-            <BuildOrder>6</BuildOrder>
+        <None Include="SequenceUsedEquipement\SequenceUsedEquipement.h">
+            <BuildOrder>26</BuildOrder>
+        </None>
+        <CppCompile Include="Sequence\Sequence.cpp">
+            <BuildOrder>24</BuildOrder>
         </CppCompile>
-        <CppCompile Include="TCPServer.cpp">
-            <DependentOn>TCPServer.h</DependentOn>
-            <BuildOrder>12</BuildOrder>
+        <None Include="Sequence\Sequence.h">
+            <BuildOrder>25</BuildOrder>
+        </None>
+        <CppCompile Include="TCPServer\TCPServer.cpp">
+            <DependentOn>TCPServer\TCPServer.h</DependentOn>
+            <BuildOrder>28</BuildOrder>
         </CppCompile>
-        <CppCompile Include="TrameManager.cpp">
-            <DependentOn>TrameManager.h</DependentOn>
-            <BuildOrder>7</BuildOrder>
+        <None Include="TCPServer\TCPServer.h">
+            <BuildOrder>29</BuildOrder>
+        </None>
+        <CppCompile Include="TrameManager\TrameManager.cpp">
+            <BuildOrder>14</BuildOrder>
         </CppCompile>
-        <CppCompile Include="UsedEquipement.cpp">
-            <DependentOn>UsedEquipement.h</DependentOn>
-            <BuildOrder>5</BuildOrder>
+        <None Include="TrameManager\TrameManager.h">
+            <BuildOrder>15</BuildOrder>
+        </None>
+        <CppCompile Include="UsedEquipement\UsedEquipement.cpp">
+            <BuildOrder>14</BuildOrder>
         </CppCompile>
-        <FormResources Include="IHM.dfm"/>
+        <None Include="UsedEquipement\UsedEquipement.h">
+            <BuildOrder>15</BuildOrder>
+        </None>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -619,13 +636,13 @@
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
-                <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
-                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
             </Deployment>
             <Platforms>
                 <Platform value="Win32">True</Platform>

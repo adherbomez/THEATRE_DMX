@@ -1,0 +1,37 @@
+//---------------------------------------------------------------------------//
+//---PROJET_THEATRE_DMX------------------------------------------------------//
+//---Développé par Arthur Dherbomez------------------------------------------//
+//---BTSSN2------------------------------------------------------------------//
+//---Class:Equipement.h------------------------------------------------------//
+//---Cette classe permet d'instancier des equipements comme des lumières-----//
+//---------------------------------------------------------------------------//
+
+#ifndef PropertyH
+#define PropertyH
+#include "Property.h"
+#include <vector>
+//---------------------------------------------------------------------------
+
+class equipement
+{
+	private:
+		std::map<String,Property*>properties;
+		int name;
+		int id;
+
+	public:
+		equipement();
+		int setId(int id);
+		char*setName(char* name);
+
+		char*getName();
+		bool verifOrder(Property*order);
+		int getNbVoies();
+		std::map<String,Property*> getProperties();
+
+
+
+};
+
+#endif
+
