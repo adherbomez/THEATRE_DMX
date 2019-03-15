@@ -2,42 +2,50 @@
 //---PROJET_THEATRE_DMX------------------------------------------------------//
 //---Développé par Arthur Dherbomez------------------------------------------//
 //---BTSSN2------------------------------------------------------------------//
-//---Class:Property.h--------------------------------------------------------//
-//---Cette classe permet d'identifier les propriétés d'un équipement comme une lumière---//
+//---Class:Manager.h---------------------------------------------------------//
+//---Cette classe permet de generer un objet de type scene ou programme en lien
+//--------------avec la BDD--------------------------------------------------//
 //---------------------------------------------------------------------------//
 
 #pragma hdrstop
 
-#include "Property.h"
+#include "Manager.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 
+//constructeur
+	manager::manager()
+	{
 
-property::property()
-{
+	}
+//permet de récupérer un programme dans la bdd grace à son id
+	Programme*manager::getProg(idProg)
+	{
 
-}
-int property::setOrder(int order)
-{
+	}
+//permet de récupérer une scène dans la bdd grace à son id
+	Scene*getScn(idScn)
+	{
 
-}
-int property::setId(int id)
-{
+	}
+//permet de vérifier et de remplacer les bons éléments d'une scene dans la bdd
+	scn*UpdateScene(scene*scn)
+	{
 
-}
-char* property::setDescription(char*description)
-{
+	}
+//permet de vérifier et de remplacer les bons éléments d'un programme dans la bdd
+	prog*UpdateProg(programme*prog)
+	{
 
-}
-int property::getOrder()
-{
+	}
+//permet de renvoyer un message d'envoi réussi
+	char*sendOk()
+	{
 
-}
-int property::getId()
-{
+	}
+//permet de renvoyer un message d'erreur
+	char*sendError()
+	{
 
-}
-char* property::getDescription()
-{
+    }
 
-}

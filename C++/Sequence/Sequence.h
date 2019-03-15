@@ -2,31 +2,32 @@
 //---PROJET_THEATRE_DMX------------------------------------------------------//
 //---Développé par Arthur Dherbomez------------------------------------------//
 //---BTSSN2------------------------------------------------------------------//
-//---Class:Property.h--------------------------------------------------------//
-//---Cette classe permet d'identifier les propriétés d'un équipement comme une lumière---//
+//---Class:Sequence.h--------------------------------------------------------//
+//---Cette classe permet de définir une séquence avec une durée et la trame--//
+//qui lui sera affectée------------------------------------------------------//
 //---------------------------------------------------------------------------//
 
-#ifndef PropertyH
-#define PropertyH
+#ifndef SequenceH
+#define SequenceH
+#include "TrameManager.h"
 //---------------------------------------------------------------------------
 
-class property
+class sequence
 {
 	private:
-		char*description;
-		int order;
 		int id;
+		int duree;
+		trameManager* trame;
+		int nbSeqUsedEq;
 
 	public:
-		property();
+		sequence(trameManager*);
 
-		int setOrder(int order);
-		int setId(int id);
-		char* setDescription(char*description);
+		void setValue(int value);
+		void setId(int id);
 
-		int getOrder();
+		int getValue();
 		int getId();
-		char* getDescription();
 };
 
 #endif

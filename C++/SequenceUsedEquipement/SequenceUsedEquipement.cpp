@@ -2,42 +2,39 @@
 //---PROJET_THEATRE_DMX------------------------------------------------------//
 //---Développé par Arthur Dherbomez------------------------------------------//
 //---BTSSN2------------------------------------------------------------------//
-//---Class:Property.h--------------------------------------------------------//
-//---Cette classe permet d'identifier les propriétés d'un équipement comme une lumière---//
+//---Class:SequenceUsedEquipement.h------------------------------------------//
+//---Cette classe permet de donnée une valeur à une séquence prédéfinie par un
+//---équipement et un usedEquipement-----------------------------------------//
 //---------------------------------------------------------------------------//
 
 #pragma hdrstop
 
-#include "Property.h"
+#include "SequenceUsedEquipement.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 
+//constructeur
+	sequenceUsedEquipement::sequenceUsedEquipement()
+	{
 
-property::property()
-{
+	}
+//setId
+	void sequenceUsedEquipement::setId(int id)
+	{
 
-}
-int property::setOrder(int order)
-{
+	}
+//recupération de l'id
+	int sequenceUsedEquipement::getId()
+	{
 
-}
-int property::setId(int id)
-{
+	}
+//réglage de la value d'une séquence
+	void sequenceUsedEquipement::setSequenceValue(int value)
+	{
 
-}
-char* property::setDescription(char*description)
-{
+	}
+//récupération de la value d'une séquence
+	int sequenceUsedEquipement::getSequenceValue()
+	{
 
-}
-int property::getOrder()
-{
-
-}
-int property::getId()
-{
-
-}
-char* property::getDescription()
-{
-
-}
+    }

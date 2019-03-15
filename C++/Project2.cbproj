@@ -46,8 +46,8 @@
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
-        <ILINK_LibraryPath>TCPServer\;SequenceUsedEquipement\;Sequence\;Scene\;Property\;Programme\;Manager\;Equipement\;TrameManager\;UsedEquipement\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
-        <IncludePath>TCPServer\;SequenceUsedEquipement\;Sequence\;Scene\;Property\;Programme\;Manager\;Equipement\;TrameManager\;UsedEquipement\;$(IncludePath)</IncludePath>
+        <ILINK_LibraryPath>..\..\..\..\Desktop\;TCPServer\;SequenceUsedEquipement\;Sequence\;Scene\;Property\;Programme\;Manager\;Equipement\;TrameManager\;UsedEquipement\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <IncludePath>..\..\..\..\Desktop\;TCPServer\;SequenceUsedEquipement\;Sequence\;Scene\;Property\;Programme\;Manager\;Equipement\;TrameManager\;UsedEquipement\;$(IncludePath)</IncludePath>
         <ProjectType>CppVCLApplication</ProjectType>
         <Icon_MainIcon>$(BDS)\bin\cbuilder_PROJECTICON.ico</Icon_MainIcon>
         <Multithreaded>true</Multithreaded>
@@ -636,13 +636,13 @@
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
-                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
-                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
             </Deployment>
             <Platforms>
                 <Platform value="Win32">True</Platform>

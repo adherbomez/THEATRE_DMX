@@ -27,9 +27,8 @@ class usedEquipement
 		usedEquipement();
 
 		void setCanal(int canal);
-		std::map<property*,int> setValues(std::map<property*,int>values);
-
-		int getCanal();
+		std::map<property*,int> setValues(std::map<property*,int>values); //valeurs des propriétés d'un equipement
+		int getCanal();     //1ere position dans la trame d'une séquence
 		std::map<property*,int> getValues();
 };
 

@@ -2,31 +2,38 @@
 //---PROJET_THEATRE_DMX------------------------------------------------------//
 //---Développé par Arthur Dherbomez------------------------------------------//
 //---BTSSN2------------------------------------------------------------------//
-//---Class:Property.h--------------------------------------------------------//
-//---Cette classe permet d'identifier les propriétés d'un équipement comme une lumière---//
+//---Class:Programme.h-------------------------------------------------------//
+//---Cette classe permet d'initialiser un programme avec les scènes affectées-//
 //---------------------------------------------------------------------------//
 
-#ifndef PropertyH
-#define PropertyH
+#ifndef ProgrammeH
+#define ProgrammeH
+#include <map>
+#include "Scene.h"
 //---------------------------------------------------------------------------
 
-class property
+class programme
 {
 	private:
-		char*description;
-		int order;
 		int id;
+		char*nom;
+		int taille;
+		std::map<string,scene*>scenes; //scenes avec leurs séquences (encapsulation)
 
 	public:
-		property();
+		programme();
 
-		int setOrder(int order);
-		int setId(int id);
-		char* setDescription(char*description);
+		void setId(int id);
+		void setName(int name);
+// (à voir)		void setOrder(int Order);
+		void setNbScene(std::map<string,scene*>); //récupère la size du vecteur scene
 
-		int getOrder();
+		//récupération des attributs
 		int getId();
-		char* getDescription();
+		int getName();
+		int getNbScene();
+//(à voir)	int getOrder();
+		std::map<string,scene*> getScenes();
 };
 
 #endif

@@ -2,8 +2,10 @@
 //---PROJET_THEATRE_DMX------------------------------------------------------//
 //---Développé par Arthur Dherbomez------------------------------------------//
 //---BTSSN2------------------------------------------------------------------//
-//---Class:Property.h--------------------------------------------------------//
-//---Cette classe permet d'identifier les propriétés d'un équipement comme une lumière---//
+//---Class:TCPServer.h-------------------------------------------------------//
+//---Cette classe permet de gerer la réception des données envoyé par le-----//
+//---TCPclient et de découpé la trame pour identifier si c'est un programme--//
+//-----ou une scene----------------------------------------------------------//
 //---------------------------------------------------------------------------//
 
 #pragma hdrstop
@@ -13,31 +15,23 @@
 #pragma package(smart_init)
 
 
-property::property()
-{
+	bool onConnect()
+	{
 
-}
-int property::setOrder(int order)
-{
+	}
+	bool onReceived()
+	{
 
-}
-int property::setId(int id)
-{
+	}
+	programme*parseProgramme(data)
+	{
 
-}
-char* property::setDescription(char*description)
-{
+	}
+	scene*parseScene(data)
+	{
 
-}
-int property::getOrder()
-{
+	}
+	scene*updateScene(scn)
+	{
 
-}
-int property::getId()
-{
-
-}
-char* property::getDescription()
-{
-
-}
+	}

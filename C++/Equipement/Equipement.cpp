@@ -28,7 +28,7 @@
 
 	}
 	//vérifie l'ordre des propriétés grâce à l'attribut order de Property
-	bool equipement::verifOrder(Property*prop)
+	bool equipement::verifOrder(property*prop)
 	{
 
 	}
@@ -39,12 +39,12 @@
 
 	}
 	//permet de récuperer les propriétés
-	std::map<String,Property*>getProperties()
+	std::map<string,property*> getProperties()
 	{
 
 	}
 	//initialise le nom de l'equipement
-	char* equipement::setName(char*name)
+	void equipement::setName(char*name)
 	{
 
 	}
