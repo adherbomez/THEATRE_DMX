@@ -2,42 +2,43 @@
 //---PROJET_THEATRE_DMX------------------------------------------------------//
 //---Développé par Arthur Dherbomez------------------------------------------//
 //---BTSSN2------------------------------------------------------------------//
-//---Class:Property.h--------------------------------------------------------//
-//---Cette classe permet d'identifier les propriétés d'un équipement comme une lumière---//
+//---Class:Sequence.h--------------------------------------------------------//
+//---Cette classe permet de définir une séquence avec une durée et la trame--//
+//qui lui sera affectée------------------------------------------------------//
 //---------------------------------------------------------------------------//
+
 
 #pragma hdrstop
 
-#include "Property.h"
+#include "Sequence.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 
+//récupére la trame
+	sequence::sequence(trameManager*)
+	{
 
-property::property()
-{
+	}
+//initialise la durée de la séquence
+	void sequence::setDuree(int duree)
+	{
 
-}
-int property::setOrder(int order)
-{
+	}
+//setId
+	void sequence::setId(int id)
+	{
 
-}
-int property::setId(int id)
-{
+	}
+//recupère la durée de la sequence
+	int sequence::getDuree()
+	{
 
-}
-char* property::setDescription(char*description)
-{
+	}
+//récupère l'id de séquence
+	int sequence::getId()
+	{
 
-}
-int property::getOrder()
-{
+	}
 
-}
-int property::getId()
-{
 
-}
-char* property::getDescription()
-{
 
-}

@@ -2,42 +2,55 @@
 //---PROJET_THEATRE_DMX------------------------------------------------------//
 //---Développé par Arthur Dherbomez------------------------------------------//
 //---BTSSN2------------------------------------------------------------------//
-//---Class:Property.h--------------------------------------------------------//
-//---Cette classe permet d'identifier les propriétés d'un équipement comme une lumière---//
+//---Class:Programme.h-------------------------------------------------------//
+//---Cette classe permet d'initialiser un programme avec les scènes affectées-//
 //---------------------------------------------------------------------------//
-
 #pragma hdrstop
 
-#include "Property.h"
+#include "Programme.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 
+//constructeur du programme
+	programme::programme()
+	{
 
-property::property()
-{
+	}
+//setId
+	void programme::setId(int id)
+	{
 
-}
-int property::setOrder(int order)
-{
+	}
+//initialisation du nom d'un progamme
+	void programme::setName(int name)
+	{
 
-}
-int property::setId(int id)
-{
+	}
+// (à voir)		void setOrder(int Order);
+//initialisation du nombre de scenes d'un programme
+	void programme::setNbScene(std::map<string,scene*>)
+	{
 
-}
-char* property::setDescription(char*description)
-{
+	}
+//réupération de l'ID du programme
+	int programme::getId()
+	{
 
-}
-int property::getOrder()
-{
+	}
+//récupération du nom du programme
+	int programme::getName()
+	{
 
-}
-int property::getId()
-{
+	}
+//récupération du nombre de scenes
+	int programme::getNbScene()
+	{
 
-}
-char* property::getDescription()
-{
+	}
+//(à voir)	int getOrder();
+//récupération des scènes d'un programme et leurs séquences
+	std::map<string,scene*> programme::getScenes()
+	{
 
-}
+    }
+

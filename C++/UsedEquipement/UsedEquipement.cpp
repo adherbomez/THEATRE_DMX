@@ -24,8 +24,7 @@
 
 	}
 //valeur de chaque propriétés
-	std::map<property*,int>
-	usedEquipement::setValues(std::map<property*,int>values)
+	std::map<property*,int> usedEquipement::setValues(std::map<property*,int>values)
 	{
 
 	}

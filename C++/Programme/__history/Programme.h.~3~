@@ -1,0 +1,41 @@
+//---------------------------------------------------------------------------//
+//---PROJET_THEATRE_DMX------------------------------------------------------//
+//---Développé par Arthur Dherbomez------------------------------------------//
+//---BTSSN2------------------------------------------------------------------//
+//---Class:Programme.h-------------------------------------------------------//
+//---Cette classe permet d'initialiser un programme avec les scènes affectés-//
+//---------------------------------------------------------------------------//
+
+#ifndef ProgrammeH
+#define ProgrammeH
+#include <map>
+#include "Scene.h"
+//---------------------------------------------------------------------------
+
+class programme
+{
+	private:
+		int id;
+		char*nom;
+		int taille;
+		std::map<string,scene*>scenes; //scenes avec leurs séquences (encapsulation)
+
+	public:
+		programme();
+
+		void setId(int id);
+		void setName(int name);
+// (à voir)		void setOrder(int Order);
+		void std::map<int,sequence*>; //récupère la size du vecteur
+		void setSequences(std::map<string,sequence*>); //récupère les séquences de la scène
+
+		//récupération des attributs
+		int getId();
+		int getName();
+		int getTime();
+		int getNbSeq();
+		std::map<string,sequence*> getSequences();
+};
+
+#endif
+

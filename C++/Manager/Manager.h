@@ -2,31 +2,34 @@
 //---PROJET_THEATRE_DMX------------------------------------------------------//
 //---Développé par Arthur Dherbomez------------------------------------------//
 //---BTSSN2------------------------------------------------------------------//
-//---Class:Property.h--------------------------------------------------------//
-//---Cette classe permet d'identifier les propriétés d'un équipement comme une lumière---//
+//---Class:Manager.h---------------------------------------------------------//
+//---Cette classe permet de generer un objet de type scene ou programme en lien
+//--------------avec la BDD--------------------------------------------------//
 //---------------------------------------------------------------------------//
 
-#ifndef PropertyH
-#define PropertyH
+
+#ifndef ManagerH
+#define ManagerH
+#include"Programme.h"
+#include"Scene.h"
 //---------------------------------------------------------------------------
 
-class property
+class Manager
 {
 	private:
-		char*description;
-		int order;
-		int id;
+		programme*prog;
+		scene*scn;
 
 	public:
-		property();
+		manager();
+		Programme*getProg(idProg);
+		Scene*getScn(idScn);
+		scn*UpdateScene(scene*scn);
+		prog*UpdateProg(programme*prog);
+		char*sendOk();
+		char*sendError();
 
-		int setOrder(int order);
-		int setId(int id);
-		char* setDescription(char*description);
 
-		int getOrder();
-		int getId();
-		char* getDescription();
 };
 
 #endif

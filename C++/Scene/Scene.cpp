@@ -2,42 +2,68 @@
 //---PROJET_THEATRE_DMX------------------------------------------------------//
 //---Développé par Arthur Dherbomez------------------------------------------//
 //---BTSSN2------------------------------------------------------------------//
-//---Class:Property.h--------------------------------------------------------//
-//---Cette classe permet d'identifier les propriétés d'un équipement comme une lumière---//
+//---Class:Scene.h-----------------------------------------------------------//
+//---Cette classe permet de répertorier une scène qui possède plusieurs séquences---//
 //---------------------------------------------------------------------------//
 
 #pragma hdrstop
 
-#include "Property.h"
+#include "Scene.h"
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 
+//constructeur
+	scene::scene()
+	{
 
-property::property()
-{
+	}
+//setID
+	void scene::setId(int id)
+	{
 
-}
-int property::setOrder(int order)
-{
+	}
+//initialisation du nom
+	void scene::setName(int name)
+	{
 
-}
-int property::setId(int id)
-{
+	}
+//initialisation du temps de pause
+	void scene::setTime(int tpsPause)
+	{
 
-}
-char* property::setDescription(char*description)
-{
+	}
+//initialisation du nombre de séquences d'une scène
+	void scene::setNbSeq(std::map<int,sequence*>)
+	{
 
-}
-int property::getOrder()
-{
+	}
+//récupération de l'id scene
+	int scene::getId()
+	{
 
-}
-int property::getId()
-{
+	}
+//récupération du Nom de la scène
+	int scene::getName()
+	{
 
-}
-char* property::getDescription()
-{
+	}
+//récupération du temps entre chaque scène
+	int scene::getTime()
+	{
 
-}
+	}
+//récupération du nombre de séquences
+	int scene::getNbSeq()
+	{
+
+	}
+//initialisation des sequences des scènes
+	void scene::setSequences(std::map<string,sequence*>)
+	{
+
+	}
+//récupération des sequences des scènes
+	std::map<string,sequence*> scene::getSequences()
+	{
+
+    }

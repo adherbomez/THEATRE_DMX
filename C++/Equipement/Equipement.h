@@ -11,6 +11,7 @@
 #include "Property.h"
 #include <map>
 #include <vector>
+#include "String.h"
 //---------------------------------------------------------------------------
 
 class equipement
@@ -22,13 +23,14 @@ class equipement
 
 	public:
 		equipement();
-		int setId(int id);
-		char*setName(char* name);
+		void setId(int id);
+		void setName(char* name);
 
 		char*getName();
 		bool verifOrder(property*order);
 		int getNbVoies();
 		std::map<std::string,property*> getProperties();
+		int getId();
 
 
 
