@@ -130,6 +130,10 @@
         <None Include="Manager\Manager.h">
             <BuildOrder>18</BuildOrder>
         </None>
+        <CppCompile Include="MySQL.cpp">
+            <DependentOn>MySQL.h</DependentOn>
+            <BuildOrder>22</BuildOrder>
+        </CppCompile>
         <CppCompile Include="Programme\Programme.cpp">
             <BuildOrder>19</BuildOrder>
         </CppCompile>
