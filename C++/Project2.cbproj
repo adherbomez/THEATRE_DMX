@@ -46,8 +46,8 @@
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
-        <ILINK_LibraryPath>..\..\..\..\Desktop\;TCPServer\;SequenceUsedEquipement\;Sequence\;Scene\;Property\;Programme\;Manager\;Equipement\;TrameManager\;UsedEquipement\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
-        <IncludePath>..\..\..\..\Desktop\;TCPServer\;SequenceUsedEquipement\;Sequence\;Scene\;Property\;Programme\;Manager\;Equipement\;TrameManager\;UsedEquipement\;$(IncludePath)</IncludePath>
+        <ILINK_LibraryPath>MySQL\;..\..\..\..\Desktop\;TCPServer\;SequenceUsedEquipement\;Sequence\;Scene\;Property\;Programme\;Manager\;Equipement\;TrameManager\;UsedEquipement\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <IncludePath>MySQL\;..\..\..\..\Desktop\;TCPServer\;SequenceUsedEquipement\;Sequence\;Scene\;Property\;Programme\;Manager\;Equipement\;TrameManager\;UsedEquipement\;$(IncludePath)</IncludePath>
         <ProjectType>CppVCLApplication</ProjectType>
         <Icon_MainIcon>$(BDS)\bin\cbuilder_PROJECTICON.ico</Icon_MainIcon>
         <Multithreaded>true</Multithreaded>
@@ -124,10 +124,13 @@
         <None Include="Manager\Manager.h">
             <BuildOrder>18</BuildOrder>
         </None>
-        <CppCompile Include="MySQL.cpp">
-            <DependentOn>MySQL.h</DependentOn>
+        <CppCompile Include="MySQL\BDD.cpp">
+            <DependentOn>MySQL\BDD.h</DependentOn>
             <BuildOrder>22</BuildOrder>
         </CppCompile>
+        <None Include="MySQL\SQLBDD.h">
+            <BuildOrder>23</BuildOrder>
+        </None>
         <CppCompile Include="Programme\Programme.cpp">
             <BuildOrder>19</BuildOrder>
         </CppCompile>
@@ -640,13 +643,13 @@
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
-                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
-                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
             </Deployment>
             <Platforms>
                 <Platform value="Win32">True</Platform>
