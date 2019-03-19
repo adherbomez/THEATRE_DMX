@@ -1,8 +1,6 @@
 //---------------------------------------------------------------------------
 
-#pragma hdrstop
-
-#include "MySQL.h"
+#ifndef MySQLH
+#define MySQLH
 //---------------------------------------------------------------------------
-#pragma package(smart_init)
-														   k					   ùmlm
+#endif
