@@ -10,30 +10,31 @@
 #define ProgrammeH
 #include <map>
 #include "Scene.h"
+#include "String.h"
 //---------------------------------------------------------------------------
 
 class programme
 {
 	private:
 		int id;
-		char*nom;
-		int taille;
-		std::map<string,scene*>scenes; //scenes avec leurs séquences (encapsulation)
+		char*name;
+		int nbScene;
+		std::map<std::string,scene*>scenes; //scenes avec leurs séquences (encapsulation)
 
 	public:
-		programme();
+		programme(int id, char*name,std::map<std::string,scene*>scn);
 
 		void setId(int id);
-		void setName(int name);
+		void setName(char*name);
 // (à voir)		void setOrder(int Order);
-		void setNbScene(std::map<string,scene*>); //récupère la size du vecteur scene
+		void setNbScene(std::map<std::string,scene*>scn); //récupère la size du vecteur scene
 
 		//récupération des attributs
 		int getId();
-		int getName();
+		char* getName();
 		int getNbScene();
 //(à voir)	int getOrder();
-		std::map<string,scene*> getScenes();
+		std::map<std::string,scene*> getScenes();
 };
 
 #endif

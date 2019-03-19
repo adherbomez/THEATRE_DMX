@@ -12,45 +12,47 @@
 #pragma package(smart_init)
 
 //constructeur du programme
-	programme::programme()
+	programme::programme(int id, char*name,std::map<std::string,scene*>scn)
 	{
-
+	   this->id=id;
+	   this->name=name;
+	   this->scenes=scn;
 	}
 //setId
 	void programme::setId(int id)
 	{
-
+		this->id=id;
 	}
 //initialisation du nom d'un progamme
-	void programme::setName(int name)
+	void programme::setName(char* name)
 	{
-
+		this->name=name;
 	}
 // (à voir)		void setOrder(int Order);
 //initialisation du nombre de scenes d'un programme
-	void programme::setNbScene(std::map<string,scene*>)
+	void programme::setNbScene(std::map<std::string,scene*>scn)
 	{
-
+		this->nbScene=scn.size();
 	}
 //réupération de l'ID du programme
 	int programme::getId()
 	{
-
+		return id;
 	}
 //récupération du nom du programme
-	int programme::getName()
+	char* programme::getName()
 	{
-
+		return name;
 	}
 //récupération du nombre de scenes
 	int programme::getNbScene()
 	{
-
+		return nbScene;
 	}
 //(à voir)	int getOrder();
 //récupération des scènes d'un programme et leurs séquences
-	std::map<string,scene*> programme::getScenes()
+	std::map<std::string,scene*> programme::getScenes()
 	{
-
+		return scenes;
     }
 

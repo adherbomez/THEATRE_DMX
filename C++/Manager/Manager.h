@@ -14,7 +14,7 @@
 #include"Scene.h"
 //---------------------------------------------------------------------------
 
-class Manager
+class manager
 {
 	private:
 		programme*prog;
@@ -22,10 +22,11 @@ class Manager
 
 	public:
 		manager();
-		Programme*getProg(idProg);
-		Scene*getScn(idScn);
-		scn*UpdateScene(scene*scn);
-		prog*UpdateProg(programme*prog);
+
+		programme*getProg(idProg); //compare avec l'id de la bdd
+		scene*getScn(idScn);      		//compare avec l'id de la bdd
+		scene*updateScene(scene*scn);      	//instancie un nouvel objet scene
+		programme*updateProg(programme*prog); 	//instancie un nouvel objet programme
 		char*sendOk();
 		char*sendError();
 

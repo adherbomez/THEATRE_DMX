@@ -14,27 +14,28 @@
 #pragma package(smart_init)
 
 //constructeur
-	sequenceUsedEquipement::sequenceUsedEquipement()
+	sequenceUsedEquipement::sequenceUsedEquipement(int id, int value)
 	{
-
+		this->id=id;
+		this->value=value;
 	}
 //setId
 	void sequenceUsedEquipement::setId(int id)
 	{
-
+		this->id=id;
 	}
 //recupération de l'id
 	int sequenceUsedEquipement::getId()
 	{
-
+		return id;
 	}
 //réglage de la value d'une séquence
 	void sequenceUsedEquipement::setSequenceValue(int value)
 	{
-
+		this->value=value;
 	}
 //récupération de la value d'une séquence
 	int sequenceUsedEquipement::getSequenceValue()
 	{
-
+        return value;
     }

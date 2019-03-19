@@ -10,6 +10,7 @@
 
 #ifndef TCPServerH
 #define TCPServerH
+#include "Programme.h"
 //---------------------------------------------------------------------------
 
 class TCPServer

@@ -13,57 +13,60 @@
 #pragma package(smart_init)
 
 //constructeur
-	scene::scene()
+	scene::scene(int id, char*name, int tpsPause, std::map<std::string,sequence*>seq)
 	{
-
+		this->id=id;
+		this->name=name;
+		this->tpsPause=tpsPause;
+		this->seq=seq;
 	}
 //setID
 	void scene::setId(int id)
 	{
-
+		this->id=id;
 	}
 //initialisation du nom
-	void scene::setName(int name)
+	void scene::setName(char*name)
 	{
-
+		this->name=name;
 	}
 //initialisation du temps de pause
 	void scene::setTime(int tpsPause)
 	{
-
+		this->tpsPause=tpsPause;
 	}
 //initialisation du nombre de séquences d'une scène
 	void scene::setNbSeq(std::map<int,sequence*>)
 	{
-
+		this->seq=seq;
 	}
 //récupération de l'id scene
 	int scene::getId()
 	{
-
+		return id;
 	}
 //récupération du Nom de la scène
-	int scene::getName()
+	char* scene::getName()
 	{
-
+		return name;
 	}
 //récupération du temps entre chaque scène
 	int scene::getTime()
 	{
-
+		return tpsPause;
 	}
 //récupération du nombre de séquences
 	int scene::getNbSeq()
 	{
-
+		return seq.size();
 	}
 //initialisation des sequences des scènes
-	void scene::setSequences(std::map<string,sequence*>)
+	void scene::setSequences(std::map<std::string,sequence*>seq)
 	{
-
+		this->seq=seq;
 	}
 //récupération des sequences des scènes
-	std::map<string,sequence*> scene::getSequences()
+	std::map<std::string,sequence*> scene::getSequences()
 	{
-
+		return seq;
     }
