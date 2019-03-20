@@ -18,7 +18,7 @@ class property
 		int id;
 
 	public:
-		property();
+		property(int id ,int order, char*description);
 
 		int setOrder(int order);
 		int setId(int id);

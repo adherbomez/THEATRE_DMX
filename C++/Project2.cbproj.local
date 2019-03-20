@@ -2,10 +2,21 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>2019/03/08 14:56:58.000.129,=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit1.cpp</Transaction>
+<<<<<<< HEAD
     <Transaction>2019/03/08 14:56:58.000.114,=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Project2PCH1.h</Transaction>
+=======
+<<<<<<< HEAD
+    <Transaction>2019/03/08 14:56:58.000.114,=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Project2PCH1.h</Transaction>
+    <Transaction>2019/03/08 14:57:06.000.144,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit1.cpp=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\IHM.cpp</Transaction>
+    <Transaction>2019/03/08 14:57:06.000.144,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit1.h=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\IHM.h</Transaction>
+    <Transaction>2019/03/08 14:57:06.000.144,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit1.dfm=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\IHM.dfm</Transaction>
+=======
+    <Transaction>2019/03/08 14:57:06.000.144,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit1.dfm=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\IHM.dfm</Transaction>
+>>>>>>> b753a374a09c1a35f2d9fd399c934d10c22f11fe
     <Transaction>2019/03/08 14:57:06.000.144,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit1.h=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\IHM.h</Transaction>
     <Transaction>2019/03/08 14:57:06.000.144,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit1.dfm=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\IHM.dfm</Transaction>
     <Transaction>2019/03/08 14:57:06.000.144,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit1.cpp=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\IHM.cpp</Transaction>
+>>>>>>> 0477508dc8ad3e60e393257829bb9bac93dbf6d4
     <Transaction>2019/03/08 14:57:12.000.506,=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit1.cpp</Transaction>
     <Transaction>2019/03/08 14:57:19.000.148,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit1.h=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Property.h</Transaction>
     <Transaction>2019/03/08 14:57:19.000.148,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit1.cpp=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Property.cpp</Transaction>
@@ -17,17 +28,50 @@
     <Transaction>2019/03/08 14:57:45.000.618,=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit6.cpp</Transaction>
     <Transaction>2019/03/08 14:57:57.000.430,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit1.h=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Equipement.h</Transaction>
     <Transaction>2019/03/08 14:57:57.000.430,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit1.cpp=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Equipement.cpp</Transaction>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    <Transaction>2019/03/08 14:58:22.000.623,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit2.cpp=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\UsedEquipement.cpp</Transaction>
+    <Transaction>2019/03/08 14:58:22.000.623,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit2.h=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\UsedEquipement.h</Transaction>
+    <Transaction>2019/03/08 14:58:36.000.012,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit3.h=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\SequenceUsedEquipement.h</Transaction>
+    <Transaction>2019/03/08 14:58:36.000.012,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit3.cpp=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\SequenceUsedEquipement.cpp</Transaction>
+    <Transaction>2019/03/08 14:58:42.000.655,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit4.h=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\TrameManager.h</Transaction>
+    <Transaction>2019/03/08 14:58:42.000.655,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit4.cpp=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\TrameManager.cpp</Transaction>
+=======
+    <Transaction>2019/03/08 14:58:22.000.623,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit2.h=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\UsedEquipement.h</Transaction>
+>>>>>>> b753a374a09c1a35f2d9fd399c934d10c22f11fe
     <Transaction>2019/03/08 14:58:22.000.623,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit2.cpp=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\UsedEquipement.cpp</Transaction>
     <Transaction>2019/03/08 14:58:22.000.623,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit2.h=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\UsedEquipement.h</Transaction>
     <Transaction>2019/03/08 14:58:36.000.012,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit3.cpp=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\SequenceUsedEquipement.cpp</Transaction>
     <Transaction>2019/03/08 14:58:36.000.012,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit3.h=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\SequenceUsedEquipement.h</Transaction>
     <Transaction>2019/03/08 14:58:42.000.655,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit4.h=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\TrameManager.h</Transaction>
+<<<<<<< HEAD
     <Transaction>2019/03/08 14:58:42.000.655,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit4.cpp=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\TrameManager.cpp</Transaction>
+=======
+>>>>>>> 0477508dc8ad3e60e393257829bb9bac93dbf6d4
+    <Transaction>2019/03/08 14:58:47.000.773,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit5.cpp=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Sequence.cpp</Transaction>
+>>>>>>> b753a374a09c1a35f2d9fd399c934d10c22f11fe
     <Transaction>2019/03/08 14:58:47.000.773,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit5.h=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Sequence.h</Transaction>
     <Transaction>2019/03/08 14:58:47.000.773,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit5.cpp=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Sequence.cpp</Transaction>
     <Transaction>2019/03/08 14:58:54.000.543,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit6.cpp=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Scene.cpp</Transaction>
     <Transaction>2019/03/08 14:58:54.000.543,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit6.h=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Scene.h</Transaction>
     <Transaction>2019/03/08 14:59:01.000.637,=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit1.cpp</Transaction>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    <Transaction>2019/03/08 14:59:08.000.446,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit1.h=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Programme.h</Transaction>
+    <Transaction>2019/03/08 14:59:08.000.446,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit1.cpp=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Programme.cpp</Transaction>
+    <Transaction>2019/03/08 14:59:14.000.580,=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit1.cpp</Transaction>
+    <Transaction>2019/03/08 14:59:53.000.094,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit1.h=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Manager.h</Transaction>
+    <Transaction>2019/03/08 14:59:53.000.094,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit1.cpp=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Manager.cpp</Transaction>
+    <Transaction>2019/03/08 15:00:00.000.004,=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit1.cpp</Transaction>
+    <Transaction>2019/03/08 15:00:34.000.029,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit1.h=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\TCPServer.h</Transaction>
+    <Transaction>2019/03/08 15:00:34.000.029,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit1.cpp=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\TCPServer.cpp</Transaction>
+    <Transaction>2019/03/08 15:01:20.000.180,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\TCPServer.h=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\TCPServer.h</Transaction>
+    <Transaction>2019/03/08 15:01:20.000.180,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\TCPServer.cpp=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\TCPServer.cpp</Transaction>
+=======
+    <Transaction>2019/03/08 14:59:08.000.446,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit1.cpp=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Programme.cpp</Transaction>
+>>>>>>> b753a374a09c1a35f2d9fd399c934d10c22f11fe
     <Transaction>2019/03/08 14:59:08.000.446,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit1.h=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Programme.h</Transaction>
     <Transaction>2019/03/08 14:59:08.000.446,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit1.cpp=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Programme.cpp</Transaction>
     <Transaction>2019/03/08 14:59:14.000.580,=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit1.cpp</Transaction>
@@ -37,11 +81,37 @@
     <Transaction>2019/03/08 15:00:34.000.029,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit1.cpp=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\TCPServer.cpp</Transaction>
     <Transaction>2019/03/08 15:00:34.000.029,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Unit1.h=C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\TCPServer.h</Transaction>
     <Transaction>2019/03/08 15:01:20.000.180,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\TCPServer.h=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\TCPServer.h</Transaction>
+<<<<<<< HEAD
     <Transaction>2019/03/08 15:01:20.000.180,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\TCPServer.cpp=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\TCPServer.cpp</Transaction>
+=======
+>>>>>>> 0477508dc8ad3e60e393257829bb9bac93dbf6d4
+>>>>>>> b753a374a09c1a35f2d9fd399c934d10c22f11fe
     <Transaction>2019/03/08 15:01:21.000.891,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Manager.cpp=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\Manager.cpp</Transaction>
     <Transaction>2019/03/08 15:01:21.000.891,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Manager.h=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\Manager.h</Transaction>
     <Transaction>2019/03/08 15:01:22.000.718,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Programme.h=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\Programme.h</Transaction>
     <Transaction>2019/03/08 15:01:22.000.718,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Programme.cpp=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\Programme.cpp</Transaction>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+    <Transaction>2019/03/08 15:01:23.000.397,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Scene.h=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\Scene.h</Transaction>
+    <Transaction>2019/03/08 15:01:23.000.397,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Scene.cpp=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\Scene.cpp</Transaction>
+    <Transaction>2019/03/08 15:01:24.000.072,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Sequence.cpp=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\Sequence.cpp</Transaction>
+    <Transaction>2019/03/08 15:01:24.000.747,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\TrameManager.cpp=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\TrameManager.cpp</Transaction>
+    <Transaction>2019/03/08 15:01:24.000.747,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\TrameManager.h=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\TrameManager.h</Transaction>
+    <Transaction>2019/03/08 15:01:24.000.072,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Sequence.h=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\Sequence.h</Transaction>
+    <Transaction>2019/03/08 15:01:25.000.403,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\SequenceUsedEquipement.cpp=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\SequenceUsedEquipement.cpp</Transaction>
+    <Transaction>2019/03/08 15:01:25.000.403,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\SequenceUsedEquipement.h=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\SequenceUsedEquipement.h</Transaction>
+    <Transaction>2019/03/08 15:01:26.000.163,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\UsedEquipement.cpp=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\UsedEquipement.cpp</Transaction>
+    <Transaction>2019/03/08 15:01:26.000.163,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\UsedEquipement.h=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\UsedEquipement.h</Transaction>
+    <Transaction>2019/03/08 15:01:31.000.380,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Equipement.cpp=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\Equipement.cpp</Transaction>
+    <Transaction>2019/03/08 15:01:31.000.380,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Equipement.h=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\Equipement.h</Transaction>
+    <Transaction>2019/03/08 15:01:32.000.084,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Property.cpp=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\Property.cpp</Transaction>
+    <Transaction>2019/03/08 15:01:32.000.794,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\IHM.cpp=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\IHM.cpp</Transaction>
+    <Transaction>2019/03/08 15:01:32.000.084,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Property.h=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\Property.h</Transaction>
+    <Transaction>2019/03/08 15:01:32.000.794,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\IHM.h=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\IHM.h</Transaction>
+=======
+    <Transaction>2019/03/08 15:01:23.000.397,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Scene.cpp=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\Scene.cpp</Transaction>
+>>>>>>> b753a374a09c1a35f2d9fd399c934d10c22f11fe
     <Transaction>2019/03/08 15:01:23.000.397,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Scene.h=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\Scene.h</Transaction>
     <Transaction>2019/03/08 15:01:23.000.397,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Scene.cpp=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\Scene.cpp</Transaction>
     <Transaction>2019/03/08 15:01:24.000.747,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\TrameManager.cpp=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\TrameManager.cpp</Transaction>
@@ -57,34 +127,60 @@
     <Transaction>2019/03/08 15:01:32.000.794,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\IHM.h=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\IHM.h</Transaction>
     <Transaction>2019/03/08 15:01:32.000.084,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Property.cpp=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\Property.cpp</Transaction>
     <Transaction>2019/03/08 15:01:32.000.084,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Property.h=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\Property.h</Transaction>
+<<<<<<< HEAD
     <Transaction>2019/03/08 15:01:32.000.794,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\IHM.cpp=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\IHM.cpp</Transaction>
+=======
+>>>>>>> 0477508dc8ad3e60e393257829bb9bac93dbf6d4
+>>>>>>> b753a374a09c1a35f2d9fd399c934d10c22f11fe
     <Transaction>2019/03/08 15:01:32.000.794,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\IHM.dfm=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\IHM.dfm</Transaction>
     <Transaction>2019/03/08 15:01:33.000.615,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Project2PCH1.h=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\Project2PCH1.h</Transaction>
     <Transaction>2019/03/08 15:01:34.000.941,C:\Users\adherbomez\Documents\Embarcadero\Studio\Projets\Project2.cbproj=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\Project2.cbproj</Transaction>
     <Transaction>2019/03/11 16:35:45.000.321,=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\UsedEquipement.h</Transaction>
-    <Transaction>2019/03/11 16:40:21.000.043,=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\UsedEquipement\UsedEquipement.cpp</Transaction>
     <Transaction>2019/03/11 16:40:21.000.057,=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\UsedEquipement\UsedEquipement.h</Transaction>
+<<<<<<< HEAD
     <Transaction>2019/03/11 16:41:25.000.540,=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\TrameManager\TrameManager.h</Transaction>
     <Transaction>2019/03/11 16:41:25.000.517,=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\TrameManager\TrameManager.cpp</Transaction>
+=======
+<<<<<<< HEAD
+    <Transaction>2019/03/11 16:40:21.000.043,=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\UsedEquipement\UsedEquipement.cpp</Transaction>
+    <Transaction>2019/03/11 16:41:25.000.540,=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\TrameManager\TrameManager.h</Transaction>
+    <Transaction>2019/03/11 16:41:25.000.517,=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\TrameManager\TrameManager.cpp</Transaction>
+=======
+    <Transaction>2019/03/11 16:41:25.000.517,=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\TrameManager\TrameManager.cpp</Transaction>
+    <Transaction>2019/03/11 16:41:25.000.540,=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\TrameManager\TrameManager.h</Transaction>
+    <Transaction>2019/03/11 16:42:20.000.682,=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\Equipement\Equipement.cpp</Transaction>
+>>>>>>> 0477508dc8ad3e60e393257829bb9bac93dbf6d4
+>>>>>>> b753a374a09c1a35f2d9fd399c934d10c22f11fe
     <Transaction>2019/03/11 16:42:20.000.693,=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\Equipement\Equipement.h</Transaction>
     <Transaction>2019/03/11 16:42:20.000.682,=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\Equipement\Equipement.cpp</Transaction>
     <Transaction>2019/03/11 16:44:49.000.293,=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\Manager\Manager.cpp</Transaction>
     <Transaction>2019/03/11 16:44:49.000.332,=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\Manager\Manager.h</Transaction>
-    <Transaction>2019/03/11 16:45:02.000.164,=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\Programme\Programme.cpp</Transaction>
     <Transaction>2019/03/11 16:45:02.000.203,=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\Programme\Programme.h</Transaction>
+    <Transaction>2019/03/11 16:45:02.000.164,=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\Programme\Programme.cpp</Transaction>
     <Transaction>2019/03/11 16:45:42.000.245,=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\Property\Property.cpp</Transaction>
     <Transaction>2019/03/11 16:46:05.000.524,=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\Scene\Scene.cpp</Transaction>
+<<<<<<< HEAD
+=======
     <Transaction>2019/03/11 16:46:05.000.483,=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\Scene\Scene.h</Transaction>
+<<<<<<< HEAD
     <Transaction>2019/03/11 16:46:43.000.217,=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\Sequence\Sequence.h</Transaction>
     <Transaction>2019/03/11 16:46:43.000.176,=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\Sequence\Sequence.cpp</Transaction>
     <Transaction>2019/03/11 16:46:58.000.214,=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\SequenceUsedEquipement\SequenceUsedEquipement.cpp</Transaction>
+=======
+    <Transaction>2019/03/11 16:46:43.000.176,=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\Sequence\Sequence.cpp</Transaction>
+>>>>>>> 0477508dc8ad3e60e393257829bb9bac93dbf6d4
+    <Transaction>2019/03/11 16:46:43.000.217,=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\Sequence\Sequence.h</Transaction>
+    <Transaction>2019/03/11 16:46:43.000.176,=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\Sequence\Sequence.cpp</Transaction>
+>>>>>>> b753a374a09c1a35f2d9fd399c934d10c22f11fe
     <Transaction>2019/03/11 16:46:58.000.171,=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\SequenceUsedEquipement\SequenceUsedEquipement.h</Transaction>
-    <Transaction>2019/03/11 16:47:12.000.353,=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\TCPServer\TCPServer.h</Transaction>
+    <Transaction>2019/03/11 16:46:58.000.214,=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\SequenceUsedEquipement\SequenceUsedEquipement.cpp</Transaction>
     <Transaction>2019/03/11 16:47:12.000.344,=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\TCPServer\TCPServer.cpp</Transaction>
+    <Transaction>2019/03/11 16:47:12.000.353,=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\TCPServer\TCPServer.h</Transaction>
     <Transaction>2019/03/11 17:35:14.000.620,=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\Property\Property.h</Transaction>
     <Transaction>2019/03/14 14:51:37.000.604,=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\Unit1.cpp</Transaction>
     <Transaction>2019/03/14 14:56:09.000.699,=C:\Users\adherbomez\Desktop\main.cpp</Transaction>
     <Transaction>2019/03/14 14:56:50.000.684,C:\Users\adherbomez\Desktop\main.cpp=</Transaction>
+<<<<<<< HEAD
     <Transaction>2019/03/19 14:07:40.000.455,=C:\Users\WhynterLeDosFin\Documents\GitHub\THEATRE_DMX\C++\Unit1.cpp</Transaction>
     <Transaction>2019/03/19 14:07:51.000.927,C:\Users\WhynterLeDosFin\Documents\GitHub\THEATRE_DMX\C++\MySQL.h=C:\Users\WhynterLeDosFin\Documents\GitHub\THEATRE_DMX\C++\Unit1.h</Transaction>
     <Transaction>2019/03/19 14:07:51.000.927,C:\Users\WhynterLeDosFin\Documents\GitHub\THEATRE_DMX\C++\MySQL.cpp=C:\Users\WhynterLeDosFin\Documents\GitHub\THEATRE_DMX\C++\Unit1.cpp</Transaction>
@@ -160,6 +256,21 @@
     <Transaction>2019/03/20 09:35:51.000.444,=C:\Users\WhynterLeDosFin\Documents\GitHub\THEATRE_DMX\C++\include\libmySQL.lib</Transaction>
     <Transaction>2019/03/20 09:36:45.000.118,C:\Users\WhynterLeDosFin\Documents\GitHub\THEATRE_DMX\C++\MySQL.cpp=C:\Users\WhynterLeDosFin\Documents\GitHub\THEATRE_DMX\C++\MySQL\MySQL.cpp</Transaction>
     <Transaction>2019/03/20 09:36:45.000.118,C:\Users\WhynterLeDosFin\Documents\GitHub\THEATRE_DMX\C++\MySQL.h=C:\Users\WhynterLeDosFin\Documents\GitHub\THEATRE_DMX\C++\MySQL\MySQL.h</Transaction>
+=======
+<<<<<<< HEAD
+    <Transaction>2019/03/18 14:39:35.305,=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\Unit1.cpp</Transaction>
+    <Transaction>2019/03/18 14:39:54.397,C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\IHM.h=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\Unit1.h</Transaction>
+    <Transaction>2019/03/18 14:39:54.397,C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\IHM.dfm=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\Unit1.dfm</Transaction>
+    <Transaction>2019/03/18 14:39:54.397,C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\IHM.cpp=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\Unit1.cpp</Transaction>
+    <Transaction>2019/03/18 14:40:31.601,C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\IHM\IHM.dfm=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\IHM.dfm</Transaction>
+    <Transaction>2019/03/18 14:40:31.601,C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\IHM\IHM.h=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\IHM.h</Transaction>
+    <Transaction>2019/03/18 14:40:31.601,C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\IHM\IHM.cpp=C:\Users\adherbomez\Documents\GitHub\THEATRE_DMX\C++\IHM.cpp</Transaction>
+=======
+    <Transaction>2019/03/19 14:07:40.455,=C:\Users\WhynterLeDosFin\Documents\GitHub\THEATRE_DMX\C++\Unit1.cpp</Transaction>
+    <Transaction>2019/03/19 14:07:51.927,C:\Users\WhynterLeDosFin\Documents\GitHub\THEATRE_DMX\C++\MySQL.cpp=C:\Users\WhynterLeDosFin\Documents\GitHub\THEATRE_DMX\C++\Unit1.cpp</Transaction>
+    <Transaction>2019/03/19 14:07:51.927,C:\Users\WhynterLeDosFin\Documents\GitHub\THEATRE_DMX\C++\MySQL.h=C:\Users\WhynterLeDosFin\Documents\GitHub\THEATRE_DMX\C++\Unit1.h</Transaction>
+>>>>>>> 0477508dc8ad3e60e393257829bb9bac93dbf6d4
+>>>>>>> b753a374a09c1a35f2d9fd399c934d10c22f11fe
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="BDD"/>
@@ -171,6 +282,7 @@
     <File Path="Equipement"/>
     <File Path="Equipement\Equipement.cpp"/>
     <File Path="Equipement\Equipement.h"/>
+<<<<<<< HEAD
     <File Path="include"/>
     <File Path="include\big_endian.h"/>
     <File Path="include\byte_order_generic.h"/>
@@ -217,6 +329,13 @@
     <File Path="include\sslopt-longopts.h"/>
     <File Path="include\sslopt-vars.h"/>
     <File Path="include\typelib.h"/>
+=======
+    <File Path="IHM"/>
+    <File Path="IHM\IHM.cpp"/>
+    <File Path="IHM\IHM.cpp"/>
+    <File Path="IHM\IHM.dfm"/>
+    <File Path="IHM\IHM.h"/>
+>>>>>>> b753a374a09c1a35f2d9fd399c934d10c22f11fe
     <File Path="Manager"/>
     <File Path="Manager\Manager.cpp"/>
     <File Path="Manager\Manager.h"/>

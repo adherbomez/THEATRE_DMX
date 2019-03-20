@@ -21,12 +21,12 @@ class sequence
 		int nbSeqUsedEq;
 
 	public:
-		sequence(trameManager*);
+		sequence(int id, int duree, trameManager*);
 
-		void setValue(int value);
+		void setDuree(int value);
 		void setId(int id);
 
-		int getValue();
+		int getDuree();
 		int getId();
 };
 

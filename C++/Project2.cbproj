@@ -46,8 +46,13 @@
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
+<<<<<<< HEAD
         <ILINK_LibraryPath>include\;BDD\;MySQL\;..\..\..\..\Desktop\;TCPServer\;SequenceUsedEquipement\;Sequence\;Scene\;Property\;Programme\;Manager\;Equipement\;TrameManager\;UsedEquipement\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <IncludePath>include\;BDD\;MySQL\;..\..\..\..\Desktop\;TCPServer\;SequenceUsedEquipement\;Sequence\;Scene\;Property\;Programme\;Manager\;Equipement\;TrameManager\;UsedEquipement\;$(IncludePath)</IncludePath>
+=======
+        <ILINK_LibraryPath>IHM\;..\..\..\..\Desktop\;TCPServer\;SequenceUsedEquipement\;Sequence\;Scene\;Property\;Programme\;Manager\;Equipement\;TrameManager\;UsedEquipement\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <IncludePath>IHM\;..\..\..\..\Desktop\;TCPServer\;SequenceUsedEquipement\;Sequence\;Scene\;Property\;Programme\;Manager\;Equipement\;TrameManager\;UsedEquipement\;$(IncludePath)</IncludePath>
+>>>>>>> b753a374a09c1a35f2d9fd399c934d10c22f11fe
         <ProjectType>CppVCLApplication</ProjectType>
         <Icon_MainIcon>$(BDS)\bin\cbuilder_PROJECTICON.ico</Icon_MainIcon>
         <Multithreaded>true</Multithreaded>
@@ -127,6 +132,7 @@
         <None Include="Equipement\Equipement.h">
             <BuildOrder>16</BuildOrder>
         </None>
+<<<<<<< HEAD
         <None Include="include\big_endian.h">
             <BuildOrder>26</BuildOrder>
         </None>
@@ -262,6 +268,14 @@
         <None Include="include\typelib.h">
             <BuildOrder>71</BuildOrder>
         </None>
+=======
+        <CppCompile Include="IHM\IHM.cpp">
+            <Form>Form1</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>IHM\IHM.h</DependentOn>
+            <BuildOrder>22</BuildOrder>
+        </CppCompile>
+>>>>>>> b753a374a09c1a35f2d9fd399c934d10c22f11fe
         <CppCompile Include="Manager\Manager.cpp">
             <BuildOrder>17</BuildOrder>
         </CppCompile>
@@ -328,6 +342,7 @@
         <None Include="UsedEquipement\UsedEquipement.h">
             <BuildOrder>15</BuildOrder>
         </None>
+        <FormResources Include="IHM\IHM.dfm"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

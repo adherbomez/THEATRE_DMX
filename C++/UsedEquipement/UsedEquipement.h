@@ -18,17 +18,17 @@
 class usedEquipement
 {
 	private:
-		int canal;
+		int adresse;
 		equipement*equip;
 		std::map<property*,int>values;
 
 
 	public:
-		usedEquipement();
+		usedEquipement(int canal,std::map<property*,int>values);
 
-		void setCanal(int canal);
+		void setAdresse(int adresse);
 		std::map<property*,int> setValues(std::map<property*,int>values); //valeurs des propriétés d'un equipement
-		int getCanal();     //1ere position dans la trame d'une séquence
+		int getAdresse();     //1ere position dans la trame d'une séquence
 		std::map<property*,int> getValues();
 };
 

@@ -18,7 +18,7 @@ class sequenceUsedEquipement
 		int value;
 
 	public:
-		sequenceUsedEquipement();
+		sequenceUsedEquipement(int id, int value);
 
 		void setSequenceValue(int value);
 		void setId(int id);

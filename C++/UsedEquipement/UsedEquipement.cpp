@@ -14,29 +14,30 @@
 #pragma package(smart_init)
 
 //constructeur
-	usedEquipement::usedEquipement()
+	usedEquipement::usedEquipement(int adresse,std::map<property*,int>values)
 	{
-
+		this->adresse=adresse;
+		this->values=values;
 	}
 //initialisation du canal qui est la première adresse de la trame
-	void usedEquipement::setCanal(int canal)
+	void usedEquipement::setAdresse(int adresse)
 	{
-
+		this->adresse=adresse;
 	}
 //valeur de chaque propriétés
 	std::map<property*,int> usedEquipement::setValues(std::map<property*,int>values)
 	{
-
+		this->values=values;
 	}
 //retourne le canal
-	int usedEquipement::getCanal()
+	int usedEquipement::getAdresse()
 	{
-
+		return adresse;
 	}
 //retourne les valeurs
 	std::map<property*,int>
 	usedEquipement::getValues()
 	{
-
+		return values;
 	}
 

@@ -15,23 +15,23 @@
 #pragma package(smart_init)
 
 
-	bool onConnect()
-	{
-
-	}
-	bool onReceived()
-	{
-
-	}
-	programme*parseProgramme(data)
-	{
-
-	}
-	scene*parseScene(data)
-	{
-
-	}
-	scene*updateScene(scn)
-	{
-
-	}
+//bool onConnect()
+//	{
+//
+//	}
+//	bool onReceived()
+//	{
+//
+//	}
+//	programme*parseProgramme(data)
+//	{
+//
+//	}
+//	scene*parseScene(data)
+//	{
+//
+//	}
+//	scene*updateScene(scn)
+//	{
+//
+//	}
