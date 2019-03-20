@@ -12,7 +12,7 @@ TForm1 *Form1;
 __fastcall TForm1::TForm1(TComponent* Owner)
 	: TForm(Owner)
 {
-/*
+
 //vecteurs
 std::vector<sequence*>seq;
 std::vector<scene*>scn;
@@ -46,8 +46,8 @@ scn1=new scene(1,name,20,seq);
 	scn.push_back(scn1);
 
 //programme
-//prog=new programme(1,name_prog,30,scn);
+prog=new programme(1,name_prog,30,scn);
 
-*/
+
 }
 //---------------------------------------------------------------------------
