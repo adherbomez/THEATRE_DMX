@@ -11,6 +11,7 @@
 #define TrameManagerH
 #include <stdlib.h>
 #include <map>
+#include <vector>
 #include "UsedEquipement.h"
 #include "Equipement.h"
 #include "string.h"
@@ -19,14 +20,14 @@
 class trameManager
 {
 	private:
-		std::map<std::string,usedEquipement*> trame;
+		std::vector<usedEquipement*> trame;
 		char* dmx[512];
 
 	public:
 		trameManager();
 
-		bool insertEquipement(equipement*,int canal);
-		void removeEquipement(int canal);
+		bool insertEquipement(equipement*equip,int adresse);
+		void removeEquipement(int adresse);
 		bool checkConflict();
 
 		char*getTrame();

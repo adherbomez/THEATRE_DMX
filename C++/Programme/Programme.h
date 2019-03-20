@@ -11,6 +11,9 @@
 #include <map>
 #include "Scene.h"
 #include "String.h"
+#include <vector>
+#include <iostream>
+#include <stdlib.h>
 //---------------------------------------------------------------------------
 
 class programme
@@ -19,22 +22,22 @@ class programme
 		int id;
 		char*name;
 		int nbScene;
-		std::map<std::string,scene*>scenes; //scenes avec leurs séquences (encapsulation)
+		std::vector<scene*>scn; //scenes avec leurs séquences (encapsulation)
 
 	public:
-		programme(int id, char*name,std::map<std::string,scene*>scn);
+		programme(int id, char*name,std::vector<scene*>scene);
 
 		void setId(int id);
 		void setName(char*name);
 // (à voir)		void setOrder(int Order);
-		void setNbScene(std::map<std::string,scene*>scn); //récupère la size du vecteur scene
+		void setNbScene(); //récupère la size du vecteur scene
 
 		//récupération des attributs
 		int getId();
 		char* getName();
 		int getNbScene();
 //(à voir)	int getOrder();
-		std::map<std::string,scene*> getScenes();
+		std::vector<scene*>getScenes();
 };
 
 #endif

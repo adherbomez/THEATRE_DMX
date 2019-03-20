@@ -17,13 +17,32 @@
 	{
 
 	}
-//insere dans dmx[512] l'equipement au canal choisis
-	bool trameManager::insertEquipement(equipement*,int canal)
+//insere dans dmx[512] l'equipement à  l'adresse choisi
+	bool trameManager::insertEquipement(equipement*equip,int adresse)
 	{
-
+//		int i,j;
+//
+//		adresse-=1;
+//
+//		for (i = 0; i < 512; i++)
+//		{
+//			while(dmx[i]==dmx[adresse])
+//			{
+//				for (j = adresse; j < adresse+equip->getNbVoies(); j++)
+//				{
+//					for (std::map<>,allocator<pair<>)
+//					{
+//						dmx[j]=trame->getValues[j];
+//					}
+//
+//				}
+//
+//			}
+//
+//		}
 	}
 //suppression d'un équipement au canal choisis
-	void trameManager::removeEquipement(int canal)
+	void trameManager::removeEquipement(int adresse)
 	{
 
 	}
@@ -33,12 +52,12 @@
 
 	}
 //récupère la trame
-	char*getTrame()
+	char* trameManager::getTrame()
 	{
-
+		return dmx[512];
 	}
 //renvoi un vecteur avec toutes les informations utilent à la trame
 	std::vector<usedEquipement*> trameManager::getUsedEquipement()
 	{
-
+		return trame;
 	}
