@@ -53,6 +53,6 @@
 //récupération des scènes d'un programme et leurs séquences
 	std::vector<scene*> programme::getScenes()
 	{
-		return scene;
+		return scn;
     }
 
