@@ -10,20 +10,18 @@
 #include <vector>
 #include <string>
 
-
 using namespace std;
 
 class BDD
 {
 	public :
-
-		virtual Connect(char*Addr,char*Id,char*Mdp,char*Table)=0;
-		virtual Disconnect()=0;
-
-		virtual bool Insert(string request)=0;
-		virtual bool Update(string request)=0;
-		virtual bool Delete(string request)=0;
-		virtual bool Select(string request)=0;
+			/* Méthodes virtuelles */
+		virtual void Connect(char*Addr,char*Id,char*Mdp,char*Table) = 0;
+		virtual void Disconnect() = 0;
+		virtual bool Insert(string request) = 0;
+		virtual bool Update(string request) = 0;
+		virtual bool Delete(string request) = 0;
+		virtual vector< vector<string> > Select(string request) = 0;
 };
 
 #endif
