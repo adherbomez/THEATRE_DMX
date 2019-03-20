@@ -49,12 +49,12 @@
 //verifie si des trames ne se superposes pas et si il n'y a pas d'erreurs
 	bool trameManager::checkConflict()
 	{
-
+	   return true;
 	}
 //récupère la trame
 	char* trameManager::getTrame()
 	{
-		return dmx[512];
+		return dmx;
 	}
 //renvoi un vecteur avec toutes les informations utilent à la trame
 	std::vector<usedEquipement*> trameManager::getUsedEquipement()

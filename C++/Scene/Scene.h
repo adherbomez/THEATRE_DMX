@@ -8,7 +8,7 @@
 
 #ifndef SceneH
 #define SceneH
-#include <map>
+#include <vector>
 #include "Sequence.h"
 #include "String.h"
 //---------------------------------------------------------------------------
@@ -17,26 +17,26 @@ class scene
 {
 	private:
 		int id;
-		char*name;
+		std::string name;
 		int tpsPause;
-		std::map<std::string,sequence*> seq;
+		std::vector<sequence*> seq;
 
 
 	public:
-		scene(int id, char*name, int tpsPause, std::map<std::string,sequence*>seq);
+		scene(int id, std::string name, int tpsPause, std::vector<sequence*>seq);
 
 		void setId(int id);
-		void setName(char*name);
+		void setName(std::string name);
 		void setTime(int tpsPause);  //temps entre chaque scenes
-		void setNbSeq(std::map<int,sequence*>); //récupère la size du vecteur
-		void setSequences(std::map<std::string,sequence*>seq); //récupère les séquences de la scène
+		void setNbSeq(std::vector<sequence*>); //récupère la size du vecteur
+		void setSequences(std::vector<sequence*>); //récupère les séquences de la scène
 
 		//récupération des attributs
 		int getId();
-		char* getName();
+		std::string getName();
 		int getTime();
 		int getNbSeq();
-		std::map<std::string,sequence*> getSequences();
+		std::vector<sequence*> getSequences();
 
 };
 

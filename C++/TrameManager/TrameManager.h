@@ -20,10 +20,11 @@
 class trameManager
 {
 	private:
-		std::vector<usedEquipement*> trame;
-		char* dmx[512];
-
 	public:
+		std::vector<usedEquipement*> trame;
+		char* dmx;
+
+
 		trameManager();
 
 		bool insertEquipement(equipement*equip,int adresse);
