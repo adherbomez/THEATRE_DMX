@@ -1,0 +1,33 @@
+//---------------------------------------------------------------------------
+
+#ifndef SQL_BDDH
+#define SQL_BDDH
+//---------------------------------------------------------------------------
+
+#include <vcl.h>
+#define __WIN__
+#include "include/mysql.h"
+#include <vector>
+
+using namespace std;
+
+class MySQL
+{
+	private :
+
+		bool Etat;
+		MySQL*SQL;
+
+	public :
+		MySQL();
+
+		bool Connect(char*adre,char*id,char*mdp,char*table);
+		bool Disconnect();
+
+		 bool Insert();
+		 bool Update();
+		 bool Delete();
+		 bool Select();
+};
+
+#endif
