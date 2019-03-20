@@ -3,12 +3,12 @@
 	<Transactions>
     <Transaction>2019/03/20 11:25:28.000.008,=C:\Users\WhynterLeDosFin\Documents\Embarcadero\Studio\Projets\Project1PCH1.h</Transaction>
     <Transaction>2019/03/20 11:25:28.000.024,=C:\Users\WhynterLeDosFin\Documents\Embarcadero\Studio\Projets\Unit1.cpp</Transaction>
-    <Transaction>2019/03/20 11:26:18.000.861,C:\Users\WhynterLeDosFin\Documents\Embarcadero\Studio\Projets\Unit1.dfm=C:\Users\WhynterLeDosFin\Documents\GitHub\THEATRE_DMX\C++\Unit1Ranaldi.dfm</Transaction>
-    <Transaction>2019/03/20 11:26:18.000.861,C:\Users\WhynterLeDosFin\Documents\Embarcadero\Studio\Projets\Unit1.h=C:\Users\WhynterLeDosFin\Documents\GitHub\THEATRE_DMX\C++\Unit1Ranaldi.h</Transaction>
-    <Transaction>2019/03/20 11:26:18.000.861,C:\Users\WhynterLeDosFin\Documents\Embarcadero\Studio\Projets\Unit1.cpp=C:\Users\WhynterLeDosFin\Documents\GitHub\THEATRE_DMX\C++\Unit1Ranaldi.cpp</Transaction>
-    <Transaction>2019/03/20 11:26:25.000.235,C:\Users\WhynterLeDosFin\Documents\Embarcadero\Studio\Projets\Project1PCH1.h=C:\Users\WhynterLeDosFin\Documents\GitHub\THEATRE_DMX\C++\Project1PCH1Ranaldi.h</Transaction>
-    <Transaction>2019/03/20 11:26:29.000.970,C:\Users\WhynterLeDosFin\Documents\Embarcadero\Studio\Projets\Project1.cbproj=C:\Users\WhynterLeDosFin\Documents\GitHub\THEATRE_DMX\C++\Project1ranaldi.cbproj</Transaction>
-    <Transaction>2019/03/20 11:29:41.730,C:\Users\WhynterLeDosFin\Documents\GitHub\THEATRE_DMX\C++\Unit1Ranaldi.cpp=</Transaction>
-    <Transaction>2019/03/20 11:29:50.666,=C:\Users\WhynterLeDosFin\Documents\GitHub\THEATRE_DMX\C++\IHM\IHM.cpp</Transaction>
+    <Transaction>2019/03/20 11:26:18.000.861,C:\Users\WhynterLeDosFin\Documents\GitHub\THEATRE_DMX\C++\Unit1Ranaldi.h=C:\Users\WhynterLeDosFin\Documents\Embarcadero\Studio\Projets\Unit1.h</Transaction>
+    <Transaction>2019/03/20 11:26:18.000.861,C:\Users\WhynterLeDosFin\Documents\GitHub\THEATRE_DMX\C++\Unit1Ranaldi.dfm=C:\Users\WhynterLeDosFin\Documents\Embarcadero\Studio\Projets\Unit1.dfm</Transaction>
+    <Transaction>2019/03/20 11:26:18.000.861,C:\Users\WhynterLeDosFin\Documents\GitHub\THEATRE_DMX\C++\Unit1Ranaldi.cpp=C:\Users\WhynterLeDosFin\Documents\Embarcadero\Studio\Projets\Unit1.cpp</Transaction>
+    <Transaction>2019/03/20 11:26:25.000.235,C:\Users\WhynterLeDosFin\Documents\GitHub\THEATRE_DMX\C++\Project1PCH1Ranaldi.h=C:\Users\WhynterLeDosFin\Documents\Embarcadero\Studio\Projets\Project1PCH1.h</Transaction>
+    <Transaction>2019/03/20 11:26:29.000.970,C:\Users\WhynterLeDosFin\Documents\GitHub\THEATRE_DMX\C++\Project1ranaldi.cbproj=C:\Users\WhynterLeDosFin\Documents\Embarcadero\Studio\Projets\Project1.cbproj</Transaction>
+    <Transaction>2019/03/20 11:29:41.000.730,C:\Users\WhynterLeDosFin\Documents\GitHub\THEATRE_DMX\C++\Unit1Ranaldi.cpp=</Transaction>
+    <Transaction>2019/03/20 11:29:50.000.666,=C:\Users\WhynterLeDosFin\Documents\GitHub\THEATRE_DMX\C++\IHM\IHM.cpp</Transaction>
   </Transactions>
 </BorlandProject>

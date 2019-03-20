@@ -6,7 +6,7 @@
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 
-bool MySQL::Connect(char*Addr,char*Id,char*Mdp,char*Table)
+void MySQL::Connect(char*Addr,char*Id,char*Mdp,char*Table)
 {
 
 	if (!mysql_real_connect(SQL,Addr,Id,Mdp,Table, 0, NULL, 0))
@@ -21,7 +21,7 @@ bool MySQL::Connect(char*Addr,char*Id,char*Mdp,char*Table)
 	return Etat;
 }
 
-bool MySQL::Disconnect()
+void MySQL::Disconnect()
 {
 	mysql_close(SQL);
 }
@@ -33,15 +33,22 @@ bool MySQL::Insert(string request)
 {
 	if(mysql_query(SQL,request.c_str())==0)
 	{
-        return true;
+		return true;
 	}
 	else
 	{
-        return false;
+		return false;
 	}
 }
 
 void MySQL::Delete(string request)
 {
-char *Req=new char[request.Length())
+	if(mysql_query(SQL,request.c_str())==0)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
 }

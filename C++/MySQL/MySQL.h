@@ -8,7 +8,7 @@
 #include "include/mysql.h"
 #include <vector>
 #include <string>
-#include "BDD.h"
+#include "BDD/BDD.h"
 
 using namespace std;
 
