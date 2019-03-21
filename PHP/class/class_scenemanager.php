@@ -1,6 +1,6 @@
 <?php
-require('class_bdd_php.php');
 require('class_scene.php');
+
 /*----------------------------------------------------------------/
 PROJET THEATRE DMX512
 DEVELOPPÉ PAR : MAXIME LEPELLETIER 
@@ -13,79 +13,71 @@ il s'agit la de pouvoir ajouter des
 /----------------------------------------------------------------*/
 
 
-	Class Scenemanager 
+	Class Scenemanager extends Scene
 {
-	$scene = new Scene();
+	protected $_Scene;
+	private $_Erreur;
 
 // fonction qui permet d'ajouter une scene sur l'ihm
-	public function AjouterScene()
+	public function AjouterScene($_Scene)
 	{
-		if(1)
+		throw new Exception("erreur lors de l'ajout de la scene", 1);
+		
+		try
 		{
-			connexion();
-			envoyer();
-			deconnexion();	
-			return true;
-		}
 			
-		else
-		{
-			return false;
 		}
-				
+		catch (Exception $e)
+		{
+		
+		}
+	
 		
 	}
 // fonction qui permet de modifier une scene sur l'ihm
 	public function ModifierScene()
 	{
-		if(1)
+		throw new Exception("erreur lors de la modification de scene", 2);
+		
+		try
 		{
-			connexion();
-			envoyer();
-			deconnexion();	
-			return true;
-		}
 			
-		else
+		}
+		catch (Exception $e)
 		{
-			return false;
+		
 		}
 		
-				
 	}
 // fonction qui permet de supprimer une scene sur l'ihm
 	public function SupprimerScene()
 	{
-		if(1)
+		throw new Exception("erreur suppression de scene", 3);
+		
+		try
 		{
-			connexion();
-			envoyer();
-			deconnexion();	
-			return true;
+
 		}
-			
-		else
+		catch (Exception $e)
 		{
-			return false;
+		
 		}
-	}		
-	
+		
+	}
 // fonction qui permet de lancer une scene a partir de l'ihm		
 	public function RunScene()
 	{
-		if(1)
+		throw new Exception("erreur lors du lancement de la scene", 4);
+		
+		try
 		{
-				connexion();
-				envoyer();
-				deconnexion();	
-				return true;
-		}
 			
-		else
-		{
-			return false;
 		}
-				 	
+		catch (Exception $e)
+		{
+		
+		}
+		
 	}
 	
 }

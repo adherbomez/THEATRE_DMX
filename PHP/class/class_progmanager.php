@@ -1,9 +1,5 @@
 <?php
-require('class_bdd_php.php');
-require('class_programme.php');
-require('class_socket.php');
-
-/*----------------------------------------------------------------/
+require('class_bdd_php.php');/*----------------------------------------------------------------/
 PROJET THEATRE DMX512
 DEVELOPPÉ PAR : MAXIME LEPELLETIER 
 BTS SN2
@@ -14,74 +10,71 @@ cette classe permet de parametrer les scene de lumiere.
 ces derniers composent les programmes (objet du fichier class_programme.php)
 /----------------------------------------------------------------*/
 
-	Class progmanager 
+	Class progmanager extends Programme
+
 	{ 
-	
-	$programme = new Programme();
+				protected $_Programme;
 
 // fonction qui permet d'ajouter un Programme sur l'ihm
-		public function AjouterProg()
-		{	
-			if(1)
+		public function AjouterProgramme()
+		{
+			throw new Exception("erreur lors de lajout du programme", 5);
+			
+			try
 			{
-				connexion();					
-				envoyer();
-				deconnexion();					
-				return true;
-			}
-			else
-			{
-				return false;
-			}
 				
-		}
+			}
+			catch (Exception $e)
+			{
+			
+			}
 
+		}
 // fonction qui permet de modifier un Programme
-		public function ModifierProg()
+		public function ModifierProgramme()
 		{
-			if(1)
+			throw new Exception("erreur lors de la modification du programme", 6);
+			
+			try
 			{
-				connexion();
-				envoyer();
-				deconnexion();	
-				return true;
+				
 			}
-			else
+			catch (Exception $e)
 			{
-				return false;
-			}
-		}
-// fonction qui permet de supprimer un Programme sur l'ihm
-		public function SupprimerProg()
-		{
-			if(1)
-			{
-				connexion();
-				envoyer();
-				deconnexion();	
-				return true;
-			}
-			else
-			{
-				return false;
-			}
-		}
-
-// fonction qui permet de lancer un Programme a partir de l'ihm		
-		public function RunProg()
-		{
-			if(1)
-			{
-				connexion();
-				envoyer();
-				deconnexion();	
-				return true;
-			}
-			else
-			{
-				return false;
+			
 			}	
 		}
+// fonction qui permet de supprimer un Programme sur l'ihm
+		public function SupprimerProgramme()
+		{
+			throw new Exception("erreur lors de la suppression du programme", 7);
+			
+			try
+			{
+				
+			}
+			catch (Exception $e)
+			{
+			
+			}
+		}
+// fonction qui permet de lancer un Programme a partir de l'ihm		
+		public function RunProgramme()
+		{
+			throw new Exception("erreur lors du lancement du programme", 2);
+			
+			try
+			{
+				
+			}
+			catch (Exception $e)
+			{
+			
+			}
+			
+		}
+
+
 	}
 
 ?>
