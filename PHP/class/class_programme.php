@@ -10,7 +10,7 @@ BTS SN2
 cette classe permet de parametrer les programmes de lumiere.
 ces derniers contiennent des scenes (objet du fichier class_scene.php)
 /----------------------------------------------------------------*/
-define(_NbScene, 1000)
+
 
 Class Programme 
 {
@@ -22,12 +22,13 @@ Class Programme
 	private $_Order;					//ordre des scenes dans le programme
 
 //Constructeur avec parametres
-	public function __construct($_Id,$_Nom,$_NbScene,$_TailleMax,)
+	public function __construct($_Id,$_Nom,$_NbScene,$_TailleMax,$_Order,)
  		{
     		$this->_id=$_Id;
     		$this->_Nom=$_Nom;
+    		$this->_NbScene=$_NbScene;
     		$this->_TailleMax=$_TailleMax;
-    	 
+    		$this->_Order=$_Order;
   	 	}
 
 //Fonction qui vas retrouner l'id du programme'
@@ -39,7 +40,7 @@ Class Programme
 //Fonction qui permet de parametrer l'id du programme
 	public function SetId($_Id)
 		{
-			$this->_Id=$_Id;
+			$this->$_Id=$_Id;
 		}
 
 //Fonction qui vas retrouner le nom du programme
@@ -51,7 +52,7 @@ Class Programme
 //Fonction qui permet de parametrer le nom du programme
 	public function SetNom($_Nom)
 		{
-			$this->_Nom=$_Nom;	
+			$this->$_Nom=$_Nom;	
 		}
 
 //Fonction qui vas retrouner le nombre de scene
@@ -63,7 +64,7 @@ Class Programme
 //Fonction qui permet de parametrer le nombre de scene
 	public function SetNbscene($_NbScene)
 		{
-			$this->_NbScene=$_NbScene;
+			$this->$_NbScene=$_NbScene;
 		}
 
 //Fonction qui vas retrouner le nombre maximal de scene d'un programme
@@ -75,7 +76,7 @@ Class Programme
 //Fonction qui permet de parametrer le nombre maximal de scene d'un programme
 	public function SetTaillemax($_TailleMax)
 		{
-			$this->_TailleMax=$_TailleMax;	
+			$this->$_TailleMax=$_TailleMax;	
 		}
 
 //Fonction qui vas retrouner l'ordre des scenes
