@@ -21,7 +21,16 @@
 //permet de récupérer un programme dans la bdd grace à son id
 	programme*manager::getProg(idProg)
 	{
+		programme *P1 ;
 
+		// On va rechercher en base les informations du programme
+		// select Nom from Programme
+		char* Nom = "lacDesSignes";
+
+		P1->setId(idProg);
+		P1->setName()
+
+		return P1;
 	}
 //permet de récupérer une scène dans la bdd grace à son id
 	scene*manager::getScn(idScn)

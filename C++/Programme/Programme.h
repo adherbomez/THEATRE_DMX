@@ -21,7 +21,7 @@ class programme
 	private:
 		int id;
 		char*name;
-		int nbScene;
+
 		std::vector<scene*>scn; //scenes avec leurs séquences (encapsulation)
 
 	public:
