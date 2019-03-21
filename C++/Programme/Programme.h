@@ -20,21 +20,21 @@ class programme
 {
 	private:
 		int id;
-		char*name;
+		std::string name;
 		int nbScene;
 		std::vector<scene*>scn; //scenes avec leurs séquences (encapsulation)
 
 	public:
-		programme(int id, char*name,std::vector<scene*>scene);
+		programme(int id, std::string name,std::vector<scene*>scene);
 
 		void setId(int id);
-		void setName(char*name);
+		void setName(std::string name);
 // (à voir)		void setOrder(int Order);
 		void setNbScene(); //récupère la size du vecteur scene
 
 		//récupération des attributs
 		int getId();
-		char* getName();
+		std::string getName();
 		int getNbScene();
 //(à voir)	int getOrder();
 		std::vector<scene*>getScenes();

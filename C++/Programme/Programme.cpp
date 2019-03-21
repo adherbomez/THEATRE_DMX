@@ -12,7 +12,7 @@
 #pragma package(smart_init)
 
 //constructeur du programme
-	programme::programme(int id, char*name,std::vector<scene*>scene)
+	programme::programme(int id, std::string name,std::vector<scene*>scene)
 	{
 	   this->id=id;
 	   this->name=name;
@@ -24,7 +24,7 @@
 		this->id=id;
 	}
 //initialisation du nom d'un progamme
-	void programme::setName(char* name)
+	void programme::setName(std::string name)
 	{
 		this->name=name;
 	}
@@ -40,7 +40,7 @@
 		return id;
 	}
 //récupération du nom du programme
-	char* programme::getName()
+	std::string programme::getName()
 	{
 		return name;
 	}

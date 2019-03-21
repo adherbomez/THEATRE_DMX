@@ -12,6 +12,11 @@ TForm1 *Form1;
 __fastcall TForm1::TForm1(TComponent* Owner)
 	: TForm(Owner)
 {
+//chargement pour la dll
+HINSTANCE g_dasusbdll = NULL;
+typedef int (*DASHARDCOMMAND)(int, int, unsigned char*);
+DASHARDCOMMAND  DasUsbCommand = NULL;
+int ref_open = 0;
 
 //vecteurs
 std::vector<sequence*>seq;
@@ -41,13 +46,31 @@ seq3=new sequence(3,60,trame);
 
 
 //scene
+std::string name= "soleil";
 scn1=new scene(1,name,20,seq);
 	//on implémente le vecteur scène
 	scn.push_back(scn1);
 
 //programme
-prog=new programme(1,name_prog,30,scn);
+std::string name_prog= "test";
+prog=new programme(1,name_prog,scn);
 
+//chargement de la dll
+	g_dasusbdll = LoadLibrary("DasHard2006.dll");
+	if (g_dasusbdll)
+		DasUsbCommand  = (DASHARDCOMMAND)::GetProcAddress((HMODULE)g_dasusbdll, "DasUsbCommand");
+	if (DasUsbCommand)
+		Shape1->Brush->Color=clGreen;
+
+//connexion à l'usb dmx
+
+
+	if (DasUsbCommand(DHC_OPEN,0,0)>0)
+	{
+	Shape2->Brush->Color=clGreen;
+	}
 
 }
+
+
 //---------------------------------------------------------------------------
