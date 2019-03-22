@@ -41,4 +41,16 @@ object Form1: TForm1
     Height = 41
     Brush.Color = clRed
   end
+  object Edit1: TEdit
+    Left = 200
+    Top = 48
+    Width = 121
+    Height = 21
+    TabOrder = 0
+  end
+  object Timer1: TTimer
+    OnTimer = Timer1Timer
+    Left = 152
+    Top = 264
+  end
 end
