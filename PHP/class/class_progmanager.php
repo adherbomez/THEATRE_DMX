@@ -16,62 +16,36 @@ ces derniers composent les programmes (objet du fichier class_programme.php)
 				protected $_Programme;
 
 // fonction qui permet d'ajouter un Programme sur l'ihm
-		public function AjouterProgramme()
+		public function AjouterProgramme($_nomprog)
 		{
-			throw new Exception("erreur lors de lajout du programme", 5);
-			
-			try
+			$_idprog=lastid();
+			if($this->_Bdd->query("INSERT INTO `program` (`idProgram`, `Nom`) VALUES ('".$this->_idprog."','".$this->_nomprog."')"))
 			{
-				
-			}
-			catch (Exception $e)
-			{
+				echo "programme ajouté";
+			}	
 			
-			}
-
 		}
 // fonction qui permet de modifier un Programme
 		public function ModifierProgramme()
 		{
-			throw new Exception("erreur lors de la modification du programme", 6);
 			
-			try
-			{
-				
-			}
-			catch (Exception $e)
-			{
-			
-			}	
 		}
 // fonction qui permet de supprimer un Programme sur l'ihm
 		public function SupprimerProgramme()
 		{
-			throw new Exception("erreur lors de la suppression du programme", 7);
-			
-			try
-			{
-				
-			}
-			catch (Exception $e)
-			{
-			
-			}
+		
 		}
 // fonction qui permet de lancer un Programme a partir de l'ihm		
 		public function RunProgramme()
 		{
-			throw new Exception("erreur lors du lancement du programme", 2);
-			
-			try
-			{
-				
-			}
-			catch (Exception $e)
-			{
-			
-			}
-			
+		
+		}
+
+		public function Lastid($nomtable)
+		{
+			if($this->_Bdd->query("SELECT MAX(".$nomtable.") FROM program"))
+			echo $_Bdd;	
+			return $_Bdd;	
 		}
 
 
