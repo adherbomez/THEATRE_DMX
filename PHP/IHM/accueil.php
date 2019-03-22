@@ -41,11 +41,10 @@ $bdd = new BDD('maxime','mdp','192.168.65.97','theater','root','root');
 	</div>
 
 	<div id="menuprog">
-		<ul id="ongletsprog" type="circle">
 		<?php 
-		$bdd->Modelaccueil('');
+			$bdd->lastid();
+			$bdd->Modelaccueil('');
 		?>	
-		</ul>
 	</div>
 
 	<?php

@@ -8,23 +8,29 @@
 #include "include/mysql.h"
 #include <vector>
 #include <string>
-#include "BDD/BDD.h"
+#include "BDD.h"
 
 using namespace std;
 
 class MySQL
 {
-	public:
+	private:
 
-		virtual void Connect(char*Addr,char*Id,char*Mdp,char*Table);
-		virtual void Disconnect();
+		bool Etat;
+		MYSQL*SQL;
+
+
+	public:
+		MySQL();
+		bool Connect(char*Addr,char*Id,char*Mdp,char*Table);
+		void Disconnect();
 
 		bool Insert(string request);
 		bool Update(string request);
 		bool Delete(string request);
 		vector< vector<string> > Select(string request);
 
-}
+};
 
 
 

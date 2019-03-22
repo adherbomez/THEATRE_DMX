@@ -46,8 +46,8 @@
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
-        <ILINK_LibraryPath>IHM\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
-        <IncludePath>IHM\;$(IncludePath)</IncludePath>
+        <ILINK_LibraryPath>Scene\;Property\;Programme\;MySQL\;Manager\;include\;Equipement\;BDD\;UsedEquipement\;TrameManager\;TCPServer\;SequenceUsedEquipement\;Sequence\;IHM\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <IncludePath>Scene\;Property\;Programme\;MySQL\;Manager\;include\;Equipement\;BDD\;UsedEquipement\;TrameManager\;TCPServer\;SequenceUsedEquipement\;Sequence\;IHM\;$(IncludePath)</IncludePath>
         <_TCHARMapping>char</_TCHARMapping>
         <Multithreaded>true</Multithreaded>
         <AllPackageLibs>rtl.lib;vcl.lib</AllPackageLibs>
@@ -66,6 +66,7 @@
         <ILINK_TranslatedLibraryPath>$(BDSLIB)\$(PLATFORM)\release\$(LANGDIR);$(ILINK_TranslatedLibraryPath)</ILINK_TranslatedLibraryPath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <ILINK_LibraryPath>C:\Users\WhynterLeDosFin\Documents\GitHub\THEATRE_DMX\C++\include\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
         <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
@@ -112,18 +113,237 @@
         <BCC_PCHName_Clang>Project1PCH1Ranaldi.h</BCC_PCHName_Clang>
     </PropertyGroup>
     <ItemGroup>
+        <CppCompile Include="BDD\BDD.cpp">
+            <DependentOn>BDD\BDD.h</DependentOn>
+            <BuildOrder>13</BuildOrder>
+        </CppCompile>
+        <None Include="BDD\BDD.h">
+            <BuildOrder>14</BuildOrder>
+        </None>
+        <CppCompile Include="Equipement\Equipement.cpp">
+            <DependentOn>Equipement\Equipement.h</DependentOn>
+            <BuildOrder>15</BuildOrder>
+        </CppCompile>
+        <None Include="Equipement\Equipement.h">
+            <BuildOrder>16</BuildOrder>
+        </None>
         <CppCompile Include="IHM\IHM.cpp">
             <Form>Form1</Form>
             <FormType>dfm</FormType>
             <DependentOn>IHM\IHM.h</DependentOn>
             <BuildOrder>2</BuildOrder>
         </CppCompile>
+        <None Include="include\big_endian.h">
+            <BuildOrder>17</BuildOrder>
+        </None>
+        <None Include="include\byte_order_generic.h">
+            <BuildOrder>18</BuildOrder>
+        </None>
+        <None Include="include\byte_order_generic_x86.h">
+            <BuildOrder>19</BuildOrder>
+        </None>
+        <None Include="include\byte_order_generic_x86_64.h">
+            <BuildOrder>20</BuildOrder>
+        </None>
+        <None Include="include\decimal.h">
+            <BuildOrder>21</BuildOrder>
+        </None>
+        <None Include="include\errmsg.h">
+            <BuildOrder>22</BuildOrder>
+        </None>
+        <None Include="include\K8055D.dll"/>
+        <None Include="include\K8055D.h">
+            <BuildOrder>24</BuildOrder>
+        </None>
+        <None Include="include\keycache.h">
+            <BuildOrder>25</BuildOrder>
+        </None>
+        <None Include="include\libmysql.dll"/>
+        <LibFiles Include="include\libmySQL.lib" Condition="'$(Platform)'=='Win32'">
+            <BuildOrder>27</BuildOrder>
+            <IgnorePath>true</IgnorePath>
+        </LibFiles>
+        <None Include="include\little_endian.h">
+            <BuildOrder>28</BuildOrder>
+        </None>
+        <None Include="include\mysql.h">
+            <BuildOrder>29</BuildOrder>
+        </None>
+        <None Include="include\mysqld_ername.h">
+            <BuildOrder>30</BuildOrder>
+        </None>
+        <None Include="include\mysqld_error.h">
+            <BuildOrder>31</BuildOrder>
+        </None>
+        <None Include="include\mysql_com.h">
+            <BuildOrder>32</BuildOrder>
+        </None>
+        <None Include="include\mysql_com_server.h">
+            <BuildOrder>33</BuildOrder>
+        </None>
+        <None Include="include\mysql_embed.h">
+            <BuildOrder>34</BuildOrder>
+        </None>
+        <None Include="include\mysql_time.h">
+            <BuildOrder>35</BuildOrder>
+        </None>
+        <None Include="include\mysql_version.h">
+            <BuildOrder>36</BuildOrder>
+        </None>
+        <None Include="include\my_alloc.h">
+            <BuildOrder>37</BuildOrder>
+        </None>
+        <None Include="include\my_attribute.h">
+            <BuildOrder>38</BuildOrder>
+        </None>
+        <None Include="include\my_byteorder.h">
+            <BuildOrder>39</BuildOrder>
+        </None>
+        <None Include="include\my_compiler.h">
+            <BuildOrder>40</BuildOrder>
+        </None>
+        <None Include="include\my_config.h">
+            <BuildOrder>41</BuildOrder>
+        </None>
+        <None Include="include\my_dbug.h">
+            <BuildOrder>42</BuildOrder>
+        </None>
+        <None Include="include\my_dir.h">
+            <BuildOrder>43</BuildOrder>
+        </None>
+        <None Include="include\my_getopt.h">
+            <BuildOrder>44</BuildOrder>
+        </None>
+        <None Include="include\my_global.h">
+            <BuildOrder>45</BuildOrder>
+        </None>
+        <None Include="include\my_list.h">
+            <BuildOrder>46</BuildOrder>
+        </None>
+        <None Include="include\my_net.h">
+            <BuildOrder>47</BuildOrder>
+        </None>
+        <None Include="include\my_pthread.h">
+            <BuildOrder>48</BuildOrder>
+        </None>
+        <None Include="include\my_sys.h">
+            <BuildOrder>49</BuildOrder>
+        </None>
+        <None Include="include\my_xml.h">
+            <BuildOrder>50</BuildOrder>
+        </None>
+        <None Include="include\m_ctype.h">
+            <BuildOrder>51</BuildOrder>
+        </None>
+        <None Include="include\m_string.h">
+            <BuildOrder>52</BuildOrder>
+        </None>
+        <None Include="include\plugin.h">
+            <BuildOrder>53</BuildOrder>
+        </None>
+        <None Include="include\plugin_audit.h">
+            <BuildOrder>54</BuildOrder>
+        </None>
+        <None Include="include\plugin_ftparser.h">
+            <BuildOrder>55</BuildOrder>
+        </None>
+        <None Include="include\plugin_validate_password.h">
+            <BuildOrder>56</BuildOrder>
+        </None>
+        <None Include="include\sql_common.h">
+            <BuildOrder>57</BuildOrder>
+        </None>
+        <None Include="include\sql_state.h">
+            <BuildOrder>58</BuildOrder>
+        </None>
+        <None Include="include\sslopt-case.h">
+            <BuildOrder>59</BuildOrder>
+        </None>
+        <None Include="include\sslopt-longopts.h">
+            <BuildOrder>60</BuildOrder>
+        </None>
+        <None Include="include\sslopt-vars.h">
+            <BuildOrder>61</BuildOrder>
+        </None>
+        <None Include="include\typelib.h">
+            <BuildOrder>62</BuildOrder>
+        </None>
+        <CppCompile Include="Manager\Manager.cpp">
+            <DependentOn>Manager\Manager.h</DependentOn>
+            <BuildOrder>63</BuildOrder>
+        </CppCompile>
+        <None Include="Manager\Manager.h">
+            <BuildOrder>64</BuildOrder>
+        </None>
+        <CppCompile Include="MySQL\MySQL.cpp">
+            <DependentOn>MySQL\MySQL.h</DependentOn>
+            <BuildOrder>65</BuildOrder>
+        </CppCompile>
+        <None Include="MySQL\MySQL.h">
+            <BuildOrder>66</BuildOrder>
+        </None>
+        <CppCompile Include="Programme\Programme.cpp">
+            <DependentOn>Programme\Programme.h</DependentOn>
+            <BuildOrder>67</BuildOrder>
+        </CppCompile>
+        <None Include="Programme\Programme.h">
+            <BuildOrder>68</BuildOrder>
+        </None>
         <PCHCompile Include="Project1PCH1Ranaldi.h">
             <BuildOrder>1</BuildOrder>
         </PCHCompile>
         <CppCompile Include="Project1ranaldi.cpp">
             <BuildOrder>0</BuildOrder>
         </CppCompile>
+        <CppCompile Include="Property\Property.cpp">
+            <DependentOn>Property\Property.h</DependentOn>
+            <BuildOrder>69</BuildOrder>
+        </CppCompile>
+        <None Include="Property\Property.h">
+            <BuildOrder>70</BuildOrder>
+        </None>
+        <CppCompile Include="Scene\Scene.cpp">
+            <DependentOn>Scene\Scene.h</DependentOn>
+            <BuildOrder>71</BuildOrder>
+        </CppCompile>
+        <None Include="Scene\Scene.h">
+            <BuildOrder>72</BuildOrder>
+        </None>
+        <CppCompile Include="SequenceUsedEquipement\SequenceUsedEquipement.cpp">
+            <DependentOn>SequenceUsedEquipement\SequenceUsedEquipement.h</DependentOn>
+            <BuildOrder>5</BuildOrder>
+        </CppCompile>
+        <None Include="SequenceUsedEquipement\SequenceUsedEquipement.h">
+            <BuildOrder>6</BuildOrder>
+        </None>
+        <CppCompile Include="Sequence\Sequence.cpp">
+            <DependentOn>Sequence\Sequence.h</DependentOn>
+            <BuildOrder>3</BuildOrder>
+        </CppCompile>
+        <None Include="Sequence\Sequence.h">
+            <BuildOrder>4</BuildOrder>
+        </None>
+        <CppCompile Include="TCPServer\TCPServer.cpp">
+            <DependentOn>TCPServer\TCPServer.h</DependentOn>
+            <BuildOrder>7</BuildOrder>
+        </CppCompile>
+        <None Include="TCPServer\TCPServer.h">
+            <BuildOrder>8</BuildOrder>
+        </None>
+        <CppCompile Include="TrameManager\TrameManager.cpp">
+            <DependentOn>TrameManager\TrameManager.h</DependentOn>
+            <BuildOrder>9</BuildOrder>
+        </CppCompile>
+        <None Include="TrameManager\TrameManager.h">
+            <BuildOrder>10</BuildOrder>
+        </None>
+        <CppCompile Include="UsedEquipement\UsedEquipement.cpp">
+            <DependentOn>UsedEquipement\UsedEquipement.h</DependentOn>
+            <BuildOrder>11</BuildOrder>
+        </CppCompile>
+        <None Include="UsedEquipement\UsedEquipement.h">
+            <BuildOrder>12</BuildOrder>
+        </None>
         <FormResources Include="IHM\IHM.dfm"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
@@ -158,8 +378,9 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin64\cc64220mt.dll" Class="DependencyModule">
-                    <Platform Name="Win64">
+                <DeployFile LocalName="include\libmySQL.lib" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -168,8 +389,9 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin64\cc64220.dll" Class="DependencyModule">
-                    <Platform Name="Win64">
+                <DeployFile LocalName="include\libmysql.dll" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -183,6 +405,28 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
+                <DeployFile LocalName="include\K8055D.dll" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'=='true'" LocalName="$(BDS)\bin64\cc64220mt.dll" Class="DependencyModule">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName=".\Win32\Debug\Project1ranaldi.tds" Configuration="Debug" Class="DebugSymbols">
+                    <Platform Name="Win32">
+                        <RemoteName>Project1ranaldi.tds</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile Condition="'$(DynamicRTL)'=='true' And '$(Multithreaded)'!='true'" LocalName="$(BDS)\bin64\cc64220.dll" Class="DependencyModule">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
                 <DeployFile Condition="'$(DynamicRTL)'=='true'" LocalName="$(BDS)\Redist\osx32\libcgstl.dylib" Class="DependencyModule">
                     <Platform Name="OSX32">
                         <Overwrite>true</Overwrite>
@@ -190,12 +434,6 @@
                 </DeployFile>
                 <DeployFile Condition="'$(UsingDelphiRTL)'=='true'" LocalName="$(BDS)\bin\borlndmm.dll" Class="DependencyModule">
                     <Platform Name="Win32">
-                        <Overwrite>true</Overwrite>
-                    </Platform>
-                </DeployFile>
-                <DeployFile LocalName=".\Win32\Debug\Project1ranaldi.tds" Configuration="Debug" Class="DebugSymbols">
-                    <Platform Name="Win32">
-                        <RemoteName>Project1ranaldi.tds</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -581,13 +819,13 @@
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
-                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
-                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
             </Deployment>
             <Platforms>
                 <Platform value="Win32">True</Platform>
