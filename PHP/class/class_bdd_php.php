@@ -18,7 +18,7 @@ class BDD{
 			private $_Bdd;
 			private $_connect = false;
 
-//On définie les variables
+			//On définie les variables
 	function __construct($name,$pswrd,$host,$dbname,$username,$mdp){
 
 		if($this->isConnect()==false)
@@ -26,7 +26,7 @@ class BDD{
 			$this->_Name=$name;
 			$this->_Pwrd=$pswrd;
 			$this->connexionBdd($host,$dbname,$username,$mdp);
-			echo 'connexion etablie';
+			echo 'connexion etablie <br>';
 		}
 		else
 		{
@@ -45,7 +45,7 @@ class BDD{
 	{
 		try
 		{
-			$this->_Bdd= new PDO('mysql:host='.$host.';dbname='.$dbname.'',$username,$mdp);
+			$this->_Bdd= new PDO('mysql:host='.$host.';dbname='.$dbname.'',$username,$mdp,array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 		}
 		catch(Exception $e)
 		{
@@ -98,11 +98,36 @@ class BDD{
 		    }
 		    echo "</ul>";
 	    }
-	    echo'</ul>';   	
-
-		
-
+	    echo'</ul>';  
 	}
+
+    public function listprog($_Bdd)
+	{
+		echo'<FORM id="proglist"><SELECT name="nom_prog" size="1"';
+		foreach($this->_Bdd->query('SELECT * FROM `program` ORDER BY`IdProgram`') as $row) 
+	    {
+	   		echo "<option class='programme'>".$row['Nom']."</option>";
+	    }
+	    echo '</SELECT></FORM>';
+	}
+			
+
+    public function Lastid($_champ,$_table)
+	{	
+		$maxid=0;
+		$reponse = $this->_Bdd->query('SELECT '.$_champ.' FROM '.$_table.'');
+		while ($donnees = $reponse->fetch())
+		{
+			$maxid++;
+		}
+		return $maxid;
+	}
+
+	public function GetBDD()
+	{
+		return $this->_Bdd;
+	}
+
 }
 		
 ?>

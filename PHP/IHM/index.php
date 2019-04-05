@@ -1,6 +1,8 @@
 <?php 
 session_start();
-include("../class/class_bdd_php.php") ?>
+include("../class/class_bdd_php.php");
+
+?>
 
 <!DOCTYPE html>
 <html>

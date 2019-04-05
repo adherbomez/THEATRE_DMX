@@ -1,5 +1,6 @@
 <?php
 require('class_scene.php');
+include('class_bdd_php.php');
 
 /*----------------------------------------------------------------/
 PROJET THEATRE DMX512
@@ -21,16 +22,7 @@ il s'agit la de pouvoir ajouter des
 // fonction qui permet d'ajouter une scene sur l'ihm
 	public function AjouterScene($_Scene)
 	{
-		throw new Exception("erreur lors de l'ajout de la scene", 1);
 		
-		try
-		{
-			
-		}
-		catch (Exception $e)
-		{
-		
-		}
 	
 		
 	}

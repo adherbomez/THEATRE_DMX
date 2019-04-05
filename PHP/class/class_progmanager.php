@@ -1,5 +1,7 @@
 <?php
-require('class_bdd_php.php');/*----------------------------------------------------------------/
+require_once  ('../class/class_bdd_php.php');
+
+/*----------------------------------------------------------------/
 PROJET THEATRE DMX512
 DEVELOPPÉ PAR : MAXIME LEPELLETIER 
 BTS SN2
@@ -10,43 +12,64 @@ cette classe permet de parametrer les scene de lumiere.
 ces derniers composent les programmes (objet du fichier class_programme.php)
 /----------------------------------------------------------------*/
 
-	Class progmanager extends Programme
 
+
+	Class progmanager 
 	{ 
-				protected $_Programme;
-
-// fonction qui permet d'ajouter un Programme sur l'ihm
-		public function AjouterProgramme($_nomprog)
+		private $bdd;
+		function __construct()
 		{
-			$_idprog=lastid();
-			if($this->_Bdd->query("INSERT INTO `program` (`idProgram`, `Nom`) VALUES ('".$this->_idprog."','".$this->_nomprog."')"))
-			{
-				echo "programme ajouté";
-			}	
-			
+			echo "lien prog ok <br>";
 		}
+
+		// fonction qui permet d'ajouter un Programme sur l'ihm
+		public function AjouterProgramme($bdd,$_nomprog)
+		{
+			$this->_nomprog=$_nomprog;
+			$bdd = new BDD('maxime','mdp','192.168.65.97','theater','root','root');
+			$req='INSERT INTO program (Nom) VALUES (:Nom)';
+			$valeurs = ['Nom'=>$this->_nomprog];
+			$pdo = $bdd->GetBDD();
+			$prepareinsert=$pdo->prepare($req);
+			if($prepareinsert->execute($valeurs))
+			{
+					echo "programme ajouté (fct)";
+			}
+			
+			$bdd = NULL;
+		}
+		
+
 // fonction qui permet de modifier un Programme
 		public function ModifierProgramme()
 		{
 			
 		}
+
 // fonction qui permet de supprimer un Programme sur l'ihm
-		public function SupprimerProgramme()
+		public function SupprimerProgramme($bdd,$id)
 		{
-		
+			$this->_nomprog=$_nomprog;
+			$bdd = new BDD('maxime','mdp','192.168.65.97','theater','root','root');
+			$req='INSERT INTO program (Nom) VALUES (:Nom)';
+			$valeurs = ['Nom'=>$this->_nomprog];
+			$pdo = $bdd->GetBDD();
+			$prepareinsert=$pdo->prepare($req);
+			if($prepareinsert->execute($valeurs))
+			{
+					echo "programme ajouté (fct)";
+			}
+			
+			$bdd = NULL;
 		}
+
 // fonction qui permet de lancer un Programme a partir de l'ihm		
 		public function RunProgramme()
 		{
 		
 		}
 
-		public function Lastid($nomtable)
-		{
-			if($this->_Bdd->query("SELECT MAX(".$nomtable.") FROM program"))
-			echo $_Bdd;	
-			return $_Bdd;	
-		}
+		
 
 
 	}
