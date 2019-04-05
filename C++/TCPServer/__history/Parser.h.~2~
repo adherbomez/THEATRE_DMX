@@ -1,0 +1,19 @@
+//---------------------------------------------------------------------------
+
+#ifndef ParserH
+#define ParserH
+
+#include "ServerStructs.h"
+
+class Parser()
+{
+public:
+	static void Parse(
+
+	//static programme * parseProgramme(data);
+	//static scene * parseScene(data);
+	//static scene * updateScene(scn);
+};
+
+//---------------------------------------------------------------------------
+#endif

@@ -1,0 +1,22 @@
+//---------------------------------------------------------------------------
+
+#ifndef ParserH
+#define ParserH
+
+#include "ServerStructs.h"
+
+class Parser
+{
+	static void Send(clientInfo cl, std::string sentence);
+
+public:
+	static void Parse(clientMessage message);
+
+
+	//static programme * parseProgramme(data);
+	//static scene * parseScene(data);
+	//static scene * updateScene(scn);
+};
+
+//---------------------------------------------------------------------------
+#endif

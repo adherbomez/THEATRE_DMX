@@ -1,0 +1,12 @@
+//---------------------------------------------------------------------------
+
+#pragma hdrstop
+
+#include "Parser.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+
+void Parser::Parse(clientMessage message)
+{
+    if(message.message
+}

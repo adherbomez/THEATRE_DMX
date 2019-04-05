@@ -1,0 +1,38 @@
+//---------------------------------------------------------------------------//
+//---PROJET_THEATRE_DMX------------------------------------------------------//
+//---Développé par Arthur Dherbomez------------------------------------------//
+//---BTSSN2------------------------------------------------------------------//
+//---Class:Parser.h----------------------------------------------------------//
+//---La classe Parser va permettre de récuperer et fragmenter la donnée------//
+//---du TCP client pour la traiter et définir si c'est un programme ou une---//
+//---scène qui est reçu et quel est l'ip de celui-ci pour ensuite l'envoyer--//
+//---au manager--------------------------------------------------------------//
+//---------------------------------------------------------------------------//
+
+#ifndef ParserH
+#define ParserH
+
+#include "ServerStructs.h"
+#include <vector>
+#include <string>
+#include <iostream>
+#include "String.h"
+
+	class Parser
+	{
+		private:
+
+			static void Send(clientInfo cl, std::string sentence);
+			std::vector<std::string>parse;
+
+		public:
+			static void Parse(clientMessage message);
+			static std::string id;
+
+		//static programme * parseProgramme(data);
+		//static scene * parseScene(data);
+		//static scene * updateScene(scn);
+	};
+
+//---------------------------------------------------------------------------
+#endif
