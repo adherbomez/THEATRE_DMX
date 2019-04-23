@@ -1,0 +1,165 @@
+//---------------------------------------------------------------------------//
+//---PROJET_THEATRE_DMX------------------------------------------------------//
+//---Développé par Arthur Dherbomez------------------------------------------//
+//---BTSSN2------------------------------------------------------------------//
+//---Class:TCPServer.h-------------------------------------------------------//
+//---Cette classe permet de gerer la réception des données envoyé par le-----//
+//---TCPclient et de découpé la trame pour identifier si c'est un programme--//
+//-----ou une scene----------------------------------------------------------//
+//---------------------------------------------------------------------------//
+
+#pragma hdrstop
+
+#include "TCPServer.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+
+	TCPServer::TCPServer()
+	{
+		WORD ver= MAKEWORD(2,2);
+		int wsok=WSAStartup(ver, &wsData);
+
+	//creation du socket
+
+		listening = socket(AF_INET, SOCK_STREAM, 0);
+		shData= new SharedData<clientMessage>;
+	}
+
+//création du bind entre l'adresse ip et le port vers un socket
+	void TCPServer::bindSocket(unsigned short port)
+	{
+		sockaddr_in hint;
+		hint.sin_family=AF_INET;
+		hint.sin_port=htons(port);
+		hint.sin_addr.S_un.S_addr = INADDR_ANY;
+
+		bind(listening, (sockaddr*)&hint, sizeof(hint));
+
+	//on indique à la Winsock que l'on est en écoute
+
+		listen(listening,SOMAXCONN);
+	}
+//on attend la connexion avec le client
+	DWORD WINAPI TCPServer::connexion(LPVOID params)
+	{
+		TCPServer * server = (TCPServer*)params;
+
+
+		int clientSize= sizeof(server->client);
+
+		//boucle infini car la connexion attend un client
+		while(1)
+		{
+			//server->clientSocket= accept(server->listening, (sockaddr*)&(server->client), &clientSize);
+			SOCKET sock = accept(server->listening, (sockaddr*)&(server->client), &clientSize);
+
+			clientInfo * clInfo = new clientInfo();
+			clInfo->sock = sock;
+			clInfo->server = server;
+			clInfo->etat.connect = true;
+
+			DWORD ref;
+			CreateThread(
+				NULL,
+				0,
+				TCPServer::received,
+				clInfo,
+				0,
+				&ref);
+
+			/*
+			char host[NI_MAXHOST];
+			char service[NI_MAXHOST];
+
+			ZeroMemory(host, NI_MAXHOST);
+			ZeroMemory(service, NI_MAXSERV);
+
+			if (getnameinfo((sockaddr*)&(server->client), sizeof(server->client), host, NI_MAXHOST , service, NI_MAXSERV,0)==0)
+			{
+				clInfo->etat.connect=true;
+			}
+			else
+			{
+				inet_ntop(AF_INET,&(server->client.sin_addr), host, NI_MAXHOST);
+				htons(server->client.sin_port);
+			}
+			*/
+
+		}
+
+
+		// fermeture du socket sur ecoute
+		//closesocket(server->listening);
+
+	}
+//s'occupe de la réception du message
+	DWORD WINAPI TCPServer::received(void * params)
+	{
+		clientInfo * clInfo = ((clientInfo*)params);
+		char buf[4096];
+		bool etat;
+		etat=true;
+
+		while(etat==true)
+		{
+			ZeroMemory(buf,4096);
+			//Attend du client pour envoyer la data
+			int bytesReceived= recv(clInfo->sock, buf, 4096, 0);
+
+			clientMessage * message = new clientMessage();
+
+			if (bytesReceived== SOCKET_ERROR || bytesReceived==0)   // Le client s'est déco
+			{
+				//clInfo->etat.receivedOK=true;
+				etat = false;
+				clInfo->etat.connect = false;
+				message->clInfo = *clInfo;
+			}
+			else
+			{
+				// Reception data :
+
+				message->message = buf;
+				message->clInfo = *clInfo;
+
+            }
+
+            clInfo->server->shData->Add(*message);
+			delete message;
+
+			/*
+			//message de retour au client
+			send(clInfo->sock, buf, bytesReceived+1,0);
+			char *test;
+			test = new char[10];
+			test=strstr(buf,"quit");
+			if(buf==test)
+			{
+			etat=false;
+			}
+			*/
+
+
+		}
+
+		//close the socket
+		if (etat==false)
+		{
+			closesocket(clInfo->sock);
+		//shutdown windsock
+			//WSACleanup();
+		}
+	}
+
+//	programme*parseProgramme(data)
+//	{
+//
+//	}
+//	scene*parseScene(data)
+//	{
+//
+//	}
+//	scene*updateScene(scn)
+//	{
+//
+//	}

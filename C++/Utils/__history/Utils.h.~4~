@@ -1,0 +1,17 @@
+//---------------------------------------------------------------------------
+
+#ifndef UtilsH
+#define UtilsH
+
+#include <string>
+
+class Utils
+{
+public:
+	static bool startsWith(std::string mainStr, std::string toMatch);
+
+	static bool startsWithCaseInsensitive(std::string mainStr, std::string toMatch);
+};
+
+//---------------------------------------------------------------------------
+#endif

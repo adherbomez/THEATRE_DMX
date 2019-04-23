@@ -1,0 +1,81 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 828
+  ClientWidth = 1119
+  Color = clSilver
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label1: TLabel
+    Left = 257
+    Top = 627
+    Width = 44
+    Height = 13
+    Caption = 'Etat DLL:'
+  end
+  object Shape1: TShape
+    Left = 257
+    Top = 646
+    Width = 44
+    Height = 38
+    Brush.Color = clRed
+  end
+  object Label2: TLabel
+    Left = 307
+    Top = 627
+    Width = 46
+    Height = 13
+    Caption = 'Etat USB:'
+  end
+  object Shape2: TShape
+    Left = 307
+    Top = 646
+    Width = 44
+    Height = 37
+    Brush.Color = clRed
+  end
+  object Shape3: TShape
+    Left = 208
+    Top = 646
+    Width = 43
+    Height = 38
+    Brush.Color = clRed
+  end
+  object Label3: TLabel
+    Left = 190
+    Top = 627
+    Width = 61
+    Height = 13
+    Caption = 'Etat Serveur'
+  end
+  object Label4: TLabel
+    Left = 48
+    Top = 627
+    Width = 31
+    Height = 13
+    Caption = 'Label4'
+  end
+  object Edit1: TEdit
+    Left = 257
+    Top = 182
+    Width = 121
+    Height = 21
+    TabOrder = 0
+  end
+  object Button1: TButton
+    Left = 80
+    Top = 344
+    Width = 75
+    Height = 25
+    Caption = 'Serveur'
+    TabOrder = 1
+    OnClick = Button1Click
+  end
+end

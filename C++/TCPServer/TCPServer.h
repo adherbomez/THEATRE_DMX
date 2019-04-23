@@ -8,38 +8,39 @@
 //-----ou une scene----------------------------------------------------------//
 //---------------------------------------------------------------------------//
 
+
 #ifndef TCPServerH
 #define TCPServerH
 #include "Programme.h"
+#include "SharedData.h"
+#include <iostream>
+#include <WS2tcpip.h>
+#include<String.h>
+#include <string>
+#include "ServerStructs.h"
+#pragma comment(lib,"ws2_32.lib")
+using namespace std;
 //---------------------------------------------------------------------------
-
 class TCPServer
 {
 	private:
 
-		std::unique_ptr<ServerImpl> mImpl;
+		WSADATA wsData;
+		SOCKET listening;
+		SOCKET clientSocket;
+		sockaddr_in client;
+
 
 	public:
 
-	//constructeurs du serveur
 		TCPServer();
-		TCPServer(const Server&) = delete;
-		TCPServer& operator=(const Server&) = delete;
-		TCPServer(Server&&);
-		TCPServer& operator=(Server&&);
-		~TCPServer();
+	//variable pour le partage de la structure clientMessage
+		SharedData<clientMessage> * shData;
+		void bindSocket(unsigned short port);
+	//methodes static pour la réutilisation
+		static DWORD WINAPI connexion(LPVOID params);
+		static DWORD WINAPI received(LPVOID params);
 
-		bool start(unsigned short _port);
-		void stop();
-		void update();
-		std::unique_ptr<Messages::Base> poll();
-
-		bool onConnect();
-		bool onReceived();
-		programme*parseProgramme(data);
-		scene*parseScene(data);
-		scene*updateScene(scn);
 };
-
-
+//---------------------------------------------------------------------------
 #endif

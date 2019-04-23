@@ -1,0 +1,23 @@
+class TCPServer;
+
+//structure sur l'information de l'etat d'client
+typedef struct etatClient
+{
+	bool connect;
+	bool receivedOK;
+	bool error;
+}etatClient;
+
+//structure sur un client et ses informations
+ typedef struct clientInfo
+	{
+		TCPServer*server;
+		SOCKET sock;
+		etatClient etat;
+	}clientInfo;
+
+ typedef struct clientMessage
+ {
+	clientInfo clInfo;
+	std::string message;
+ } clientMessage;

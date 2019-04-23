@@ -1,0 +1,68 @@
+//---------------------------------------------------------------------------//
+//---PROJET_THEATRE_DMX------------------------------------------------------//
+//---Développé par Arthur Dherbomez------------------------------------------//
+//---BTSSN2------------------------------------------------------------------//
+//---Class:TCPServer.h-------------------------------------------------------//
+//---Cette classe permet de gerer la réception des données envoyé par le-----//
+//---TCPclient et de découpé la trame pour identifier si c'est un programme--//
+//-----ou une scene----------------------------------------------------------//
+//---------------------------------------------------------------------------//
+
+
+#ifndef TCPServerH
+#define TCPServerH
+#include "Programme.h"
+#include "SharedData.h"
+#include <iostream>
+#include <WS2tcpip.h>
+#include<String.h>
+#include <string>
+#pragma comment(lib,"ws2_32.lib")
+using namespace std;
+//---------------------------------------------------------------------------
+
+
+class TCPServer
+{
+	private:
+
+
+		WSADATA wsData;
+		SOCKET listening;
+		SOCKET clientSocket;
+		sockaddr_in client;
+	//structure sur l'information de l'etat d'client
+		 typedef struct etatClient
+			{
+			  bool connect;
+			  bool receivedOK;
+			  bool error;
+
+			}etatClient;
+	//structure sur un client et ses informations
+		 typedef struct clientInfo
+			{
+				TCPServer*server;
+				SOCKET sock;
+				etatClient etat;
+
+			}clientInfo;
+
+
+	public:
+	//constructeurs du serveur
+		TCPServer();
+
+		SharedData<clientInfo> * shData;
+
+		void bindSocket(unsigned short port);
+		static DWORD WINAPI connexion(LPVOID params);
+		static DWORD WINAPI received(LPVOID params);
+
+		programme*parseProgramme(data);
+		scene*parseScene(data);
+		scene*updateScene(scn);
+};
+
+
+#endif

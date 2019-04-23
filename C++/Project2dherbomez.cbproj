@@ -47,13 +47,13 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
         <Icon_MainIcon>$(BDS)\bin\cbuilder_PROJECTICON.ico</Icon_MainIcon>
-        <ILINK_LibraryPath>BDD\;Manager\;include\;IHM\;Equipement\;UsedEquipement\;TrameManager\;TCPServer\;SequenceUsedEquipement\;Sequence\;Scene\;Property\;Programme\;MySQL\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <ILINK_LibraryPath>Utils\;BDD\;Manager\;include\;IHM\;Equipement\;UsedEquipement\;TrameManager\;TCPServer\;SequenceUsedEquipement\;Sequence\;Scene\;Property\;Programme\;MySQL\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
         <AllPackageLibs>rtl.lib;vcl.lib</AllPackageLibs>
         <ProjectType>CppVCLApplication</ProjectType>
         <Multithreaded>true</Multithreaded>
         <_TCHARMapping>char</_TCHARMapping>
-        <IncludePath>BDD\;Manager\;include\;IHM\;Equipement\;UsedEquipement\;TrameManager\;TCPServer\;SequenceUsedEquipement\;Sequence\;Scene\;Property\;Programme\;MySQL\;$(IncludePath)</IncludePath>
+        <IncludePath>Utils\;BDD\;Manager\;include\;IHM\;Equipement\;UsedEquipement\;TrameManager\;TCPServer\;SequenceUsedEquipement\;Sequence\;Scene\;Property\;Programme\;MySQL\;$(IncludePath)</IncludePath>
         <SanitizedProjectName>Project2dherbomez</SanitizedProjectName>
         <DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
         <DynamicRTL>true</DynamicRTL>
@@ -326,6 +326,17 @@
             <DependentOn>SUIDI.h</DependentOn>
             <BuildOrder>84</BuildOrder>
         </CppCompile>
+        <CppCompile Include="TCPServer\Parser.cpp">
+            <DependentOn>TCPServer\Parser.h</DependentOn>
+            <BuildOrder>86</BuildOrder>
+        </CppCompile>
+        <None Include="TCPServer\ServerStructs.h">
+            <BuildOrder>87</BuildOrder>
+        </None>
+        <CppCompile Include="TCPServer\SharedData.cpp">
+            <DependentOn>TCPServer\SharedData.h</DependentOn>
+            <BuildOrder>85</BuildOrder>
+        </CppCompile>
         <CppCompile Include="TCPServer\TCPServer.cpp">
             <DependentOn>TCPServer\TCPServer.h</DependentOn>
             <BuildOrder>19</BuildOrder>
@@ -350,6 +361,10 @@
             <BuildOrder>26</BuildOrder>
         </None>
         <None Include="UsedEquipement\__history"/>
+        <CppCompile Include="Utils\Utils.cpp">
+            <DependentOn>Utils\Utils.h</DependentOn>
+            <BuildOrder>88</BuildOrder>
+        </CppCompile>
         <None Include="_DasHard.h">
             <BuildOrder>83</BuildOrder>
         </None>
@@ -910,8 +925,8 @@
                 <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
-                <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
             </Deployment>
             <Platforms>

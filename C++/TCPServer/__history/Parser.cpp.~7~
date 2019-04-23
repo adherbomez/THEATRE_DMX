@@ -1,0 +1,27 @@
+//---------------------------------------------------------------------------
+
+#pragma hdrstop
+
+#include "Parser.h"
+#include "Utils.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+
+void Parser::Parse(clientMessage message)
+{
+	send(message.clInfo.sock
+
+	if(Utils::startsWith(message.message, "PRG"))
+	{
+		// Parse programme ...
+	}
+	else if(Utils::startsWith(message.message, "..."))
+	{
+        // ...
+	}
+}
+
+void Parser::Send(clientInfo cl, std::string sentence)
+{
+    send(cl.sock, sentence.c_str(), sentence.length() + 1,0);
+}

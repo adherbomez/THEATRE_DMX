@@ -10,20 +10,47 @@
 #include "Programme.h"
 #include "Scene.h"
 #include "Sequence.h"
+#include "TCPServer.h"
 #include <Vcl.ExtCtrls.hpp>
+#include <Vcl.ComCtrls.hpp>
 #include <map>
+#include <string>
 #include "String.h"
 #include "_DasHard.h"
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
-__published:	// Composants gérés par l'EDI
+__published:	// Composants gérés par l'IHM
 	TLabel *Label1;
 	TShape *Shape1;
 	TLabel *Label2;
 	TShape *Shape2;
-	TEdit *Edit1;
-private:	// Déclarations utilisateur
+	TShape *Shape3;
+	TLabel *Label3;
+	TLabel *Label4;
+	TButton *Button1;
+	TTimer *Timer1;
+	TShape *Shape4;
+	TLabel *Label5;
+	TLabel *Label6;
+	TTrackBar *bar2;
+	TTrackBar *bar1;
+	TTrackBar *bar3;
+	TTrackBar *bar4;
+	TTrackBar *bar5;
+	TMemo *Memo1;
+	TGroupBox *GroupBox1;
+	TTrackBar *bar6;
+	TGroupBox *GroupBox2;
+	TLabel *Label7;
+	TLabel *Label8;
+	TLabel *Label9;
+	TLabel *Label10;
+	TLabel *Label11;
+	TLabel *Intensité;
+	void __fastcall Button1Click(TObject *Sender);
+	void __fastcall Timer1Timer(TObject *Sender);
+private: clientMessage cl;	// Déclarations utilisateur
 public:		// Déclarations utilisateur
 
 	programme*prog;
@@ -31,6 +58,7 @@ public:		// Déclarations utilisateur
 	sequence*seq1;
 	sequence*seq2;
 	sequence*seq3;
+	TCPServer*server;
 
 
 	__fastcall TForm1(TComponent* Owner);

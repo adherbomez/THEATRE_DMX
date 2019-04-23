@@ -1,0 +1,73 @@
+//---------------------------------------------------------------------------
+
+#ifndef SharedDataH
+#define SharedDataH
+
+#include <windows.h>
+#include <vector>
+
+template <typename T>
+class SharedData
+{
+	private:
+		HANDLE mutex;
+		std::vector<T> shared;
+
+	public:
+		SharedData();
+		~SharedData();
+		void Add(T data);
+		T Get();
+};
+
+
+template <typename T>
+SharedData<T>::SharedData()
+{
+	mutex = CreateMutex(
+				NULL,
+				FALSE,
+				NULL);
+}
+
+template <typename T>
+SharedData<T>::~SharedData()
+{
+	CloseHandle(mutex);
+}
+
+template <typename T>
+void SharedData<T>::Add(T data)
+{
+	DWORD dwWaitResult = WaitForSingleObject(
+							mutex,
+							INFINITE);
+
+	shared.push_back(data);
+
+	ReleaseMutex(mutex);
+}
+
+template <typename T>
+T SharedData<T>::Get()
+{
+	T data = NULL;
+	DWORD dwWaitResult;
+	dwWaitResult = WaitForSingleObject(
+							mutex,
+							INFINITE);
+
+	if(shared.size() > 0)
+	{
+		data = shared.front();
+		shared.erase(shared.begin());
+    }
+
+	ReleaseMutex(mutex);
+
+	return data;
+}
+
+
+//---------------------------------------------------------------------------
+#endif
