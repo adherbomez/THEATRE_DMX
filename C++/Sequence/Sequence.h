@@ -25,9 +25,11 @@ class sequence
 
 		void setDuree(int value);
 		void setId(int id);
+		trameManager*setTrame();
 
 		int getDuree();
 		int getId();
+		trameManager*getTrame();
 };
 
 #endif

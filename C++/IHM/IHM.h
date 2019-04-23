@@ -13,6 +13,7 @@
 #include "TCPServer.h"
 #include <Vcl.ExtCtrls.hpp>
 #include <Vcl.ComCtrls.hpp>
+#include <Vcl.Menus.hpp>
 #include <map>
 #include <string>
 #include "String.h"
@@ -25,31 +26,69 @@ __published:	// Composants gérés par l'IHM
 	TShape *Shape1;
 	TLabel *Label2;
 	TShape *Shape2;
-	TShape *Shape3;
+	TTimer *Timer1;
+	TGroupBox *GroupBox2;
 	TLabel *Label3;
 	TLabel *Label4;
-	TButton *Button1;
-	TTimer *Timer1;
-	TShape *Shape4;
 	TLabel *Label5;
 	TLabel *Label6;
-	TTrackBar *bar2;
-	TTrackBar *bar1;
-	TTrackBar *bar3;
-	TTrackBar *bar4;
-	TTrackBar *bar5;
-	TMemo *Memo1;
+	TShape *Shape3;
+	TShape *Shape4;
+	TButton *Button1;
+	TMainMenu *MainMenu1;
+	TMenuItem *Nouveau1;
+	TMenuItem *menuScn;
 	TGroupBox *GroupBox1;
-	TTrackBar *bar6;
-	TGroupBox *GroupBox2;
 	TLabel *Label7;
 	TLabel *Label8;
 	TLabel *Label9;
 	TLabel *Label10;
 	TLabel *Label11;
 	TLabel *Intensité;
+	TTrackBar *bar1;
+	TTrackBar *bar2;
+	TTrackBar *bar3;
+	TTrackBar *bar5;
+	TTrackBar *bar6;
+	TTrackBar *bar4;
+	TMenuItem *menuSeq;
+	TMenuItem *menuEqp;
+	TComboBox *ComboBox1;
+	TGroupBox *gbEqp;
+	TLabel *Label12;
+	TEdit *edtNameEqp;
+	TLabel *Label13;
+	TEdit *edtAdr;
+	TEdit *edtNbCan;
+	TLabel *lblNbCan;
+	TLabel *lblProp;
+	TButton *btnValideEqp;
+	TEdit *edtProp;
+	TButton *btnPropEqp;
+	TLabel *lblEqpValide;
+	TButton *btnOkEqp;
+	TButton *btnNokEqp;
+	TGroupBox *gpSeq;
+	TButton *Button2;
+	TEdit *edtNomSeq;
+	TLabel *lblNomSeq;
+	TLabel *Label14;
+	TListBox *lbSeq;
+	TListBox *lb2Seq;
+	TGroupBox *GroupBox3;
+	TEdit *edtNomScene;
+	TLabel *lblNomScene;
+	TListBox *lbScene;
+	TListBox *lb2Scene;
+	TButton *btnValideScene;
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall Timer1Timer(TObject *Sender);
+	void __fastcall menuEqpClick(TObject *Sender);
+	void __fastcall btnValideEqpClick(TObject *Sender);
+	void __fastcall btnPropEqpClick(TObject *Sender);
+	void __fastcall btnOkEqpClick(TObject *Sender);
+	void __fastcall btnNokEqpClick(TObject *Sender);
+	void __fastcall lbSeqClick(TObject *Sender);
 private: clientMessage cl;	// Déclarations utilisateur
 public:		// Déclarations utilisateur
 

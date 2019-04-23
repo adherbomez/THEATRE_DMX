@@ -13,12 +13,11 @@
 #pragma package(smart_init)
 
 //constructeur
-	scene::scene(int id, std::string name, int tpsPause, std::vector<sequence*>seq)
+	scene::scene(int id, std::string name, int tpsPause)
 	{
 		this->id=id;
 		this->name=name;
 		this->tpsPause=tpsPause;
-		this->seq=seq;
 	}
 //setID
 	void scene::setId(int id)
@@ -36,7 +35,7 @@
 		this->tpsPause=tpsPause;
 	}
 //initialisation du nombre de séquences d'une scène
-	void scene::setNbSeq(std::vector<sequence*>)
+	void scene::setNbSeq(std::vector<sequence*>seq)
 	{
 		this->seq=seq;
 	}
@@ -61,12 +60,12 @@
 		return seq.size();
 	}
 //initialisation des sequences des scènes
-	void scene::setSequences(std::vector<sequence*>seq)
+	void scene::setSequences(sequence*sequ)
 	{
-		this->seq=seq;
+		this->seq.push_back(sequ);
 	}
 //récupération des sequences des scènes
 	std::vector<sequence*> scene::getSequences()
 	{
-		return seq;
+		return this->seq;
     }

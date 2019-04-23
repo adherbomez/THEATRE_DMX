@@ -15,70 +15,15 @@ TForm1 *Form1;
 __fastcall TForm1::TForm1(TComponent* Owner)
 	: TForm(Owner)
 {
-/*
-//chargement pour la dll
-HINSTANCE g_dasusbdll = NULL;
-typedef int (*DASHARDCOMMAND)(int, int, unsigned char*);
-DASHARDCOMMAND  DasUsbCommand = NULL;
-
-//vecteurs
-std::vector<sequence*>seq;
-std::vector<scene*>scn;
-
-//déclaration des attributs
-trameManager*trame=new trameManager();
-char*dmxx;
-int i;
-dmxx = new char[512];
-
-	//on implémente une trame dmx
-		dmxx[0]=185;
-		dmxx[1]=116;
-		dmxx[2]=100;
-		dmxx[3]=100;
-
-trame->dmx=dmxx;
-
-//sequences
-seq1=new sequence(1,20,trame);
-seq2=new sequence(2,40,trame);
-seq3=new sequence(3,60,trame);
-	//on remplie le vector avec les séquences
-	seq.push_back(seq1);
-	seq.push_back(seq2);
-	seq.push_back(seq3);
-
-//scene
-std::string name= "soleil";
-scn1=new scene(1,name,20,seq);
-	//on implémente le vecteur scène
-	scn.push_back(scn1);
-
-//programme
-std::string name_prog= "test";
-prog=new programme(1,name_prog,scn);
-
-//chargement de la dll
-	g_dasusbdll = LoadLibrary("DasHard2006.dll");
-	if (g_dasusbdll)
-		DasUsbCommand  = (DASHARDCOMMAND)::GetProcAddress((HMODULE)g_dasusbdll, "DasUsbCommand");
-	if (DasUsbCommand)
-		Shape1->Brush->Color=clGreen;
-
-//connexion à l'usb dmx
-	DasUsbCommand(DHC_INIT,0,NULL);
-	if (DasUsbCommand(DHC_OPEN,0,0)>0)
-	{
-		Shape2->Brush->Color=clGreen;
-		DasUsbCommand(DHC_DMXOUT, 512, trame->dmx);
-	}
-
-	if (DasUsbCommand(DHC_OPEN,0,0)>0)
-	DasUsbCommand(DHC_CLOSE,0,0);
-	DasUsbCommand(DHC_EXIT,0, NULL);
-  */
-
 	server = NULL;
+	lbSeq->Items->Add("Eqp_1");
+	lbSeq->Items->Add("Eqp_2");
+	lbSeq->Items->Add("Eqp_3");
+	lbSeq->Items->Add("Eqp_4");
+	lbSeq->Items->Add("Eqp_5");
+	lbSeq->Items->Add("Eqp_6");
+
+
 }
 
 
@@ -120,25 +65,48 @@ std::vector<scene*>scn;
 
 //déclaration des attributs
 trameManager*trame=new trameManager();
+trameManager*trame1=new trameManager();
+trameManager*trame2=new trameManager();
+
 char*dmxx;
+char*dmxx1;
+char*dmxx2;
 int i;
 dmxx = new char[512];
+dmxx1 = new char[512];
+dmxx2 = new char[512];
 
 	//on implémente une trame dmx
-		dmxx[0]=bar1->Position;
-		dmxx[1]=bar2->Position;
-		dmxx[2]=bar3->Position;
-		dmxx[3]=bar4->Position;
-		dmxx[4]=bar5->Position;
-		dmxx[5]=bar6->Position;
-		Memo1->Lines->Add(bar1->Position);
-
+	//rouge
+		dmxx[0]=116;
+		dmxx[1]=0;
+		dmxx[2]=0;
+		dmxx[3]=255;
+		dmxx[4]=255;
+		dmxx[5]=120;
 trame->dmx=dmxx;
+	//vert
+		dmxx1[0]=116;
+		dmxx1[1]=0;
+		dmxx1[2]=255;
+		dmxx1[3]=0;
+		dmxx1[4]=255;
+		dmxx1[5]=120;
+trame1->dmx=dmxx1;
+	//bleu
+		dmxx2[0]=116;
+		dmxx2[1]=255;
+		dmxx2[2]=0;
+		dmxx2[3]=0;
+		dmxx2[4]=255;
+		dmxx2[5]=120;
+trame2->dmx=dmxx2;
+
 
 //sequences
-seq1=new sequence(1,20,trame);
-seq2=new sequence(2,40,trame);
-seq3=new sequence(3,60,trame);
+seq1=new sequence(1,1000,trame);
+seq2=new sequence(2,1000,trame1);
+seq3=new sequence(3,1000,trame2);
 	//on remplie le vector avec les séquences
 	seq.push_back(seq1);
 	seq.push_back(seq2);
@@ -146,8 +114,11 @@ seq3=new sequence(3,60,trame);
 
 //scene
 std::string name= "soleil";
-scn1=new scene(1,name,20,seq);
+scn1=new scene(1,name,20);
 	//on implémente le vecteur scène
+	scn1->setSequences(seq1);
+	scn1->setSequences(seq2);
+	scn1->setSequences(seq3);
 	scn.push_back(scn1);
 
 //programme
@@ -164,9 +135,11 @@ prog=new programme(1,name_prog,scn);
 //connexion à l'usb dmx
 	DasUsbCommand(DHC_INIT,0,NULL);
 	if (DasUsbCommand(DHC_OPEN,0,0)>0)
-	{
-		Shape2->Brush->Color=clGreen;
-		DasUsbCommand(DHC_DMXOUT, 512, trame->dmx);
+	{	for (i = 0; i < scn1->getNbSeq(); i++)
+		{
+			Shape2->Brush->Color=clGreen;
+			DasUsbCommand(DHC_DMXOUT, 512, scn1->getSequences()[i]->getTrame()->dmx);
+		}
 	}
 
 	if (DasUsbCommand(DHC_OPEN,0,0)>0)
@@ -206,5 +179,72 @@ prog=new programme(1,name_prog,scn);
 }
 //---------------------------------------------------------------------------
 
+
+
+
+
+void __fastcall TForm1::menuEqpClick(TObject *Sender)
+{
+	if (menuEqp->OnClick)
+	{
+		gbEqp->Visible=true;
+	}
+}
+//---------------------------------------------------------------------------
+
+
+
+void __fastcall TForm1::btnValideEqpClick(TObject *Sender)
+{
+   	//---------------Fonctionnalité de L'IHM-----------------------------
+	if (edtNameEqp->Text!="" && edtAdr->Text!="" && edtNbCan->Text!="" && btnValideEqp->OnClick)
+	{
+		lblProp->Visible=true;
+		edtProp->Visible=true;
+		btnPropEqp->Visible=true;
+	}
+	else
+	{
+		MessageBox(this->Handle,"Un ou plusieurs champs sont vides", "Erreur", 0);
+	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::btnPropEqpClick(TObject *Sender)
+{
+	if (edtProp->Text!="" && btnPropEqp->OnClick)
+	{
+		lblEqpValide->Visible=true;
+		btnOkEqp->Visible=true;
+        btnNokEqp->Visible=true;
+	}
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TForm1::btnOkEqpClick(TObject *Sender)
+{
+	//TODO: check dans la BDD si l'équipement n'y est pas via le nom
+
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::btnNokEqpClick(TObject *Sender)
+{
+	//TODO: recharge une page de formulaire
+}
+//---------------------------------------------------------------------------
+
+
+
+void __fastcall TForm1::lbSeqClick(TObject *Sender)
+{
+	if (lbSeq->OnClick)
+	{
+
+		lb2Seq->Items->Add(lbSeq->Items->);
+	}
+}
+//---------------------------------------------------------------------------
 
 

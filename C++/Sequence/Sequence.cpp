@@ -24,7 +24,7 @@
 //initialise la durée de la séquence
 	void sequence::setDuree(int duree)
 	{
-		this->duree=duree;
+		//this->duree=duree;
 	}
 //setId
 	void sequence::setId(int id)
@@ -40,6 +40,14 @@
 	int sequence::getId()
 	{
 		return id;
+	}
+	trameManager*setTrame()
+	{
+
+	}
+	trameManager*sequence::getTrame(){
+
+		return trame;
 	}
 
 
