@@ -3,11 +3,15 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 3199d37... change
 EditorSecs=17933
 DesignerSecs=2675
 InspectorSecs=775
 CompileSecs=463932
 OtherSecs=1789
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> parent of 569f578... update 02/05
@@ -30,7 +34,9 @@ OtherSecs=1389
 >>>>>>> parent of 569f578... update 02/05
 =======
 >>>>>>> parent of 569f578... update 02/05
+=======
+>>>>>>> parent of 3199d37... change
 StartTime=20/03/2019 11:47:48
 RealKeys=0
 EffectiveKeys=0
-DebugSecs=1494
+DebugSecs=2445

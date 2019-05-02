@@ -1,0 +1,20 @@
+//---------------------------------------------------------------------------
+
+#ifndef GraphH
+#define GraphH
+#include <vector>
+
+class Node;
+class Arc;
+
+class Graph
+{
+	private:
+	public:
+		std::vector<Node*>node;
+		std::vector<Arc*>arc;
+
+
+};
+//---------------------------------------------------------------------------
+#endif
