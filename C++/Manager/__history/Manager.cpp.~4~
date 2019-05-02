@@ -25,10 +25,10 @@
 
 		// On va rechercher en base les informations du programme
 		// select Nom from Programme
-		std::string Nom = "lacDesSignes";
+		char* Nom = "lacDesSignes";
 
 		P1->setId(idProg);
-		P1->setName(Nom);
+		P1->setName()
 
 		return P1;
 	}
