@@ -9,6 +9,7 @@
 #pragma hdrstop
 
 #include "Scene.h"
+#include <Windows.h>
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 
@@ -68,4 +69,30 @@
 	std::vector<sequence*> scene::getSequences()
 	{
 		return this->seq;
-    }
+	}
+
+	void scene::planifyScene()
+	{   int i;
+		unsigned long lastProcessedTime = GetTickCount();
+		for (i = 0; i < seq.size(); i++)
+		{
+			lastProcessedTime+=seq[i]->getDuree();
+			times.push_back(lastProcessedTime);
+		}
+
+		sequenceIndex = 0;
+	}
+	bool scene::updateScene()
+	{
+		unsigned long currentTime= GetTickCount();
+		if (currentTime> times[sequenceIndex])
+		{
+			sequenceIndex++;
+		}
+		return sequenceIndex==seq.size();
+	}
+
+	int scene::getSeqIndex()
+	{
+		return sequenceIndex;
+	}

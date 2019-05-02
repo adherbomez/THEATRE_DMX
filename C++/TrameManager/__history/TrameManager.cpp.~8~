@@ -1,0 +1,77 @@
+//---------------------------------------------------------------------------//
+//---PROJET_THEATRE_DMX------------------------------------------------------//
+//---Développé par Arthur Dherbomez------------------------------------------//
+//---BTSSN2------------------------------------------------------------------//
+//---Class:TrameManager.h--------------------------------------------------------//
+//---Cette classe permet la construction de la trame DMX en récupérant le canal,
+//les équipements et leurs propriétés---//
+//---------------------------------------------------------------------------//
+#pragma hdrstop
+
+#include "TrameManager.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+
+//constructeur
+	trameManager::trameManager()
+	{
+
+	}
+//insere dans dmx[512] l'equipement à  l'adresse choisi
+	bool trameManager::insertEquipement(equipement*equip,int adresse)
+	{
+//		int i,j;
+//
+//		adresse-=1;
+//
+//		for (i = 0; i < 512; i++)
+//		{
+//			while(dmx[i]==dmx[adresse])
+//			{
+//				for (j = adresse; j < adresse+equip->getNbVoies(); j++)
+//				{
+//					for (std::map<>,allocator<pair<>)
+//					{
+//						dmx[j]=trame->getValues[j];
+//					}
+//
+//				}
+//
+//			}
+//
+//		}
+	}
+//suppression d'un équipement au canal choisis
+	void trameManager::removeEquipement(int adresse)
+	{
+
+	}
+//verifie si des trames ne se superposes pas et si il n'y a pas d'erreurs
+	bool trameManager::checkConflict()
+	{
+		/*
+		int i,j;
+		graph= new Graph();
+
+		for (i = 0; i < nodes.size() ; i++)
+		{
+			for (j = i+1; j < nodes.size() ; j++)
+			{
+				if (Node::localCheckIntersection(nodes[i],nodes[j]))
+				{
+				   	conflicts.push_back(new Conflict(nodes[i],nodes[j]);
+				}
+			}
+		}
+        */
+	}
+//récupère la trame
+	char* trameManager::getTrame()
+	{
+		return dmx;
+	}
+//renvoi un vecteur avec toutes les informations utilent à la trame
+	std::vector<usedEquipement*> trameManager::getUsedEquipement()
+	{
+		return trame;
+	}

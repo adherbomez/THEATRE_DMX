@@ -113,6 +113,10 @@
         <BCC_PCHName_Clang>dherbomez.h</BCC_PCHName_Clang>
     </PropertyGroup>
     <ItemGroup>
+        <CppCompile Include="Arc.cpp">
+            <DependentOn>Arc.h</DependentOn>
+            <BuildOrder>91</BuildOrder>
+        </CppCompile>
         <None Include="DasHard2006.dll"/>
         <PCHCompile Include="dherbomez.h">
             <BuildOrder>1</BuildOrder>
@@ -125,6 +129,10 @@
             <BuildOrder>29</BuildOrder>
         </None>
         <None Include="Equipement\__history"/>
+        <CppCompile Include="Graph.cpp">
+            <DependentOn>Graph.h</DependentOn>
+            <BuildOrder>89</BuildOrder>
+        </CppCompile>
         <CppCompile Include="IHM\IHM.cpp">
             <Form>Form1</Form>
             <FormType>dfm</FormType>
@@ -279,6 +287,10 @@
             <BuildOrder>82</BuildOrder>
         </None>
         <None Include="Manager\__history"/>
+        <CppCompile Include="Node.cpp">
+            <DependentOn>Node.h</DependentOn>
+            <BuildOrder>90</BuildOrder>
+        </CppCompile>
         <CppCompile Include="Programme\Programme.cpp">
             <DependentOn>Programme\Programme.h</DependentOn>
             <BuildOrder>4</BuildOrder>
@@ -921,13 +933,13 @@
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
-                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
-                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
             </Deployment>
             <Platforms>
                 <Platform value="Win32">True</Platform>

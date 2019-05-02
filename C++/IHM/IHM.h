@@ -75,12 +75,18 @@ __published:	// Composants gérés par l'IHM
 	TLabel *Label14;
 	TListBox *lbSeq;
 	TListBox *lb2Seq;
-	TGroupBox *GroupBox3;
+	TGroupBox *gpScene;
 	TEdit *edtNomScene;
 	TLabel *lblNomScene;
 	TListBox *lbScene;
 	TListBox *lb2Scene;
 	TButton *btnValideScene;
+	TButton *Button3;
+	TButton *Button4;
+	TGroupBox *GroupBox4;
+	TButton *Button5;
+	TListBox *lbAdressage;
+	TLabel *Label15;
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall Timer1Timer(TObject *Sender);
 	void __fastcall menuEqpClick(TObject *Sender);
@@ -89,7 +95,14 @@ __published:	// Composants gérés par l'IHM
 	void __fastcall btnOkEqpClick(TObject *Sender);
 	void __fastcall btnNokEqpClick(TObject *Sender);
 	void __fastcall lbSeqClick(TObject *Sender);
-private: clientMessage cl;	// Déclarations utilisateur
+	void __fastcall Button3Click(TObject *Sender);
+	void __fastcall Button4Click(TObject *Sender);
+	void __fastcall gpSeqClick(TObject *Sender);
+	void __fastcall gpSceneClick(TObject *Sender);
+	void __fastcall lbSceneClick(TObject *Sender);
+	void __fastcall lb2SceneClick(TObject *Sender);
+private: clientMessage cl;
+	// Déclarations utilisateur
 public:		// Déclarations utilisateur
 
 	programme*prog;
@@ -97,6 +110,7 @@ public:		// Déclarations utilisateur
 	sequence*seq1;
 	sequence*seq2;
 	sequence*seq3;
+	std::vector<scene*>scn;
 	TCPServer*server;
 
 
