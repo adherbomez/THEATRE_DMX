@@ -20,8 +20,6 @@ class scene
 		std::string name;
 		int tpsPause;
 		std::vector<sequence*> seq;
-		std::vector<unsigned long> times;
-		int sequenceIndex;
 
 
 	public:
@@ -32,9 +30,6 @@ class scene
 		void setTime(int tpsPause);  //temps entre chaque scenes
 		void setNbSeq(std::vector<sequence*>); //récupère la size du vecteur
 		void setSequences(sequence*sequ); //récupère les séquences de la scène
-		void planifyScene(); //calcul les temps de changement de sequences
-		bool updateScene(); //renvoi true la scene est terminée
-		int getSeqIndex();
 
 		//récupération des attributs
 		int getId();

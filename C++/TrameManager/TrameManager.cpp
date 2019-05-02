@@ -49,21 +49,7 @@
 //verifie si des trames ne se superposes pas et si il n'y a pas d'erreurs
 	bool trameManager::checkConflict()
 	{
-		int i,j;
-		graph= new Graph();
-
-		for (i = 0; i < graph->nodes.size() ; i++)
-		{
-			for (j = i+1; j < graph->nodes.size() ; j++)
-			{
-				if (Node::localCheckIntersection(graph->nodes[i],graph->nodes[j]))
-				{
-					graph->conflicts.push_back(new Conflict(graph->nodes[i],graph->nodes[j]));
-					return graph->conflicts.size()>0;
-				}
-			}
-		}
-		return true;
+	   return true;
 	}
 //récupère la trame
 	char* trameManager::getTrame()

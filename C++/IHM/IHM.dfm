@@ -2,8 +2,8 @@
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 804
-  ClientWidth = 1115
+  ClientHeight = 571
+  ClientWidth = 1033
   Color = clSilver
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,8 +15,8 @@
   PixelsPerInch = 96
   TextHeight = 13
   object GroupBox2: TGroupBox
-    Left = 1009
-    Top = 28
+    Left = 912
+    Top = 128
     Width = 98
     Height = 16
     Caption = 'Module de test 2'
@@ -84,10 +84,10 @@
     end
   end
   object GroupBox1: TGroupBox
-    Left = 1009
-    Top = 8
-    Width = 98
-    Height = 14
+    Left = 912
+    Top = 106
+    Width = 95
+    Height = 16
     Caption = 'Module de test 1'
     Color = clCream
     ParentBackground = False
@@ -213,15 +213,16 @@
     end
   end
   object gbEqp: TGroupBox
-    Left = 96
-    Top = 8
-    Width = 489
-    Height = 315
+    Left = 912
+    Top = 152
+    Width = 68
+    Height = 12
     Caption = 'Equipement'
     Color = clCream
     ParentBackground = False
     ParentColor = False
     TabOrder = 2
+    Visible = False
     object Label12: TLabel
       Left = 24
       Top = 46
@@ -229,9 +230,16 @@
       Height = 13
       Caption = 'Nom:'
     end
+    object Label13: TLabel
+      Left = 25
+      Top = 120
+      Width = 46
+      Height = 13
+      Caption = 'Adresse: '
+    end
     object lblNbCan: TLabel
-      Left = 24
-      Top = 133
+      Left = 26
+      Top = 194
       Width = 122
       Height = 13
       Caption = 'Nombre de propri'#233't'#233'e(s):'
@@ -259,20 +267,27 @@
       Height = 21
       TabOrder = 0
     end
-    object edtNbCan: TEdit
-      Left = 23
-      Top = 152
+    object edtAdr: TEdit
+      Left = 26
+      Top = 139
       Width = 121
       Height = 21
       TabOrder = 1
     end
+    object edtNbCan: TEdit
+      Left = 25
+      Top = 213
+      Width = 121
+      Height = 21
+      TabOrder = 2
+    end
     object btnValideEqp: TButton
-      Left = 48
-      Top = 219
+      Left = 50
+      Top = 264
       Width = 75
       Height = 25
       Caption = 'Valid'#233
-      TabOrder = 2
+      TabOrder = 3
       OnClick = btnValideEqpClick
     end
     object edtProp: TEdit
@@ -280,7 +295,7 @@
       Top = 71
       Width = 121
       Height = 21
-      TabOrder = 3
+      TabOrder = 4
       Visible = False
     end
     object btnPropEqp: TButton
@@ -289,7 +304,7 @@
       Width = 75
       Height = 25
       Caption = 'Valid'#233
-      TabOrder = 4
+      TabOrder = 5
       Visible = False
       OnClick = btnPropEqpClick
     end
@@ -299,7 +314,7 @@
       Width = 75
       Height = 25
       Caption = 'Oui'
-      TabOrder = 5
+      TabOrder = 6
       Visible = False
       OnClick = btnOkEqpClick
     end
@@ -309,25 +324,24 @@
       Width = 75
       Height = 25
       Caption = 'Non'
-      TabOrder = 6
+      TabOrder = 7
       Visible = False
       OnClick = btnNokEqpClick
     end
   end
   object gpSeq: TGroupBox
-    Left = 599
-    Top = 329
-    Width = 410
-    Height = 302
+    Left = 912
+    Top = 170
+    Width = 58
+    Height = 19
     Caption = 'S'#233'quence'
     Color = clCream
     ParentBackground = False
     ParentColor = False
     TabOrder = 3
-    OnClick = gpSeqClick
     object lblNomSeq: TLabel
       Left = 16
-      Top = 37
+      Top = 61
       Width = 25
       Height = 13
       Caption = 'Nom:'
@@ -340,8 +354,8 @@
       Caption = 'Choisissez les '#233'quipements dans l'#39'ordre souhait'#233':'
     end
     object Button2: TButton
-      Left = 168
-      Top = 263
+      Left = 176
+      Top = 273
       Width = 75
       Height = 25
       Caption = 'Valid'#233
@@ -349,7 +363,7 @@
     end
     object edtNomSeq: TEdit
       Left = 136
-      Top = 31
+      Top = 55
       Width = 121
       Height = 21
       TabOrder = 1
@@ -365,47 +379,30 @@
       OnClick = lbSeqClick
     end
     object lb2Seq: TListBox
-      Left = 222
+      Left = 240
       Top = 133
       Width = 169
       Height = 124
       ItemHeight = 13
       TabOrder = 3
     end
-    object Button3: TButton
-      Left = 183
-      Top = 136
-      Width = 33
-      Height = 25
-      Caption = '>>'
-      TabOrder = 4
-      OnClick = Button3Click
-    end
   end
-  object gpScene: TGroupBox
-    Left = 96
-    Top = 329
-    Width = 489
-    Height = 302
+  object GroupBox3: TGroupBox
+    Left = 304
+    Top = 106
+    Width = 481
+    Height = 354
     Caption = 'Sc'#232'ne'
     Color = clCream
     ParentBackground = False
     ParentColor = False
     TabOrder = 4
-    OnClick = gpSceneClick
     object lblNomScene: TLabel
       Left = 184
       Top = 43
       Width = 25
       Height = 13
       Caption = 'Nom:'
-    end
-    object Label15: TLabel
-      Left = 25
-      Top = 90
-      Width = 226
-      Height = 13
-      Caption = 'Choisissez les s'#233'quences dans l'#39'ordre souhait'#233':'
     end
     object edtNomScene: TEdit
       Left = 184
@@ -415,84 +412,32 @@
       TabOrder = 0
     end
     object lbScene: TListBox
-      Left = 40
-      Top = 117
+      Left = 48
+      Top = 133
       Width = 153
       Height = 132
       ItemHeight = 13
       TabOrder = 1
-      OnClick = lbSceneClick
     end
     object lb2Scene: TListBox
-      Left = 267
-      Top = 117
+      Left = 272
+      Top = 133
       Width = 161
       Height = 132
       ItemHeight = 13
       TabOrder = 2
-      OnClick = lb2SceneClick
     end
     object btnValideScene: TButton
       Left = 200
-      Top = 271
+      Top = 312
       Width = 75
       Height = 25
       Caption = 'Valid'#233
       TabOrder = 3
     end
   end
-  object Button4: TButton
-    Left = 782
-    Top = 385
-    Width = 33
-    Height = 25
-    Caption = '<<'
-    TabOrder = 5
-    OnClick = Button4Click
-  end
-  object GroupBox4: TGroupBox
-    Left = 599
-    Top = 8
-    Width = 407
-    Height = 315
-    Caption = 'Adressage'
-    Color = clCream
-    ParentBackground = False
-    ParentColor = False
-    TabOrder = 6
-    object Label13: TLabel
-      Left = 289
-      Top = 60
-      Width = 46
-      Height = 13
-      Caption = 'Adresse: '
-    end
-    object edtAdr: TEdit
-      Left = 266
-      Top = 87
-      Width = 121
-      Height = 21
-      TabOrder = 0
-    end
-    object Button5: TButton
-      Left = 280
-      Top = 114
-      Width = 75
-      Height = 25
-      Caption = 'Button5'
-      TabOrder = 1
-    end
-    object lbAdressage: TListBox
-      Left = 24
-      Top = 79
-      Width = 153
-      Height = 125
-      ItemHeight = 13
-      TabOrder = 2
-    end
-  end
   object Timer1: TTimer
-    Interval = 23
+    Interval = 100
     OnTimer = Timer1Timer
     Left = 8
     Top = 88

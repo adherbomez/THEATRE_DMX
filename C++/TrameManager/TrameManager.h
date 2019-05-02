@@ -15,7 +15,6 @@
 #include "UsedEquipement.h"
 #include "Equipement.h"
 #include "string.h"
-#include "Graph.h"
 //---------------------------------------------------------------------------
 
 class trameManager
@@ -24,7 +23,6 @@ class trameManager
 	public:
 		std::vector<usedEquipement*> trame;
 		char* dmx;
-		Graph*graph;
 
 
 		trameManager();

@@ -16,68 +16,14 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 	: TForm(Owner)
 {
 	server = NULL;
-
-//vecteurs
-std::vector<sequence*>seq;
-
-
-//déclaration des attributs
-trameManager*trame=new trameManager();
-trameManager*trame1=new trameManager();
-trameManager*trame2=new trameManager();
-
-char*tableau[3];
-
-int i;
-tableau[0] = new char[512];
-tableau[1] = new char[512];
-tableau[2] = new char[512];
-
-	//on implémente une trame dmx
-	//bleu
-		tableau[0][0]=116;
-		tableau[0][1]=0;
-		tableau[0][2]=0;
-		tableau[0][3]=255;
-		tableau[0][4]=255;
-		tableau[0][5]=120;
-trame->dmx=tableau[0];
-	//vert
-		tableau[1][0]=116;
-		tableau[1][1]=0;
-		tableau[1][2]=255;
-		tableau[1][3]=0;
-		tableau[1][4]=255;
-		tableau[1][5]=120;
-trame1->dmx=tableau[1];
-	//rouge
-		tableau[2][0]=116;
-		tableau[2][1]=255;
-		tableau[2][2]=0;
-		tableau[2][3]=0;
-		tableau[2][4]=255;
-		tableau[2][5]=120;
-trame2->dmx=tableau[2];
+	lbSeq->Items->Add("Eqp_1");
+	lbSeq->Items->Add("Eqp_2");
+	lbSeq->Items->Add("Eqp_3");
+	lbSeq->Items->Add("Eqp_4");
+	lbSeq->Items->Add("Eqp_5");
+	lbSeq->Items->Add("Eqp_6");
 
 
-//sequences
-seq1=new sequence(1,2000,trame);
-seq2=new sequence(2,3000,trame1);
-seq3=new sequence(3,4000,trame2);
-	//on remplie le vector avec les séquences
-	seq.push_back(seq1);
-	seq.push_back(seq2);
-	seq.push_back(seq3);
-
-//scene
-std::string name= "soleil";
-scn1=new scene(1,name,20);
-	//on implémente le vecteur scène
-	scn1->setSequences(seq1);
-	scn1->setSequences(seq2);
-	scn1->setSequences(seq3);
-	scn1->planifyScene();
-	scn.push_back(scn1);
 }
 
 
@@ -107,14 +53,77 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
 void __fastcall TForm1::Timer1Timer(TObject *Sender)
 {
 //-------------------------------lumière---------------------------------------
+
 //chargement pour la dll
-	HINSTANCE g_dasusbdll = NULL;
-	typedef int (*DASHARDCOMMAND)(int, int, unsigned char*);
-	DASHARDCOMMAND  DasUsbCommand = NULL;
+HINSTANCE g_dasusbdll = NULL;
+typedef int (*DASHARDCOMMAND)(int, int, unsigned char*);
+DASHARDCOMMAND  DasUsbCommand = NULL;
+
+//vecteurs
+std::vector<sequence*>seq;
+std::vector<scene*>scn;
+
+//déclaration des attributs
+trameManager*trame=new trameManager();
+trameManager*trame1=new trameManager();
+trameManager*trame2=new trameManager();
+
+char*dmxx;
+char*dmxx1;
+char*dmxx2;
+int i;
+dmxx = new char[512];
+dmxx1 = new char[512];
+dmxx2 = new char[512];
+
+	//on implémente une trame dmx
+	//rouge
+		dmxx[0]=116;
+		dmxx[1]=0;
+		dmxx[2]=0;
+		dmxx[3]=255;
+		dmxx[4]=255;
+		dmxx[5]=120;
+trame->dmx=dmxx;
+	//vert
+		dmxx1[0]=116;
+		dmxx1[1]=0;
+		dmxx1[2]=255;
+		dmxx1[3]=0;
+		dmxx1[4]=255;
+		dmxx1[5]=120;
+trame1->dmx=dmxx1;
+	//bleu
+		dmxx2[0]=116;
+		dmxx2[1]=255;
+		dmxx2[2]=0;
+		dmxx2[3]=0;
+		dmxx2[4]=255;
+		dmxx2[5]=120;
+trame2->dmx=dmxx2;
+
+
+//sequences
+seq1=new sequence(1,1000,trame);
+seq2=new sequence(2,1000,trame1);
+seq3=new sequence(3,1000,trame2);
+	//on remplie le vector avec les séquences
+	seq.push_back(seq1);
+	seq.push_back(seq2);
+	seq.push_back(seq3);
+
+//scene
+std::string name= "soleil";
+scn1=new scene(1,name,20);
+	//on implémente le vecteur scène
+	scn1->setSequences(seq1);
+	scn1->setSequences(seq2);
+	scn1->setSequences(seq3);
+	scn.push_back(scn1);
 
 //programme
-	std::string name_prog= "test";
-	prog=new programme(1,name_prog,scn);
+std::string name_prog= "test";
+prog=new programme(1,name_prog,scn);
 
 //chargement de la dll
 	g_dasusbdll = LoadLibrary("DasHard2006.dll");
@@ -126,17 +135,11 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
 //connexion à l'usb dmx
 	DasUsbCommand(DHC_INIT,0,NULL);
 	if (DasUsbCommand(DHC_OPEN,0,0)>0)
-	{
-		if(scn.size() > 0)
+	{	for (i = 0; i < scn1->getNbSeq(); i++)
 		{
-			if(scn.front()->updateScene())
-			{
-				scn.pop_back();
-			}
-			DasUsbCommand(DHC_DMXOUT, 512, scn.front()->getSequences()[scn.front()->getSeqIndex()]->getTrame()->dmx);
+			Shape2->Brush->Color=clGreen;
+			DasUsbCommand(DHC_DMXOUT, 512, scn1->getSequences()[i]->getTrame()->dmx);
 		}
-		Shape2->Brush->Color=clGreen;
-
 	}
 
 	if (DasUsbCommand(DHC_OPEN,0,0)>0)
@@ -193,8 +196,8 @@ void __fastcall TForm1::menuEqpClick(TObject *Sender)
 
 void __fastcall TForm1::btnValideEqpClick(TObject *Sender)
 {
-	//---------------Fonctionnalité de L'IHM-----------------------------
-	if (edtNameEqp->Text!="" && edtNbCan->Text!="" && btnValideEqp->OnClick)
+   	//---------------Fonctionnalité de L'IHM-----------------------------
+	if (edtNameEqp->Text!="" && edtAdr->Text!="" && edtNbCan->Text!="" && btnValideEqp->OnClick)
 	{
 		lblProp->Visible=true;
 		edtProp->Visible=true;
@@ -239,128 +242,9 @@ void __fastcall TForm1::lbSeqClick(TObject *Sender)
 	if (lbSeq->OnClick)
 	{
 
-	  //lb2Seq->Items->Add(lbSeq->Items->);
+		lb2Seq->Items->Add(lbSeq->Items->);
 	}
 }
 //---------------------------------------------------------------------------
-//bouton qui permet d'ajouter des equipements pour les séquences
-void __fastcall TForm1::Button3Click(TObject *Sender)
-{
-	int  NbListSq1;
-	int  NbListSq2;
-	 NbListSq1=lbSeq->Items->Count;
-	  NbListSq2=lb2Seq->Items->Count;
-		 for(int i=0;i<NbListSq1;i++)
-		 {
-			if (lbSeq->Selected[i])
-				{
-					if (!FileExists(lbSeq->Items->Strings[i]))
-					 {
-						  lb2Seq->Items->Strings[NbListSq2]=lbSeq->Items->Strings[i];
 
-						  NbListSq2++;
-
-
-					 }
-				}
-		 }
-
-}
-//---------------------------------------------------------------------------
-//bouton qui supprime des équipements pour les séquences
-void __fastcall TForm1::Button4Click(TObject *Sender)
-{
-	int  NbListSq1;
-	int  NbListSq2;
-	 NbListSq1=lbSeq->Items->Count;
-	  NbListSq2=lb2Seq->Items->Count;
-		 for(int i=0;i<NbListSq2;i++)
-		 {
-			if (lb2Seq->Selected[i])
-				{
-					if (!FileExists(lbSeq->Items->Strings[i]))
-					 {
-
-						  lb2Seq->Items->Delete(i);
-						  NbListSq2--;
-
-
-					 }
-				}
-		 }
-}
-//---------------------------------------------------------------------------
-//génére les équipements de la bdd
-void __fastcall TForm1::gpSeqClick(TObject *Sender)
-{
-	//TODO: CODE QUI GENERE LES EQUIPEMENTS DEPUIS LA BDD
-
-	lbSeq->Items->Add("Eqp_1");
-	lbSeq->Items->Add("Eqp_2");
-	lbSeq->Items->Add("Eqp_3");
-	lbSeq->Items->Add("Eqp_4");
-	lbSeq->Items->Add("Eqp_5");
-	lbSeq->Items->Add("Eqp_6");
-
-}
-//---------------------------------------------------------------------------
-//génére les séquences de la bdd
-void __fastcall TForm1::gpSceneClick(TObject *Sender)
-{
-	//TODO: CODE QUI GENERE LES SEQUENCES DEPUIS LA BDD
-
-	lbSeq->Items->Add("Seq_1");
-	lbSeq->Items->Add("Seq_2");
-	lbSeq->Items->Add("Seq_3");
-	lbSeq->Items->Add("Seq_4");
-	lbSeq->Items->Add("Seq_5");
-	lbSeq->Items->Add("Seq_6");
-}
-//---------------------------------------------------------------------------
-//affiche les scenes dans le listbox
-void __fastcall TForm1::lbSceneClick(TObject *Sender)
-{
-//	int  NbListSq1;
-//	int  NbListSq2;
-//	 NbListSq1=lbSeq->Items->Count;
-//	  NbListSq2=lb2Seq->Items->Count;
-//		 for(int i=0;i<NbListSq2;i++)
-//		 {
-//			if (lb2Seq->Selected[i])
-//				{
-//					if (!FileExists(lbSeq->Items->Strings[i]))
-//					 {
-//
-//						  lb2Seq->Items->Delete(i);
-//						  NbListSq2--;
-//
-//
-//					 }
-//				}
-//		 }
-}
-//---------------------------------------------------------------------------
-//affiche les scenes dans le listbox
-void __fastcall TForm1::lb2SceneClick(TObject *Sender)
-{
-//	int  NbListSq1;
-//	int  NbListSq2;
-//	 NbListSq1=lbSeq->Items->Count;
-//	  NbListSq2=lb2Seq->Items->Count;
-//		 for(int i=0;i<NbListSq2;i++)
-//		 {
-//			if (lb2Seq->Selected[i])
-//				{
-//					if (!FileExists(lbSeq->Items->Strings[i]))
-//					 {
-//
-//						  lb2Seq->Items->Delete(i);
-//						  NbListSq2--;
-//
-//
-//					 }
-//				}
-//		 }
-}
-//---------------------------------------------------------------------------
 
