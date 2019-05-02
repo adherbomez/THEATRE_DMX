@@ -4,6 +4,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 3199d37... change
 EditorSecs=19295
@@ -36,6 +37,13 @@ OtherSecs=1389
 >>>>>>> parent of 569f578... update 02/05
 =======
 >>>>>>> parent of 3199d37... change
+=======
+EditorSecs=17786
+DesignerSecs=2655
+InspectorSecs=775
+CompileSecs=461141
+OtherSecs=1723
+>>>>>>> parent of bdd4534... test
 StartTime=20/03/2019 11:47:48
 RealKeys=0
 EffectiveKeys=0
