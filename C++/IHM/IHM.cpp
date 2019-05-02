@@ -234,17 +234,8 @@ void __fastcall TForm1::btnNokEqpClick(TObject *Sender)
 
 
 
-void __fastcall TForm1::lbSeqClick(TObject *Sender)
-{
-	if (lbSeq->OnClick)
-	{
-
-	  //lb2Seq->Items->Add(lbSeq->Items->);
-	}
-}
-//---------------------------------------------------------------------------
 //bouton qui permet d'ajouter des equipements pour les séquences
-void __fastcall TForm1::Button3Click(TObject *Sender)
+void __fastcall TForm1::btnSeqAddClick(TObject *Sender)
 {
 	int  NbListSq1;
 	int  NbListSq2;
@@ -268,7 +259,7 @@ void __fastcall TForm1::Button3Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 //bouton qui supprime des équipements pour les séquences
-void __fastcall TForm1::Button4Click(TObject *Sender)
+void __fastcall TForm1::btnSeqSuppClick(TObject *Sender)
 {
 	int  NbListSq1;
 	int  NbListSq2;
@@ -309,58 +300,87 @@ void __fastcall TForm1::gpSceneClick(TObject *Sender)
 {
 	//TODO: CODE QUI GENERE LES SEQUENCES DEPUIS LA BDD
 
-	lbSeq->Items->Add("Seq_1");
-	lbSeq->Items->Add("Seq_2");
-	lbSeq->Items->Add("Seq_3");
-	lbSeq->Items->Add("Seq_4");
-	lbSeq->Items->Add("Seq_5");
-	lbSeq->Items->Add("Seq_6");
+	lbScene->Items->Add("Seq_1");
+	lbScene->Items->Add("Seq_2");
+	lbScene->Items->Add("Seq_3");
+	lbScene->Items->Add("Seq_4");
+	lbScene->Items->Add("Seq_5");
+	lbScene->Items->Add("Seq_6");
 }
 //---------------------------------------------------------------------------
 //affiche les scenes dans le listbox
-void __fastcall TForm1::lbSceneClick(TObject *Sender)
+void __fastcall TForm1::btnScnAddClick(TObject *Sender)
 {
-//	int  NbListSq1;
-//	int  NbListSq2;
-//	 NbListSq1=lbSeq->Items->Count;
-//	  NbListSq2=lb2Seq->Items->Count;
-//		 for(int i=0;i<NbListSq2;i++)
-//		 {
-//			if (lb2Seq->Selected[i])
-//				{
-//					if (!FileExists(lbSeq->Items->Strings[i]))
-//					 {
-//
-//						  lb2Seq->Items->Delete(i);
-//						  NbListSq2--;
-//
-//
-//					 }
-//				}
-//		 }
+	int  NbListScn1;
+	int  NbListScn2;
+	 NbListScn1=lbScene->Items->Count;
+	  NbListScn2=lb2Scene->Items->Count;
+		 for(int i=0;i<NbListScn1;i++)
+		 {
+			if (lbScene->Selected[i])
+				{
+					if (!FileExists(lbScene->Items->Strings[i]))
+					 {
+
+						 lb2Scene->Items->Strings[NbListScn2]=lbScene->Items->Strings[i];
+						 NbListScn2++;
+
+
+					 }
+				}
+		 }
 }
 //---------------------------------------------------------------------------
-//affiche les scenes dans le listbox
-void __fastcall TForm1::lb2SceneClick(TObject *Sender)
+
+void __fastcall TForm1::btnScnSuppClick(TObject *Sender)
 {
-//	int  NbListSq1;
-//	int  NbListSq2;
-//	 NbListSq1=lbSeq->Items->Count;
-//	  NbListSq2=lb2Seq->Items->Count;
-//		 for(int i=0;i<NbListSq2;i++)
-//		 {
-//			if (lb2Seq->Selected[i])
-//				{
-//					if (!FileExists(lbSeq->Items->Strings[i]))
-//					 {
-//
-//						  lb2Seq->Items->Delete(i);
-//						  NbListSq2--;
-//
-//
-//					 }
-//				}
-//		 }
+	int  NbListScn1;
+	int  NbListScn2;
+	 NbListScn1=lbScene->Items->Count;
+	  NbListScn2=lb2Scene->Items->Count;
+		 for(int i=0;i<NbListScn2;i++)
+		 {
+			if (lbScene->Selected[i])
+				{
+					if (!FileExists(lbScene->Items->Strings[i]))
+					 {
+						 lb2Scene->Items->Delete(i);
+						 NbListScn2--;
+					 }
+				}
+		 }
 }
 //---------------------------------------------------------------------------
+
+
+void __fastcall TForm1::GroupBox4Click(TObject *Sender)
+{
+  	//TODO: CODE QUI GENERE LES EQUIPEMENTS DEPUIS LA BDD
+
+	lbAdressage->Items->Add("Eqp_1");
+	lbAdressage->Items->Add("Eqp_2");
+	lbAdressage->Items->Add("Eqp_3");
+	lbAdressage->Items->Add("Eqp_4");
+	lbAdressage->Items->Add("Eqp_5");
+	lbAdressage->Items->Add("Eqp_6");
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::btnAdrClick(TObject *Sender)
+{
+
+	int NbList=lbAdressage->Items->Count;
+	int i;
+	for (i = 0; i < NbList; i++)
+	{
+		if (lbAdressage->Selected[i] && edtAdr->Text!="")
+		{
+		  //TODO: Inclure l'adresse à l'équipement sélectionné
+		  lblAjoutSucc->Visible=true;
+		}
+	}
+}
+//---------------------------------------------------------------------------
+
+
 
