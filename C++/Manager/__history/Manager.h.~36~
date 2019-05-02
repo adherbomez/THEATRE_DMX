@@ -32,7 +32,7 @@ class manager
 		MySQL* mysql;
 		bool EtatConnect;
 
-        void afficheDoubleVector(std::vector<std::vector<std::string> > vector);
+        void afficheDoubleVector(std::vector<std::vector<std::string>> & vector);
 
 	public:
 		manager();

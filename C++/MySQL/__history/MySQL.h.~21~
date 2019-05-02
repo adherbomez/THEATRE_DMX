@@ -5,10 +5,10 @@
 //---------------------------------------------------------------------------
 #include <vcl.h>
 #define __WIN__
-#include "./include/mysql.h"
+#include "include/mysql.h"
 #include <vector>
 #include <string>
-#include "./BDD/BDD.h"
+#include "BDD.h"
 
 using namespace std;
 

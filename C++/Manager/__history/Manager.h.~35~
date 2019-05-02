@@ -31,9 +31,6 @@ class manager
 		scene*scn;
 		MySQL* mysql;
 		bool EtatConnect;
-
-        void afficheDoubleVector(std::vector<std::vector<std::string> > vector);
-
 	public:
 		manager();
 		~manager();

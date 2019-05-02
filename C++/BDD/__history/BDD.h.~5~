@@ -16,7 +16,7 @@ class BDD
 {
 	public :
 			/* Méthodes virtuelles */
-		virtual bool Connect(string Addr,string Id,string Mdp,string Table) = 0;
+		virtual void Connect(string Addr,string Id,string Mdp,string Table) = 0;
 		virtual void Disconnect() = 0;
 		virtual bool Insert(string request) = 0;
 		virtual bool Update(string request) = 0;

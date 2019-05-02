@@ -79,7 +79,7 @@ vector< vector<string> >  MySQL::Select(string request)
 	mysql_query(this->SQL,request.c_str());
 	res = mysql_store_result(this->SQL);
 	int rows = mysql_num_rows(res);
-	//RequestResult.resize(rows);
+	RequestResult.resize(rows);
 	NbCol =  mysql_num_fields(res);
 
 	while ((row = mysql_fetch_row(res))) {

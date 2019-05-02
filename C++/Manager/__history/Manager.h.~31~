@@ -16,12 +16,8 @@
 #include"./MySQL/MySQL.h"
 #include<iostream>
 #include<vector>
-#include <windows.h>
 #include <stdlib.h>
 #include <string>
-#include <stdio.h>
-
-#include <sstream>
 //---------------------------------------------------------------------------
 
 class manager
@@ -31,9 +27,6 @@ class manager
 		scene*scn;
 		MySQL* mysql;
 		bool EtatConnect;
-
-        void afficheDoubleVector(std::vector<std::vector<std::string> > vector);
-
 	public:
 		manager();
 		~manager();

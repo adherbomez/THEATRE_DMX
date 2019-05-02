@@ -8,7 +8,6 @@
 
 MySQL::MySQL()
 {
-    SQL= new MYSQL();
 	mysql_init(SQL);       //initialise la connexion
 }
 
@@ -71,29 +70,28 @@ bool MySQL::Update(string request)
 vector< vector<string> >  MySQL::Select(string request)
 {
 	std::vector< std::vector<string> > RequestResult;
-
+	std::vector<string> copie;
 	MYSQL_RES *res; /* holds the result set */
 	MYSQL_ROW row;
 	int NbCol=0;
 
 	mysql_query(this->SQL,request.c_str());
 	res = mysql_store_result(this->SQL);
-	int rows = mysql_num_rows(res);
-	//RequestResult.resize(rows);
+	RequestResult.resize(mysql_num_rows(res));
 	NbCol =  mysql_num_fields(res);
 
 	while ((row = mysql_fetch_row(res))) {
-		std::vector<string> copie;
-	   for(int x = 0; x < NbCol; x++)
+
+	   for(int j = 0; j < NbCol; j++)
 	   {
-		   if(row[x] != NULL)
+		   if(row[j] != NULL)
 		   {
-				copie.push_back(row[x]);
+				copie.push_back(row[j]);
 		   }
 	   }
 
 	   RequestResult.push_back(copie);
-	   //copie.clear();
+	   copie.clear();
 	}
 	if(res != NULL)
 	mysql_free_result(res);

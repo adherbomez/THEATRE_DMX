@@ -71,7 +71,7 @@ bool MySQL::Update(string request)
 vector< vector<string> >  MySQL::Select(string request)
 {
 	std::vector< std::vector<string> > RequestResult;
-
+	std::vector<string> copie;
 	MYSQL_RES *res; /* holds the result set */
 	MYSQL_ROW row;
 	int NbCol=0;
@@ -79,11 +79,11 @@ vector< vector<string> >  MySQL::Select(string request)
 	mysql_query(this->SQL,request.c_str());
 	res = mysql_store_result(this->SQL);
 	int rows = mysql_num_rows(res);
-	//RequestResult.resize(rows);
+	RequestResult.resize(row);
 	NbCol =  mysql_num_fields(res);
 
 	while ((row = mysql_fetch_row(res))) {
-		std::vector<string> copie;
+
 	   for(int x = 0; x < NbCol; x++)
 	   {
 		   if(row[x] != NULL)
@@ -93,7 +93,7 @@ vector< vector<string> >  MySQL::Select(string request)
 	   }
 
 	   RequestResult.push_back(copie);
-	   //copie.clear();
+	   copie.clear();
 	}
 	if(res != NULL)
 	mysql_free_result(res);
