@@ -1,7 +1,8 @@
 
 body{
-	background-color:#F6F8FC;
-	font-family:;	
+	background-color:#fbfbfb
+;
+	font-family:calibri;	
 }
 form{
 	padding-top: 100px;
@@ -68,25 +69,82 @@ div#container{
 }
 
 .btnprog{
-		padding: 3px;	
+	padding: 3px;	
 }
 
 #scene{
     display: table;
     padding: 10px;
+
 }
 #scene .btnscene{
     display: table-cell;
     padding: 10px;
     border: 2px ridge;
-    
+    width: 120px; 
 }
-	
-}
-.btnscene .btnscene a{
-    display: block;
-    text-align: center;
+
+#scene .btnscene a {
+    display: block ;
+    text-align: center ;
     color: rgba(0, 0, 0, .7); 
-    text-decoration: none;
-    padding: 8px 8px 17px 8px;
+    text-decoration: none ;
+  
+}
+
+#Menuprog
+{
+	margin-top: 15px;
+	border:2px;
+	box-shadow:2px 2px 5px #000000;
+	background-color:#DDcdf4;
+	width:1000px;
+	margin-right:100px;
+	overflow-y:scroll; 
+	height:600px;
+	float:bottom;
+}
+.btnset{
+	border-radius: 3px;
+	border:solid 1px #AA83E4;
+	background-color:#AA83E4;
+	height: 40px; 
+	width: 250px;
+	float :none;
+
+}
+
+.tag1{
+	display:none;
+
+}
+.tag:hover .tag1{
+	display:block;
+	padding-top: 10px;
+	margin-bottom: 5px;
+	text-align: center;
+	background-color:#AA83E4;
+	height: 40px; 
+	width: 300px;
+	position: relative;
+	margin-top: 5px;
+}
+.tag:hover{
+	box-shadow: 0px 2px 2px  #000000;
+
+}
+.tag{
+	border: 2PX black;
+	padding-top: 10px;
+	margin-bottom: 5px;
+	text-align: center;
+	background-color:#AA83E4;
+	height: 40px; 
+	width: 300px;
+	border-radius: 3px;
+	display: inline-block;
+
+}
+.tag1:hover{
+	box-shadow: 0px 2px 2px  #000000;
 }

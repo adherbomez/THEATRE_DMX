@@ -8,6 +8,7 @@ class TCP
 	private $adr;
 	private $port;
 	private $socket;
+
 	
 	function __construct()
 	{
@@ -23,11 +24,11 @@ class TCP
 
 	function connexion($adr,$port)
 	{
+
 		$this->adr = $adr;
 		$this->port = $port;
-		$res = socket_connect($this->socket, $this->adr, $this->port);
-		return $res;
-	
+		
+			$res = socket_connect($this->socket, $this->adr, $this->port);
 	}
 
 	function envoie($buffer)

@@ -90,25 +90,37 @@ class BDD{
 		echo'<ul id="prog" type="circle">';
 		foreach($this->_Bdd->query('SELECT * FROM `program` ORDER BY`IdProgram`') as $row) 
 	    {
-	        echo '<li class="btnprog"><a href="#programme"'.$row['IdProgram'].'><h2>'.$row['Nom'].'</h2></a></li><br>';
+	        echo '<li class="btnprog"><a href="programme"'.$row['IdProgram'].'><h2>'.$row['Nom'].'</h2></a></li><br>';
 	        echo '<ul Id="scene">';
-	        foreach($this->_Bdd->query("SELECT `Nomscene` FROM `scene` INNER JOIN `program` INNER join `compoprogram` ON program.IdProgram = compoprogram.IdProgram and scene.Id=compoprogram.IdScene and compoprogram.IdProgram=".$row['IdProgram']." ORDER by compoprogram.Place") as $row) 
+	        foreach($this->_Bdd->query("SELECT `Nomscene` FROM `scene` INNER JOIN `program` INNER join `compoprogram` ON program.IdProgram = compoprogram.IdProgram and scene.IdScene=compoprogram.IdScene and compoprogram.IdProgram=".$row['IdProgram']." ORDER by compoprogram.Place") as $row) 
 		    {
 		      	echo "<li class='btnscene'><a href='scene'>".$row['Nomscene']."</a></li><br>";
 		    }
-		    echo "</ul>";
+		   	echo "</ul>";
 	    }
-	    echo'</ul>';  
+	    echo'</ul>'; 
+	   
 	}
 
-    public function listprog($_Bdd)
+    public function listprog($_Bdd,$name)
 	{
-		echo'<FORM id="proglist"><SELECT name="nom_prog" size="1"';
+		echo'<SELECT name='.$name.' size="1">';
+		echo '<option class="proglist" value=""></option>';
 		foreach($this->_Bdd->query('SELECT * FROM `program` ORDER BY`IdProgram`') as $row) 
 	    {
-	   		echo "<option class='programme'>".$row['Nom']."</option>";
+	   		echo "<option class='proglist' value=".$row['IdProgram'].">" .$row['Nom']."</option>";
 	    }
-	    echo '</SELECT></FORM>';
+	    echo '</SELECT>';
+	}
+	 public function listscene($_Bdd,$name)
+	{
+		echo'<SELECT name='.$name.' size="1">';
+		echo '<option class="scenelist" value=""></option>';
+		foreach($this->_Bdd->query('SELECT * FROM `scene` ORDER BY`IdScene`') as $row) 
+	    {
+	   		echo "<option class='scenelist' value=".$row['IdScene'].">" .$row['Nomscene']."</option>";
+	    }
+	    echo '</SELECT>';
 	}
 			
 

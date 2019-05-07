@@ -1,6 +1,5 @@
 <?php
-require('class_scene.php');
-include('class_bdd_php.php');
+require_once  ('../class/class_bdd_php.php');
 
 /*----------------------------------------------------------------/
 PROJET THEATRE DMX512
@@ -14,63 +13,58 @@ il s'agit la de pouvoir ajouter des
 /----------------------------------------------------------------*/
 
 
-	Class Scenemanager extends Scene
+	Class Scenemanager
 {
-	protected $_Scene;
-	private $_Erreur;
+		protected $_Scene;
+
 
 // fonction qui permet d'ajouter une scene sur l'ihm
-	public function AjouterScene($_Scene)
+	public function AjouterScene($bdd,$_Scene)
 	{
+		$this->_Scene=$_Scene;
+		$bdd = new BDD('maxime','mdp','192.168.65.97','theater','root','root');
+		$req='INSERT INTO scene (Nomscene) VALUES (:Nomscene)';
+		$valeurs = ['Nomscene'=>$_Scene];
+		$pdo = $bdd->GetBDD();
+		$prepareinsert=$pdo->prepare($req);
+		if($prepareinsert->execute($valeurs))
+		{
+				echo "scene ajoutée (fct)";
+		}
 		
+		$bdd = NULL;
+	}
 	
 		
-	}
+	
 // fonction qui permet de modifier une scene sur l'ihm
-	public function ModifierScene()
-	{
-		throw new Exception("erreur lors de la modification de scene", 2);
-		
-		try
-		{
-			
-		}
-		catch (Exception $e)
+		public function ModifierScene()
 		{
 		
-		}
 		
-	}
+		}
 // fonction qui permet de supprimer une scene sur l'ihm
-	public function SupprimerScene()
-	{
-		throw new Exception("erreur suppression de scene", 3);
-		
-		try
+		public function SupprimerScene($bdd,$_idscene)
 		{
-
-		}
-		catch (Exception $e)
+		$this->_idscene=$_idscene;
+		$bdd = new BDD('maxime','mdp','192.168.65.97','theater','root','root');
+		$req='DELETE FROM `scene` WHERE `IdScene`= :ids ';
+		$valeurs = ['idp'=>$this->_idscene];
+		$pdo = $bdd->GetBDD();
+		$preparedelete=$pdo->prepare($req);
+		$preparedelete->bindParam('idp',$this->_idscene);
+		if($preparedelete->execute($valeurs))
 		{
-		
+			echo "scene supprimée (fct)";
+		}			
+		$bdd = NULL;	
 		}
-		
-	}
 // fonction qui permet de lancer une scene a partir de l'ihm		
-	public function RunScene()
-	{
-		throw new Exception("erreur lors du lancement de la scene", 4);
-		
-		try
+		public function RunScene()
 		{
 			
+			
 		}
-		catch (Exception $e)
-		{
-		
-		}
-		
-	}
 	
 }
 
