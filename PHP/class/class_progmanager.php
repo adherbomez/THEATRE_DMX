@@ -41,10 +41,11 @@ ces derniers composent les programmes (objet du fichier class_programme.php)
 		
 
 // fonction qui permet de modifier un Programme
-		public function ModifierProgramme($bdd,$_nomprog)
+		public function ModifierProgramme($bdd,$_nomprog,$_idprog)
 		{
+
 		$bdd = new BDD('maxime','mdp','192.168.65.97','theater','root','root');
-		$req='UPDATE `program` SET `Nom`= :nom WHERE 1'	;
+		$req="UPDATE `program` SET `Nom`= '".$_nomprog."' WHERE `IdProgram` =".$_idprog." "	;
 		$valeurs = ['idp'=>$this->_idprog];
 		$pdo = $bdd->GetBDD();
 		$preparedelete=$pdo->prepare($req);
