@@ -20,6 +20,9 @@ class programme
 {
 	private:
 		int id;
+
+
+
 		std::string name;
 		int nbScene;
 
@@ -31,7 +34,7 @@ class programme
 		void setId(int id);
 		void setName(std::string name);
 // (à voir)		void setOrder(int Order);
-		void setNbScene(); //récupère la size du vecteur scene
+
 
 		//récupération des attributs
 		int getId();

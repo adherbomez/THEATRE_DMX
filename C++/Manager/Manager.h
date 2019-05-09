@@ -10,8 +10,18 @@
 
 #ifndef ManagerH
 #define ManagerH
-#include"Programme.h"
-#include"Scene.h"
+#include"./Programme/Programme.h"
+#include"./Scene/Scene.h"
+#include"./BDD/BDD.h"
+#include"./MySQL/MySQL.h"
+#include<iostream>
+#include<vector>
+#include <windows.h>
+#include <stdlib.h>
+#include <string>
+#include <stdio.h>
+
+#include <sstream>
 //---------------------------------------------------------------------------
 
 class manager
@@ -19,18 +29,23 @@ class manager
 	private:
 		programme*prog;
 		scene*scn;
+		MySQL* mysql;
+		bool EtatConnect;
+
+        void afficheDoubleVector(std::vector<std::vector<std::string> > vector);
 
 	public:
 		manager();
-
+		~manager();
 		programme*getProg(idProg); //compare avec l'id de la bdd
 		scene*getScn(idScn);      		//compare avec l'id de la bdd
 		scene*updateScene(scene*scn);      	//instancie un nouvel objet scene
 		programme*updateProg(programme*prog); 	//instancie un nouvel objet programme
 		char*sendOk();
 		char*sendError();
-
-
+		void CloseConnection();
+		bool CheckEtat();
+		bool Connect();
 };
 
 #endif

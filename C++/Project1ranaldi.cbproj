@@ -46,8 +46,8 @@
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
-        <ILINK_LibraryPath>Scene\;Property\;Programme\;MySQL\;Manager\;include\;Equipement\;BDD\;UsedEquipement\;TrameManager\;TCPServer\;SequenceUsedEquipement\;Sequence\;IHM\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
-        <IncludePath>Scene\;Property\;Programme\;MySQL\;Manager\;include\;Equipement\;BDD\;UsedEquipement\;TrameManager\;TCPServer\;SequenceUsedEquipement\;Sequence\;IHM\;$(IncludePath)</IncludePath>
+        <ILINK_LibraryPath>IHMrana\;Scene\;Property\;Programme\;MySQL\;Manager\;include\;Equipement\;BDD\;UsedEquipement\;TrameManager\;TCPServer\;SequenceUsedEquipement\;Sequence\;IHM\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <IncludePath>IHMrana\;Scene\;Property\;Programme\;MySQL\;Manager\;include\;Equipement\;BDD\;UsedEquipement\;TrameManager\;TCPServer\;SequenceUsedEquipement\;Sequence\;IHM\;$(IncludePath)</IncludePath>
         <_TCHARMapping>char</_TCHARMapping>
         <Multithreaded>true</Multithreaded>
         <AllPackageLibs>rtl.lib;vcl.lib</AllPackageLibs>
@@ -127,6 +127,12 @@
         <None Include="Equipement\Equipement.h">
             <BuildOrder>16</BuildOrder>
         </None>
+        <CppCompile Include="IHMrana\IHMrana.cpp">
+            <Form>Form2</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>IHMrana\IHMrana.h</DependentOn>
+            <BuildOrder>73</BuildOrder>
+        </CppCompile>
         <CppCompile Include="IHM\IHM.cpp">
             <Form>Form1</Form>
             <FormType>dfm</FormType>
@@ -344,6 +350,7 @@
         <None Include="UsedEquipement\UsedEquipement.h">
             <BuildOrder>12</BuildOrder>
         </None>
+        <FormResources Include="IHMrana\IHMrana.dfm"/>
         <FormResources Include="IHM\IHM.dfm"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
@@ -819,12 +826,12 @@
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
-                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
-                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
             </Deployment>
             <Platforms>

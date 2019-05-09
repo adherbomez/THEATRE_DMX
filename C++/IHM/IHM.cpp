@@ -16,6 +16,8 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 	: TForm(Owner)
 {
 	server = NULL;
+    this->form = new TForm2(Owner);
+
 
 //vecteurs
 std::vector<sequence*>seq;
@@ -361,6 +363,13 @@ void __fastcall TForm1::lb2SceneClick(TObject *Sender)
 //					 }
 //				}
 //		 }
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button6Click(TObject *Sender)
+{
+
+	this->form->Show();
 }
 //---------------------------------------------------------------------------
 

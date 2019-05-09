@@ -18,6 +18,7 @@
 #include <string>
 #include "String.h"
 #include "_DasHard.h"
+#include "IHMrana.h"
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
@@ -87,6 +88,7 @@ __published:	// Composants gérés par l'IHM
 	TButton *Button5;
 	TListBox *lbAdressage;
 	TLabel *Label15;
+	TButton *Button6;
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall Timer1Timer(TObject *Sender);
 	void __fastcall menuEqpClick(TObject *Sender);
@@ -101,8 +103,10 @@ __published:	// Composants gérés par l'IHM
 	void __fastcall gpSceneClick(TObject *Sender);
 	void __fastcall lbSceneClick(TObject *Sender);
 	void __fastcall lb2SceneClick(TObject *Sender);
+	void __fastcall Button6Click(TObject *Sender);
 private: clientMessage cl;
 	// Déclarations utilisateur
+	TForm2 *form;
 public:		// Déclarations utilisateur
 
 	programme*prog;
