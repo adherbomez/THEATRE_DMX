@@ -334,7 +334,7 @@
     end
     object Label14: TLabel
       Left = 16
-      Top = 102
+      Top = 70
       Width = 236
       Height = 13
       Caption = 'Choisissez les '#233'quipements dans l'#39'ordre souhait'#233':'
@@ -356,30 +356,37 @@
     end
     object lbSeq: TListBox
       Left = 16
-      Top = 133
+      Top = 101
       Width = 161
       Height = 124
       ItemHeight = 13
       MultiSelect = True
       TabOrder = 2
-      OnClick = lbSeqClick
     end
     object lb2Seq: TListBox
       Left = 222
-      Top = 133
+      Top = 101
       Width = 169
       Height = 124
       ItemHeight = 13
       TabOrder = 3
     end
-    object Button3: TButton
+    object btnSeqAdd: TButton
       Left = 183
       Top = 136
       Width = 33
       Height = 25
       Caption = '>>'
       TabOrder = 4
-      OnClick = Button3Click
+      OnClick = btnSeqAddClick
+    end
+    object btnConflict: TButton
+      Left = 160
+      Top = 232
+      Width = 89
+      Height = 25
+      Caption = 'Test de conflits'
+      TabOrder = 5
     end
   end
   object gpScene: TGroupBox
@@ -421,7 +428,6 @@
       Height = 132
       ItemHeight = 13
       TabOrder = 1
-      OnClick = lbSceneClick
     end
     object lb2Scene: TListBox
       Left = 267
@@ -430,7 +436,6 @@
       Height = 132
       ItemHeight = 13
       TabOrder = 2
-      OnClick = lb2SceneClick
     end
     object btnValideScene: TButton
       Left = 200
@@ -440,15 +445,33 @@
       Caption = 'Valid'#233
       TabOrder = 3
     end
+    object btnScnAdd: TButton
+      Left = 209
+      Top = 128
+      Width = 35
+      Height = 25
+      Caption = '>>'
+      TabOrder = 4
+      OnClick = btnScnAddClick
+    end
+    object btnScnSupp: TButton
+      Left = 209
+      Top = 168
+      Width = 35
+      Height = 25
+      Caption = '<<'
+      TabOrder = 5
+      OnClick = btnScnSuppClick
+    end
   end
-  object Button4: TButton
+  object btnSeqSupp: TButton
     Left = 782
-    Top = 385
+    Top = 496
     Width = 33
     Height = 25
     Caption = '<<'
     TabOrder = 5
-    OnClick = Button4Click
+    OnClick = btnSeqSuppClick
   end
   object GroupBox4: TGroupBox
     Left = 599
@@ -460,12 +483,21 @@
     ParentBackground = False
     ParentColor = False
     TabOrder = 6
+    OnClick = GroupBox4Click
     object Label13: TLabel
       Left = 289
       Top = 60
       Width = 46
       Height = 13
       Caption = 'Adresse: '
+    end
+    object lblAjoutSucc: TLabel
+      Left = 237
+      Top = 172
+      Width = 156
+      Height = 13
+      Caption = 'Adressage effectu'#233' avec succ'#232's'
+      Visible = False
     end
     object edtAdr: TEdit
       Left = 266
@@ -474,13 +506,14 @@
       Height = 21
       TabOrder = 0
     end
-    object Button5: TButton
+    object btnAdr: TButton
       Left = 280
-      Top = 114
+      Top = 128
       Width = 75
       Height = 25
-      Caption = 'Button5'
+      Caption = 'Valid'#233
       TabOrder = 1
+      OnClick = btnAdrClick
     end
     object lbAdressage: TListBox
       Left = 24
@@ -488,6 +521,7 @@
       Width = 153
       Height = 125
       ItemHeight = 13
+      MultiSelect = True
       TabOrder = 2
     end
   end
@@ -510,7 +544,7 @@
     Left = 16
     Top = 32
     object Nouveau1: TMenuItem
-      Caption = 'Nouveau'
+      Caption = 'Ajouter'
       object menuScn: TMenuItem
         Caption = 'Sc'#232'ne'
       end

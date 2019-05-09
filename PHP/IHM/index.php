@@ -12,7 +12,7 @@ include("../class/class_bdd_php.php");
 	<title>Login</title>
 </head>
 <body>
-						
+				
 	<?php 
 	
 
@@ -74,7 +74,15 @@ include("../class/class_bdd_php.php");
 
 		?>
 
-			
+<script>
+	setInterval('recharge()',2000);
+	
+	function recharge()
+	{
+		$('#nomdiv').load('coordonées du fichier de ref');
+	}
+
+</script>			
 
 
 </body>

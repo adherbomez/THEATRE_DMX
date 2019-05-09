@@ -28,7 +28,7 @@ ces derniers composent les programmes (objet du fichier class_programme.php)
 			$this->_nomprog=$_nomprog;
 			$bdd = new BDD('maxime','mdp','192.168.65.97','theater','root','root');
 			$req='INSERT INTO program (Nom) VALUES (:Nom)';
-			$valeurs = ['Nom'=>$this->_nomprog];
+			$valeurs = ['Nom'=>$_nomprog];
 			$pdo = $bdd->GetBDD();
 			$prepareinsert=$pdo->prepare($req);
 			if($prepareinsert->execute($valeurs))
@@ -41,25 +41,33 @@ ces derniers composent les programmes (objet du fichier class_programme.php)
 		
 
 // fonction qui permet de modifier un Programme
-		public function ModifierProgramme()
+		public function ModifierProgramme($bdd,$_nomprog,$_idprog)
 		{
-			
+
+		$bdd = new BDD('maxime','mdp','192.168.65.97','theater','root','root');
+		$req="UPDATE `program` SET `Nom`= '".$_nomprog."' WHERE `IdProgram` =".$_idprog." "	;
+		$valeurs = ['idp'=>$this->_idprog];
+		$pdo = $bdd->GetBDD();
+		$preparedelete=$pdo->prepare($req);
+		$preparedelete->bindParam('idp',$this->_idprog);
+
 		}
 
 // fonction qui permet de supprimer un Programme sur l'ihm
-		public function SupprimerProgramme($bdd,$id)
+		public function SupprimerProgramme($bdd,$_idprog)
 		{
-			$this->_nomprog=$_nomprog;
+
+			$this->_idprog=$_idprog;
 			$bdd = new BDD('maxime','mdp','192.168.65.97','theater','root','root');
-			$req='INSERT INTO program (Nom) VALUES (:Nom)';
-			$valeurs = ['Nom'=>$this->_nomprog];
+			$req='DELETE FROM `program` WHERE `IdProgram`= :idp ';
+			$valeurs = ['idp'=>$this->_idprog];
 			$pdo = $bdd->GetBDD();
-			$prepareinsert=$pdo->prepare($req);
-			if($prepareinsert->execute($valeurs))
+			$preparedelete=$pdo->prepare($req);
+			$preparedelete->bindParam('idp',$this->_idprog);
+			if($preparedelete->execute($valeurs))
 			{
-					echo "programme ajouté (fct)";
-			}
-			
+					echo "programme supprimé (fct)";
+			}			
 			$bdd = NULL;
 		}
 

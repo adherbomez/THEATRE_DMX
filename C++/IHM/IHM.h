@@ -82,13 +82,17 @@ __published:	// Composants gérés par l'IHM
 	TListBox *lbScene;
 	TListBox *lb2Scene;
 	TButton *btnValideScene;
-	TButton *Button3;
-	TButton *Button4;
+	TButton *btnSeqAdd;
+	TButton *btnSeqSupp;
 	TGroupBox *GroupBox4;
-	TButton *Button5;
+	TButton *btnAdr;
 	TListBox *lbAdressage;
 	TLabel *Label15;
 	TButton *Button6;
+	TButton *btnScnAdd;
+	TButton *btnScnSupp;
+	TButton *btnConflict;
+	TLabel *lblAjoutSucc;
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall Timer1Timer(TObject *Sender);
 	void __fastcall menuEqpClick(TObject *Sender);
@@ -96,14 +100,19 @@ __published:	// Composants gérés par l'IHM
 	void __fastcall btnPropEqpClick(TObject *Sender);
 	void __fastcall btnOkEqpClick(TObject *Sender);
 	void __fastcall btnNokEqpClick(TObject *Sender);
-	void __fastcall lbSeqClick(TObject *Sender);
-	void __fastcall Button3Click(TObject *Sender);
-	void __fastcall Button4Click(TObject *Sender);
+	void __fastcall btnSeqAddClick(TObject *Sender);
+	void __fastcall btnSeqSuppClick(TObject *Sender);
 	void __fastcall gpSeqClick(TObject *Sender);
 	void __fastcall gpSceneClick(TObject *Sender);
+
 	void __fastcall lbSceneClick(TObject *Sender);
 	void __fastcall lb2SceneClick(TObject *Sender);
 	void __fastcall Button6Click(TObject *Sender);
+
+	void __fastcall btnScnAddClick(TObject *Sender);
+	void __fastcall btnScnSuppClick(TObject *Sender);
+	void __fastcall GroupBox4Click(TObject *Sender);
+	void __fastcall btnAdrClick(TObject *Sender);
 private: clientMessage cl;
 	// Déclarations utilisateur
 	TForm2 *form;
