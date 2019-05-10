@@ -1,49 +1,35 @@
 [Stats]
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> parent of 3199d37... change
+
+
 EditorSecs=21645
 DesignerSecs=3260
 InspectorSecs=1061
 CompileSecs=575044
 OtherSecs=2228
-<<<<<<< HEAD
-=======
-=======
->>>>>>> parent of 569f578... update 02/05
-=======
->>>>>>> parent of 569f578... update 02/05
-=======
->>>>>>> parent of 569f578... update 02/05
+
+EditorSecs=17941
+DesignerSecs=2677
+InspectorSecs=775
+CompileSecs=465712
+OtherSecs=1803
+
+EditorSecs=19295
+DesignerSecs=3050
+InspectorSecs=1005
+CompileSecs=494033
+OtherSecs=1921
+
 EditorSecs=13769
 DesignerSecs=1780
 InspectorSecs=659
 CompileSecs=366105
 OtherSecs=1389
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of 569f578... update 02/05
-=======
->>>>>>> parent of 569f578... update 02/05
-=======
->>>>>>> parent of 569f578... update 02/05
-=======
->>>>>>> parent of 569f578... update 02/05
-=======
->>>>>>> parent of 3199d37... change
-=======
+
 EditorSecs=17786
 DesignerSecs=2655
 InspectorSecs=775
 CompileSecs=461141
 OtherSecs=1723
->>>>>>> parent of bdd4534... test
 StartTime=20/03/2019 11:47:48
 RealKeys=0
 EffectiveKeys=0

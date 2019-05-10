@@ -8,7 +8,7 @@
 
 #pragma hdrstop
 
-#include "Scene.h"
+#include "./Scene/Scene.h"
 #include <Windows.h>
 #include <algorithm>
 //---------------------------------------------------------------------------
@@ -20,6 +20,13 @@
 		this->id=id;
 		this->name=name;
 		this->tpsPause=tpsPause;
+	}
+
+	scene::scene()
+	{
+	this->id=0;
+	this->name="\0";
+	this->tpsPause=0;
 	}
 //setID
 	void scene::setId(int id)
@@ -37,9 +44,9 @@
 		this->tpsPause=tpsPause;
 	}
 //initialisation du nombre de séquences d'une scène
-	void scene::setNbSeq(std::vector<sequence*>seq)
+	void scene::setNbSeq(int NbSeq)
 	{
-		this->seq=seq;
+		this->NbSeq=NbSeq;
 	}
 //récupération de l'id scene
 	int scene::getId()

@@ -555,6 +555,15 @@
       TabOrder = 2
     end
   end
+  object Button6: TButton
+    Left = 336
+    Top = 704
+    Width = 75
+    Height = 25
+    Caption = 'Button6'
+    TabOrder = 7
+    OnClick = Button6Click
+  end
   object Timer1: TTimer
     Interval = 23
     OnTimer = Timer1Timer

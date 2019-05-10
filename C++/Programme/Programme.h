@@ -9,7 +9,7 @@
 #ifndef ProgrammeH
 #define ProgrammeH
 #include <map>
-#include "Scene.h"
+#include "./Scene/Scene.h"
 #include "String.h"
 #include <vector>
 #include <iostream>
@@ -22,16 +22,17 @@ class programme
 		int id;
 		std::string name;
 		int nbScene;
-
 		std::vector<scene*>scn; //scenes avec leurs séquences (encapsulation)
 
 	public:
 		programme(int id, std::string name,std::vector<scene*>scene);
+		programme();
 
 		void setId(int id);
 		void setName(std::string name);
+		void setNbScene(int nbScene);
 // (à voir)		void setOrder(int Order);
-		void setNbScene(); //récupère la size du vecteur scene
+
 
 		//récupération des attributs
 		int getId();
@@ -39,6 +40,8 @@ class programme
 		int getNbScene();
 //(à voir)	int getOrder();
 		std::vector<scene*>getScenes();
+		void AjouterUneSceneAuProgramme(scene * s1);
+
 };
 
 #endif

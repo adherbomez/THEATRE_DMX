@@ -16,6 +16,8 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 	: TForm(Owner)
 {
 	server = NULL;
+    this->form = new TForm2(Owner);
+
 
 	equipement * equip = new equipement(1, "Lampe");
 
@@ -447,6 +449,15 @@ void __fastcall TForm1::GroupBox4Click(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
+
+void __fastcall TForm1::Button6Click(TObject *Sender)
+{
+
+	this->form->Show();
+}
+//---------------------------------------------------------------------------
+
+
 void __fastcall TForm1::btnAdrClick(TObject *Sender)
 {
 
@@ -462,8 +473,4 @@ void __fastcall TForm1::btnAdrClick(TObject *Sender)
 	}
 }
 //---------------------------------------------------------------------------
-
-
-
-
 

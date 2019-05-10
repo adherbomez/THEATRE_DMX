@@ -18,6 +18,12 @@
 	   this->name=name;
 	   this->scn=scene;
 	}
+		programme::programme()
+	{
+	   this->id=0;
+	   this->name="";
+
+	}
 //setId
 	void programme::setId(int id)
 	{
@@ -29,11 +35,8 @@
 		this->name=name;
 	}
 // (à voir)		void setOrder(int Order);
-//initialisation du nombre de scenes d'un programme
-	void programme::setNbScene()
-	{
-		this->nbScene=scn.size();
-	}
+
+
 //réupération de l'ID du programme
 	int programme::getId()
 	{
@@ -54,5 +57,15 @@
 	std::vector<scene*> programme::getScenes()
 	{
 		return scn;
-    }
+	}
+
+	void programme::AjouterUneSceneAuProgramme(scene * s1)
+	{
+		scn.push_back(s1)  ;
+	}
+
+	void programme::setNbScene(int nbScene)
+	{
+        this->nbScene=nbScene;
+	}
 

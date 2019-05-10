@@ -5,14 +5,14 @@
 //---------------------------------------------------------------------------
 #include <vcl.h>
 #define __WIN__
-#include "include/mysql.h"
+#include "./include/mysql.h"
 #include <vector>
 #include <string>
-#include "BDD.h"
+#include "./BDD/BDD.h"
 
 using namespace std;
 
-class MySQL
+class MySQL  : public BDD
 {
 	private:
 
@@ -22,7 +22,7 @@ class MySQL
 
 	public:
 		MySQL();
-		bool Connect(char*Addr,char*Id,char*Mdp,char*Table);
+		bool Connect(string Addr,string Id,string Mdp,string Table);
 		void Disconnect();
 
 		bool Insert(string request);
