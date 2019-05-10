@@ -13,11 +13,12 @@
   Menu = MainMenu1
   OldCreateOrder = False
   Position = poDesigned
+  Visible = True
   PixelsPerInch = 96
   TextHeight = 13
   object GroupBox2: TGroupBox
-    Left = 735
-    Top = 446
+    Left = 787
+    Top = 438
     Width = 304
     Height = 231
     Caption = 'Module de test 2'
@@ -99,7 +100,7 @@
       Text = 'ComboBox1'
     end
     object edtPort: TEdit
-      Left = 96
+      Left = 89
       Top = 40
       Width = 121
       Height = 21
@@ -243,8 +244,8 @@
     end
   end
   object gbEqp: TGroupBox
-    Left = 38
-    Top = 66
+    Left = 30
+    Top = 11
     Width = 489
     Height = 315
     Caption = 'Equipement'
@@ -345,8 +346,8 @@
     end
   end
   object gpSeq: TGroupBox
-    Left = 319
-    Top = 446
+    Left = 342
+    Top = 295
     Width = 410
     Height = 302
     Caption = 'S'#233'quence'
@@ -429,8 +430,8 @@
     end
   end
   object gpScene: TGroupBox
-    Left = -176
-    Top = 446
+    Left = 7
+    Top = 281
     Width = 489
     Height = 302
     Caption = 'Sc'#232'ne'
@@ -460,29 +461,13 @@
       Height = 21
       TabOrder = 0
     end
-    object lbScene: TListBox
-      Left = 40
-      Top = 117
-      Width = 153
-      Height = 132
-      ItemHeight = 13
-      TabOrder = 1
-    end
-    object lb2Scene: TListBox
-      Left = 267
-      Top = 117
-      Width = 161
-      Height = 132
-      ItemHeight = 13
-      TabOrder = 2
-    end
     object btnValideScene: TButton
       Left = 200
       Top = 271
       Width = 75
       Height = 25
       Caption = 'Valid'#233
-      TabOrder = 3
+      TabOrder = 1
     end
     object btnScnAdd: TButton
       Left = 209
@@ -490,7 +475,7 @@
       Width = 35
       Height = 25
       Caption = '>>'
-      TabOrder = 4
+      TabOrder = 2
       OnClick = btnScnAddClick
     end
     object btnScnSupp: TButton
@@ -499,13 +484,31 @@
       Width = 35
       Height = 25
       Caption = '<<'
-      TabOrder = 5
+      TabOrder = 3
       OnClick = btnScnSuppClick
+    end
+    object lbScene: TListBox
+      Left = 25
+      Top = 109
+      Width = 153
+      Height = 125
+      ItemHeight = 13
+      MultiSelect = True
+      TabOrder = 4
+    end
+    object lb2Scene: TListBox
+      Left = 270
+      Top = 103
+      Width = 153
+      Height = 125
+      ItemHeight = 13
+      MultiSelect = True
+      TabOrder = 5
     end
   end
   object GroupBox4: TGroupBox
-    Left = 550
-    Top = 66
+    Left = 479
+    Top = 184
     Width = 407
     Height = 315
     Caption = 'Adressage'
@@ -561,7 +564,7 @@
     Width = 75
     Height = 25
     Caption = 'Button6'
-    TabOrder = 7
+    TabOrder = 6
     OnClick = Button6Click
   end
   object Timer1: TTimer

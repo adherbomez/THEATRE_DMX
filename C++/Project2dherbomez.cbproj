@@ -39,21 +39,15 @@
         <CfgParent>Base</CfgParent>
         <Base>true</Base>
     </PropertyGroup>
-    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win64)'!=''">
-        <Cfg_2_Win64>true</Cfg_2_Win64>
-        <CfgParent>Cfg_2</CfgParent>
-        <Cfg_2>true</Cfg_2>
-        <Base>true</Base>
-    </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
         <Icon_MainIcon>$(BDS)\bin\cbuilder_PROJECTICON.ico</Icon_MainIcon>
-        <ILINK_LibraryPath>Graph\;Utils\;BDD\;Manager\;include\;IHM\;Equipement\;UsedEquipement\;TrameManager\;TCPServer\;SequenceUsedEquipement\;Sequence\;Scene\;Property\;Programme\;MySQL\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <ILINK_LibraryPath>IHMrana\;Graph\;Utils\;BDD\;Manager\;include\;IHM\;Equipement\;UsedEquipement\;TrameManager\;TCPServer\;SequenceUsedEquipement\;Sequence\;Scene\;Property\;Programme\;MySQL\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
         <AllPackageLibs>rtl.lib;vcl.lib</AllPackageLibs>
         <ProjectType>CppVCLApplication</ProjectType>
         <Multithreaded>true</Multithreaded>
         <_TCHARMapping>char</_TCHARMapping>
-        <IncludePath>Graph\;Utils\;BDD\;Manager\;include\;IHM\;Equipement\;UsedEquipement\;TrameManager\;TCPServer\;SequenceUsedEquipement\;Sequence\;Scene\;Property\;Programme\;MySQL\;$(IncludePath)</IncludePath>
+        <IncludePath>IHMrana\;Graph\;Utils\;BDD\;Manager\;include\;IHM\;Equipement\;UsedEquipement\;TrameManager\;TCPServer\;SequenceUsedEquipement\;Sequence\;Scene\;Property\;Programme\;MySQL\;$(IncludePath)</IncludePath>
         <SanitizedProjectName>Project2dherbomez</SanitizedProjectName>
         <DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
         <DynamicRTL>true</DynamicRTL>
@@ -76,7 +70,6 @@
         <IncludePath>$(BDSINCLUDE)\windows\vcl;$(IncludePath)</IncludePath>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base_Win64)'!=''">
-        <BCC_PCHName_Clang>dherbomez.h</BCC_PCHName_Clang>
         <PackageImports>adortl;appanalytics;bindcomp;bindcompdbx;bindcompfmx;bindcompvcl;bindengine;CloudService;CustomIPTransport;DataSnapClient;DataSnapCommon;DataSnapConnectors;DatasnapConnectorsFreePascal;DataSnapFireDAC;DataSnapIndy10ServerTransport;DataSnapNativeClient;DataSnapProviderClient;DataSnapServer;DataSnapServerMidas;dbexpress;dbrtl;dbxcds;DbxClientDriver;DbxCommonDriver;DBXDb2Driver;DBXFirebirdDriver;DBXInformixDriver;DBXInterBaseDriver;DBXMSSQLDriver;DBXMySQLDriver;DBXOdbcDriver;DBXOracleDriver;DBXSqliteDriver;DBXSybaseASADriver;DBXSybaseASEDriver;dsnap;dsnapcon;dsnapxml;emsclient;emsclientfiredac;FireDAC;FireDACADSDriver;FireDACASADriver;FireDACCommon;FireDACCommonDriver;FireDACDb2Driver;FireDACDBXDriver;FireDACDSDriver;FireDACIBDriver;FireDACInfxDriver;FireDACMSAccDriver;FireDACMSSQLDriver;FireDACMySQLDriver;FireDACODBCDriver;FireDACOracleDriver;FireDACPgDriver;FireDACSqliteDriver;FireDACTDataDriver;fmx;fmxase;fmxdae;fmxFireDAC;fmxobj;FMXTee;FmxTeeUI;ibmonitor;ibxpress;IndyCore;IndyIPClient;IndyIPCommon;IndyIPServer;IndyProtocols;IndySystem;inet;inetdb;inetdbxpress;Intraweb;RESTBackendComponents;RESTComponents;rtl;soapmidas;soaprtl;soapserver;Tee;TeeDB;TeeUI;tethering;vcl;vclactnband;vcldb;vcldsnap;vclFireDAC;vclib;vclie;vclimg;VCLRESTComponents;vclribbon;VclSmp;vcltouch;vclx;xmlrtl;$(PackageImports)</PackageImports>
         <IncludePath>$(BDSINCLUDE)\windows\vcl;$(IncludePath)</IncludePath>
     </PropertyGroup>
@@ -109,18 +102,15 @@
         <Defines>NDEBUG;$(Defines)</Defines>
         <TASM_Debugging>None</TASM_Debugging>
     </PropertyGroup>
-    <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
-        <BCC_PCHName_Clang>dherbomez.h</BCC_PCHName_Clang>
-    </PropertyGroup>
     <ItemGroup>
-        <CppCompile Include="Arc.cpp">
-            <DependentOn>Arc.h</DependentOn>
-            <BuildOrder>91</BuildOrder>
+        <CppCompile Include="BDD\BDD.cpp">
+            <DependentOn>BDD\BDD.h</DependentOn>
+            <BuildOrder>98</BuildOrder>
         </CppCompile>
+        <None Include="BDD\BDD.h">
+            <BuildOrder>99</BuildOrder>
+        </None>
         <None Include="DasHard2006.dll"/>
-        <PCHCompile Include="dherbomez.h">
-            <BuildOrder>1</BuildOrder>
-        </PCHCompile>
         <CppCompile Include="Equipement\Equipement.cpp">
             <DependentOn>Equipement\Equipement.h</DependentOn>
             <BuildOrder>28</BuildOrder>
@@ -129,43 +119,46 @@
             <BuildOrder>29</BuildOrder>
         </None>
         <None Include="Equipement\__history"/>
-        <CppCompile Include="Graph.cpp">
-            <DependentOn>Graph.h</DependentOn>
-            <BuildOrder>89</BuildOrder>
-        </CppCompile>
         <CppCompile Include="Graph\Arc.cpp">
             <DependentOn>Graph\Arc.h</DependentOn>
-            <Suffix>_0</Suffix>
-            <BuildOrder>92</BuildOrder>
+            <BuildOrder>95</BuildOrder>
         </CppCompile>
         <None Include="Graph\Arc.h">
-            <BuildOrder>93</BuildOrder>
+            <BuildOrder>96</BuildOrder>
         </None>
         <CppCompile Include="Graph\Graph.cpp">
             <DependentOn>Graph\Graph.h</DependentOn>
-            <Suffix>_0</Suffix>
-            <BuildOrder>94</BuildOrder>
+            <BuildOrder>97</BuildOrder>
         </CppCompile>
         <None Include="Graph\Graph.h">
-            <BuildOrder>95</BuildOrder>
+            <BuildOrder>98</BuildOrder>
         </None>
         <CppCompile Include="Graph\Node.cpp">
             <DependentOn>Graph\Node.h</DependentOn>
-            <Suffix>_0</Suffix>
-            <BuildOrder>96</BuildOrder>
+            <BuildOrder>99</BuildOrder>
         </CppCompile>
         <None Include="Graph\Node.h">
-            <BuildOrder>97</BuildOrder>
+            <BuildOrder>100</BuildOrder>
+        </None>
+        <CppCompile Include="IHMrana\IHMrana.cpp">
+            <Form>Form2</Form>
+            <FormType>dfm</FormType>
+            <DependentOn>IHMrana\IHMrana.h</DependentOn>
+            <BuildOrder>98</BuildOrder>
+        </CppCompile>
+        <None Include="IHMrana\IHMrana.dfm"/>
+        <None Include="IHMrana\IHMrana.h">
+            <BuildOrder>100</BuildOrder>
         </None>
         <CppCompile Include="IHM\IHM.cpp">
             <Form>Form1</Form>
             <FormType>dfm</FormType>
             <DependentOn>IHM\IHM.h</DependentOn>
-            <BuildOrder>31</BuildOrder>
+            <BuildOrder>93</BuildOrder>
         </CppCompile>
         <None Include="IHM\IHM.dfm"/>
         <None Include="IHM\IHM.h">
-            <BuildOrder>33</BuildOrder>
+            <BuildOrder>95</BuildOrder>
         </None>
         <None Include="IHM\__history"/>
         <None Include="include\big_endian.h">
@@ -305,16 +298,19 @@
         </None>
         <CppCompile Include="Manager\Manager.cpp">
             <DependentOn>Manager\Manager.h</DependentOn>
-            <BuildOrder>81</BuildOrder>
+            <BuildOrder>97</BuildOrder>
         </CppCompile>
         <None Include="Manager\Manager.h">
-            <BuildOrder>82</BuildOrder>
+            <BuildOrder>98</BuildOrder>
         </None>
         <None Include="Manager\__history"/>
-        <CppCompile Include="Node.cpp">
-            <DependentOn>Node.h</DependentOn>
-            <BuildOrder>90</BuildOrder>
+        <CppCompile Include="MySQL\MySQL.cpp">
+            <DependentOn>MySQL\MySQL.h</DependentOn>
+            <BuildOrder>99</BuildOrder>
         </CppCompile>
+        <None Include="MySQL\MySQL.h">
+            <BuildOrder>100</BuildOrder>
+        </None>
         <CppCompile Include="Programme\Programme.cpp">
             <DependentOn>Programme\Programme.h</DependentOn>
             <BuildOrder>4</BuildOrder>
@@ -404,6 +400,7 @@
         <None Include="_DasHard.h">
             <BuildOrder>83</BuildOrder>
         </None>
+        <FormResources Include="IHMrana\IHMrana.dfm"/>
         <FormResources Include="IHM\IHM.dfm"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
@@ -472,9 +469,9 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="IHM\__history" Configuration="Debug" Class="ProjectFile">
+                <DeployFile LocalName=".\Win32\Debug\Project2dherbomez.tds" Configuration="Debug" Class="DebugSymbols">
                     <Platform Name="Win32">
-                        <RemoteDir>.\</RemoteDir>
+                        <RemoteName>Project2dherbomez.tds</RemoteName>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -484,9 +481,9 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName=".\Win32\Debug\Project2dherbomez.tds" Configuration="Debug" Class="DebugSymbols">
+                <DeployFile LocalName="IHM\__history" Configuration="Debug" Class="ProjectFile">
                     <Platform Name="Win32">
-                        <RemoteName>Project2dherbomez.tds</RemoteName>
+                        <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -510,6 +507,12 @@
                 </DeployFile>
                 <DeployFile Condition="'$(UsingDelphiRTL)'=='true'" LocalName="$(BDS)\bin\borlndmm.dll" Class="DependencyModule">
                     <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="IHMrana\IHMrana.dfm" Configuration="Debug" Class="ProjectFile">
+                    <Platform Name="Win32">
+                        <RemoteDir>.\</RemoteDir>
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
@@ -962,8 +965,8 @@
                 <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
-                <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
             </Deployment>
             <Platforms>
                 <Platform value="Win32">True</Platform>

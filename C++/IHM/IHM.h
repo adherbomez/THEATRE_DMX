@@ -79,8 +79,6 @@ __published:	// Composants gérés par l'IHM
 	TGroupBox *gpScene;
 	TEdit *edtNomScene;
 	TLabel *lblNomScene;
-	TListBox *lbScene;
-	TListBox *lb2Scene;
 	TButton *btnValideScene;
 	TButton *btnSeqAdd;
 	TButton *btnSeqSupp;
@@ -97,6 +95,8 @@ __published:	// Composants gérés par l'IHM
 	TLabel *Label17;
 	TLabel *Label16;
 	TEdit *Edit1;
+	TListBox *lbScene;
+	TListBox *lb2Scene;
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall Timer1Timer(TObject *Sender);
 	void __fastcall menuEqpClick(TObject *Sender);
@@ -109,8 +109,7 @@ __published:	// Composants gérés par l'IHM
 	void __fastcall gpSeqClick(TObject *Sender);
 	void __fastcall gpSceneClick(TObject *Sender);
 
-	void __fastcall lbSceneClick(TObject *Sender);
-	void __fastcall lb2SceneClick(TObject *Sender);
+
 	void __fastcall Button6Click(TObject *Sender);
 
 	void __fastcall btnScnAddClick(TObject *Sender);

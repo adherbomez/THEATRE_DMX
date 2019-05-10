@@ -452,7 +452,6 @@ void __fastcall TForm1::GroupBox4Click(TObject *Sender)
 
 void __fastcall TForm1::Button6Click(TObject *Sender)
 {
-
 	this->form->Show();
 }
 //---------------------------------------------------------------------------
