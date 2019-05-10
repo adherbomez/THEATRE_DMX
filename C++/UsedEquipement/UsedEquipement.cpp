@@ -14,10 +14,16 @@
 #pragma package(smart_init)
 
 //constructeur
-	usedEquipement::usedEquipement(int adresse,std::map<property*,int>values)
+	usedEquipement::usedEquipement(int canal, equipement * equip)
 	{
-		this->adresse=adresse;
-		this->values=values;
+		this->adresse=canal;
+
+        std::vector<property*> properties = equip->getOrderedProperties();
+
+		for(int i = 0; i < properties.size(); i++)
+			this->values[properties[i]] = 0;
+
+		this->equip = equip;
 	}
 //initialisation du canal qui est la première adresse de la trame
 	void usedEquipement::setAdresse(int adresse)
@@ -35,9 +41,14 @@
 		return adresse;
 	}
 //retourne les valeurs
-	std::map<property*,int>
+	std::map<property*,int> &
 	usedEquipement::getValues()
 	{
 		return values;
 	}
+
+	int usedEquipement::getNbVoies()
+	{
+        return equip->getNbVoies();
+    }
 

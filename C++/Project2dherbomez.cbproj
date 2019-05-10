@@ -47,13 +47,13 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
         <Icon_MainIcon>$(BDS)\bin\cbuilder_PROJECTICON.ico</Icon_MainIcon>
-        <ILINK_LibraryPath>Utils\;BDD\;Manager\;include\;IHM\;Equipement\;UsedEquipement\;TrameManager\;TCPServer\;SequenceUsedEquipement\;Sequence\;Scene\;Property\;Programme\;MySQL\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <ILINK_LibraryPath>Graph\;Utils\;BDD\;Manager\;include\;IHM\;Equipement\;UsedEquipement\;TrameManager\;TCPServer\;SequenceUsedEquipement\;Sequence\;Scene\;Property\;Programme\;MySQL\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
         <AllPackageLibs>rtl.lib;vcl.lib</AllPackageLibs>
         <ProjectType>CppVCLApplication</ProjectType>
         <Multithreaded>true</Multithreaded>
         <_TCHARMapping>char</_TCHARMapping>
-        <IncludePath>Utils\;BDD\;Manager\;include\;IHM\;Equipement\;UsedEquipement\;TrameManager\;TCPServer\;SequenceUsedEquipement\;Sequence\;Scene\;Property\;Programme\;MySQL\;$(IncludePath)</IncludePath>
+        <IncludePath>Graph\;Utils\;BDD\;Manager\;include\;IHM\;Equipement\;UsedEquipement\;TrameManager\;TCPServer\;SequenceUsedEquipement\;Sequence\;Scene\;Property\;Programme\;MySQL\;$(IncludePath)</IncludePath>
         <SanitizedProjectName>Project2dherbomez</SanitizedProjectName>
         <DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
         <DynamicRTL>true</DynamicRTL>
@@ -133,6 +133,30 @@
             <DependentOn>Graph.h</DependentOn>
             <BuildOrder>89</BuildOrder>
         </CppCompile>
+        <CppCompile Include="Graph\Arc.cpp">
+            <DependentOn>Graph\Arc.h</DependentOn>
+            <Suffix>_0</Suffix>
+            <BuildOrder>92</BuildOrder>
+        </CppCompile>
+        <None Include="Graph\Arc.h">
+            <BuildOrder>93</BuildOrder>
+        </None>
+        <CppCompile Include="Graph\Graph.cpp">
+            <DependentOn>Graph\Graph.h</DependentOn>
+            <Suffix>_0</Suffix>
+            <BuildOrder>94</BuildOrder>
+        </CppCompile>
+        <None Include="Graph\Graph.h">
+            <BuildOrder>95</BuildOrder>
+        </None>
+        <CppCompile Include="Graph\Node.cpp">
+            <DependentOn>Graph\Node.h</DependentOn>
+            <Suffix>_0</Suffix>
+            <BuildOrder>96</BuildOrder>
+        </CppCompile>
+        <None Include="Graph\Node.h">
+            <BuildOrder>97</BuildOrder>
+        </None>
         <CppCompile Include="IHM\IHM.cpp">
             <Form>Form1</Form>
             <FormType>dfm</FormType>
@@ -933,13 +957,13 @@
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
-                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
-                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
             </Deployment>
             <Platforms>
                 <Platform value="Win32">True</Platform>

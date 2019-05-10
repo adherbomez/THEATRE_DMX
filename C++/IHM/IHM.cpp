@@ -17,6 +17,68 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 {
 	server = NULL;
 
+	equipement * equip = new equipement(1, "Lampe");
+
+	equip->addProperty("Strobo", new property(1, 0, "Strobo"));
+	equip->addProperty("Rouge", new property(2, 1, "Composante rouge"));
+	equip->addProperty("Vert", new property(3, 2, "Composante verte"));
+	equip->addProperty("Bleu", new property(4, 3, "Composante bleue"));
+	equip->addProperty("Blanc", new property(5, 4, "Composante blanche"));
+	equip->addProperty("Intensité", new property(6, 5, "Intensité"));
+
+	trameManager*trame=new trameManager();
+	std::vector<property*> orderedProps = equip->getOrderedProperties();
+	usedEquipement * usedEquip = new usedEquipement(0, equip);
+	trame->insertEquipement(usedEquip);
+
+	// Sequence rouge
+	sequenceUsedEquipement * seqUsedEquip1[6];
+	seqUsedEquip1[0] = new sequenceUsedEquipement(usedEquip, orderedProps[0], 116);
+	seqUsedEquip1[1] = new sequenceUsedEquipement(usedEquip, orderedProps[1], 255);
+	seqUsedEquip1[2] = new sequenceUsedEquipement(usedEquip, orderedProps[2], 0);
+	seqUsedEquip1[3] = new sequenceUsedEquipement(usedEquip, orderedProps[3], 0);
+	seqUsedEquip1[4] = new sequenceUsedEquipement(usedEquip, orderedProps[4], 0);
+	seqUsedEquip1[5] = new sequenceUsedEquipement(usedEquip, orderedProps[5], 120);
+
+	sequence * seq1 = new sequence(1, 500, trame);
+	for(int i = 0; i < 6; i++)
+		seq1->addSequenceUsedEquipment(seqUsedEquip1[i]);
+
+	// Sequence verte
+	sequenceUsedEquipement * seqUsedEquip2[6];
+	seqUsedEquip2[0] = new sequenceUsedEquipement(usedEquip, orderedProps[0], 116);
+	seqUsedEquip2[1] = new sequenceUsedEquipement(usedEquip, orderedProps[1], 0);
+	seqUsedEquip2[2] = new sequenceUsedEquipement(usedEquip, orderedProps[2], 255);
+	seqUsedEquip2[3] = new sequenceUsedEquipement(usedEquip, orderedProps[3], 0);
+	seqUsedEquip2[4] = new sequenceUsedEquipement(usedEquip, orderedProps[4], 0);
+	seqUsedEquip2[5] = new sequenceUsedEquipement(usedEquip, orderedProps[5], 120);
+
+	sequence * seq2 = new sequence(2, 500, trame);
+	for(int i = 0; i < 6; i++)
+		seq2->addSequenceUsedEquipment(seqUsedEquip2[i]);
+
+
+	// Sequence bleue
+	sequenceUsedEquipement * seqUsedEquip3[6];
+	seqUsedEquip3[0] = new sequenceUsedEquipement(usedEquip, orderedProps[0], 116);
+	seqUsedEquip3[1] = new sequenceUsedEquipement(usedEquip, orderedProps[1], 0);
+	seqUsedEquip3[2] = new sequenceUsedEquipement(usedEquip, orderedProps[2], 0);
+	seqUsedEquip3[3] = new sequenceUsedEquipement(usedEquip, orderedProps[3], 255);
+	seqUsedEquip3[4] = new sequenceUsedEquipement(usedEquip, orderedProps[4], 0);
+	seqUsedEquip3[5] = new sequenceUsedEquipement(usedEquip, orderedProps[5], 120);
+
+	sequence * seq3 = new sequence(3, 500, trame);
+	for(int i = 0; i < 6; i++)
+		seq3->addSequenceUsedEquipment(seqUsedEquip3[i]);
+
+	scn1 = new scene(1, "RGB", 20);
+	scn1->setSequences(seq1);
+	scn1->setSequences(seq2);
+	scn1->setSequences(seq3);
+    scn1->planifyScene();
+    scn.push_back(scn1);
+
+	/*
 //vecteurs
 std::vector<sequence*>seq;
 
@@ -78,6 +140,7 @@ scn1=new scene(1,name,20);
 	scn1->setSequences(seq3);
 	scn1->planifyScene();
 	scn.push_back(scn1);
+	*/
 }
 
 
@@ -88,8 +151,14 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
 //---------------------------------------------------------------------------
 //Connexion TCPServeur
 	server= new TCPServer();
-	server->bindSocket(9998);
-
+	if (edtPort->Text!="")
+	{
+		server->bindSocket(edtPort->Text.ToInt());
+	}
+	else
+	{
+		Label16->Visible=true;
+    }
 	DWORD dwThreadId;
 
 	CreateThread(
@@ -129,11 +198,23 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
 	{
 		if(scn.size() > 0)
 		{
-			if(scn.front()->updateScene())
+			scene * curScene = scn.front();
+
+			// Si la scene est terminée, on la retire de la liste de scene à executer
+			if(curScene->updateScene())
 			{
 				scn.pop_back();
 			}
-			DasUsbCommand(DHC_DMXOUT, 512, scn.front()->getSequences()[scn.front()->getSeqIndex()]->getTrame()->dmx);
+
+			//
+			if(scn.size() == 0)
+			{
+				scn1->planifyScene();
+				scn.push_back(scn1);
+			}
+            //*/
+
+			DasUsbCommand(DHC_DMXOUT, 512, curScene->getSequences()[curScene->getSeqIndex()]->getTrame()->getTrame());
 		}
 		Shape2->Brush->Color=clGreen;
 
@@ -156,8 +237,8 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
 			{
 				Label6->Caption = cl.message.c_str();
 				Shape4->Brush->Color=clGreen;
-				//std::string test=Parser::Parse(cl);
-				//Edit1->Text=test.c_str();
+				std::string test=Parser::Parse(cl);
+				Edit1->Text=test.c_str();
 			}
 			else
 			{
@@ -381,6 +462,8 @@ void __fastcall TForm1::btnAdrClick(TObject *Sender)
 	}
 }
 //---------------------------------------------------------------------------
+
+
 
 
 

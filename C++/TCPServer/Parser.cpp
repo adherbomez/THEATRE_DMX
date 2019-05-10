@@ -22,40 +22,34 @@
 	{   int i;
 		Parser parseObj;
 		Send(message.clInfo, message.message);
+		std::string resultat;
 
 		if(Utils::startsWith(message.message, "PRG"))
 		{
-			 std::istringstream iss(message.message);
-			 std::string sousChaine;
-			 while (getline(iss, sousChaine))
-			 {
-				parseObj.parse.push_back(sousChaine);
-			 }
-				for (i = 0; i < parseObj.parse.size(); i++)
-				{
-					std::string caract= ";";
-					if (parseObj.parse[i]==caract)
-					{
-						return parseObj.id=parseObj.parse[i+1];
-					}
-				}
+			parseObj.parse=Utils::explode(message.message,';');
+					resultat+=parseObj.parse[1];
+				  return resultat;
+
+
+//			 std::istringstream iss(message.message);
+//			 std::string sousChaine;
+//			 while (getline(iss, sousChaine))
+//			 {
+//				parseObj.parse.push_back(sousChaine);
+//			 }
+//				for (i = 0; i < parseObj.parse.size(); i++)
+//				{
+//
+//						return parseObj.id=parseObj.parse[i+1];
+//
+//				}
 		}
+
 		else if(Utils::startsWith(message.message, "SCN"))
 		{
-			 std::istringstream iss(message.message);
-			 std::string sousChaine;
-			 while (getline(iss, sousChaine))
-			 {
-				parseObj.parse.push_back(sousChaine);
-			 }
-				for (i = 0; i < parseObj.parse.size(); i++)
-				{
-					std::string caract= ";";
-					if (parseObj.parse[i]==caract)
-					{
-						return parseObj.id=parseObj.parse[i+1];
-					}
-				}
+//           parseObj.parse=Utils::explode(message.message,';');
+//
+//				  return parseObj.parse;
 		}
 	}
 //methode qui renvoi un message de reception au client

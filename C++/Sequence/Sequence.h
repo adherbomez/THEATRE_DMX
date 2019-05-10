@@ -10,6 +10,7 @@
 #ifndef SequenceH
 #define SequenceH
 #include "TrameManager.h"
+#include "SequenceUsedEquipement.h"
 //---------------------------------------------------------------------------
 
 class sequence
@@ -19,17 +20,18 @@ class sequence
 		int duree;
 		trameManager* trame;
 		int nbSeqUsedEq;
+		std::vector<sequenceUsedEquipement *> seqEquipValues;
 
 	public:
 		sequence(int id, int duree, trameManager*);
-
 		void setDuree(int value);
 		void setId(int id);
-		trameManager*setTrame();
-
+		void setTrame(trameManager* trame);
 		int getDuree();
 		int getId();
 		trameManager*getTrame();
+		void addSequenceUsedEquipment(sequenceUsedEquipement * seqUsedEquip);
+		std::vector<sequenceUsedEquipement *> & getSequenceUsedEquipments();
 };
 
 #endif

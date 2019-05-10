@@ -91,6 +91,10 @@ __published:	// Composants gérés par l'IHM
 	TButton *btnScnSupp;
 	TButton *btnConflict;
 	TLabel *lblAjoutSucc;
+	TEdit *edtPort;
+	TLabel *Label17;
+	TLabel *Label16;
+	TEdit *Edit1;
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall Timer1Timer(TObject *Sender);
 	void __fastcall menuEqpClick(TObject *Sender);

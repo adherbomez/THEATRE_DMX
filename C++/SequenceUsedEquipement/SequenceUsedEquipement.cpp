@@ -13,29 +13,40 @@
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 
-//constructeur
-	sequenceUsedEquipement::sequenceUsedEquipement(int id, int value)
+//constructeur de la classe, récupère les valeurs
+	sequenceUsedEquipement::sequenceUsedEquipement(usedEquipement * usedEquip, property * prop, int value)
 	{
-		this->id=id;
-		this->value=value;
+		this->usedEquip = usedEquip;
+		this->prop = prop;
+		this->value = value;
 	}
-//setId
-	void sequenceUsedEquipement::setId(int id)
+//paramètre l'instance d'un usedEquipement
+	void sequenceUsedEquipement::setUsedEquipment(usedEquipement * usedEquip)
 	{
-		this->id=id;
+		this->usedEquip = usedEquip;
 	}
-//recupération de l'id
-	int sequenceUsedEquipement::getId()
+//paramètre l'instance d'un Property
+	void sequenceUsedEquipement::setProperty(property * prop)
 	{
-		return id;
+		this->prop = prop;
 	}
-//réglage de la value d'une séquence
-	void sequenceUsedEquipement::setSequenceValue(int value)
+//paramètre la value d'une propriété
+	void sequenceUsedEquipement::setValue(int value)
 	{
-		this->value=value;
+		this->value = value;
 	}
-//récupération de la value d'une séquence
-	int sequenceUsedEquipement::getSequenceValue()
+//récupère la value
+	int sequenceUsedEquipement::getValue()
 	{
-        return value;
-    }
+		return value;
+	}
+//récupère l'instance d'un UsedEquipement
+	usedEquipement * sequenceUsedEquipement::getUsedEquipment()
+	{
+		return usedEquip;
+	}
+//récupère l'instance d'une Propriété
+	property * sequenceUsedEquipement::getProperty()
+	{
+		return prop;
+	}

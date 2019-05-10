@@ -21,16 +21,16 @@
 class trameManager
 {
 	private:
-	public:
 		std::vector<usedEquipement*> trame;
-		char* dmx;
+		char * dmx;
+	public:
 		Graph*graph;
 
 
 		trameManager();
 
-		bool insertEquipement(equipement*equip,int adresse);
-		void removeEquipement(int adresse);
+		bool insertEquipement(usedEquipement*usedEquip);
+		void removeEquipement(usedEquipement*usedEquip);
 		bool checkConflict();
 
 		char*getTrame();

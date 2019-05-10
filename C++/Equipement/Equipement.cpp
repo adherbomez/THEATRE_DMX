@@ -36,7 +36,7 @@
 	//recupère le nombre de voies d'un équipement (ses propriétés)
 	int equipement::getNbVoies()
 	{
-		return 5;
+		return properties.size();
 	}
 	//permet de récuperer les propriétés
 	std::map<std::string,property*> equipement::getProperties()

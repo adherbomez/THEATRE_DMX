@@ -1,0 +1,115 @@
+//---------------------------------------------------------------------------//
+//---PROJET_THEATRE_DMX------------------------------------------------------//
+//---Développé par Arthur Dherbomez------------------------------------------//
+//---BTSSN2------------------------------------------------------------------//
+//---Class:TrameManager.h--------------------------------------------------------//
+//---Cette classe permet la construction de la trame DMX en récupérant le canal,
+//les équipements et leurs propriétés---//
+//---------------------------------------------------------------------------//
+#pragma hdrstop
+
+#include "TrameManager.h"
+//---------------------------------------------------------------------------
+#pragma package(smart_init)
+
+//constructeur
+	trameManager::trameManager()
+	{
+		 for (int i = 0; i < 512; i++)
+		 {
+			 this->dmx[i]=0;
+		 }
+	}
+//insere dans dmx[512] l'equipement à  l'adresse choisi
+	bool trameManager::insertEquipement(usedEquipement*usedEquip)
+	{
+        trame.push_back(usedEquip);
+	}
+//suppression d'un équipement au canal choisis
+	void trameManager::removeEquipement(int adresse,usedEquipement*usedEquip)
+	{
+		int i,j;
+
+		adresse-=1;
+
+		for (i = 0; i < 512; i++)
+		{
+			if(dmx[i]==dmx[adresse])
+			{
+				for (j = adresse; j < adresse+usedEquip->getNbVoies(); j++)
+				{
+						dmx[j]=NULL;
+				}
+
+			}
+
+		}
+	}
+//verifie si des trames ne se superposes pas et si il n'y a pas d'erreurs
+	bool trameManager::checkConflict()
+	{
+		int i,j;
+		graph= new Graph();
+
+		for (i = 0; i < graph->nodes.size() ; i++)
+		{
+			for (j = i+1; j < graph->nodes.size() ; j++)
+			{
+				if (Node::localCheckIntersection(graph->nodes[i],graph->nodes[j]))
+				{
+					graph->conflicts.push_back(new Conflict(graph->nodes[i],graph->nodes[j]));
+					return graph->conflicts.size()>0;
+				}
+			}
+		}
+		return true;
+	}
+//récupère la trame
+	char* trameManager::getTrame()
+	{
+		for(int iEquip = 0; iEquip < trame.size(); i++)
+		{
+			usedEquipement * usedEquip = trame[i];
+			int address = usedEquip->getAdresse();
+			std::map<property*, int> & props = usedEquip->getValues();
+
+			if(props.size() > 0)
+			{
+				std::vector<property*> nonOrderedProperties;
+
+				for(std::map<property *,int>::iterator it = props.begin(); it != props.end(); it++)
+				{
+					nonOrderedProperties.push_back((*it).first);
+				}
+
+				std::vector<property*> orderedProperties;
+
+				while(nonOrderedProperties.size() > 0)
+				{
+					int minIdx = 0;
+					for(int i = 1; i < nonOrderedProperties.size(); i++)
+					{
+						if(nonOrderedProperties[i]->getOrder() < nonOrderedProperties[minIdx]->getOrder())
+						{
+							minIdx = i;
+						}
+					}
+
+					orderedProperties.push_back(nonOrderedProperties[minIdx]);
+					nonOrderedProperties.erase(nonOrderedProperties.begin() + minIdx);
+				}
+
+				for (int i = 0; i < orderedProperties.size(); i++)
+				{
+						dmx[address + i]=props[orderedProperties[i]];
+				}
+			}
+		}
+
+		return dmx;
+	}
+//renvoi un vecteur avec toutes les informations utilent à la trame
+	std::vector<usedEquipement*> trameManager::getUsedEquipement()
+	{
+		return trame;
+	}

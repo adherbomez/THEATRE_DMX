@@ -41,13 +41,25 @@
 	{
 		return id;
 	}
-	trameManager*setTrame()
+//paramètre la trame
+	void sequence::setTrame(trameManager* trame)
 	{
-
+        this->trame = trame;
 	}
+//retourne la trame
 	trameManager*sequence::getTrame(){
 
 		return trame;
+	}
+//ajoute une séquenceUsedEquipement à la séquence
+	void sequence::addSequenceUsedEquipment(sequenceUsedEquipement * seqUsedEquip)
+	{
+		seqEquipValues.push_back(seqUsedEquip);
+	}
+//
+	std::vector<sequenceUsedEquipement *> & sequence::getSequenceUsedEquipments()
+	{
+		return seqEquipValues;
 	}
 
 

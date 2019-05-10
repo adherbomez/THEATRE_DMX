@@ -11,19 +11,25 @@
 #define SequenceUsedEquipementH
 //---------------------------------------------------------------------------
 
+class usedEquipement;
+class property;
+
 class sequenceUsedEquipement
 {
 	private:
-		int id;
+		usedEquipement * usedEquip;
+		property * prop;
 		int value;
 
 	public:
-		sequenceUsedEquipement(int id, int value);
+		sequenceUsedEquipement(usedEquipement * usedEquip, property * prop, int value);
+		void setUsedEquipment(usedEquipement * usedEquip);
+		void setProperty(property * prop);
+		void setValue(int value);
+		int getValue();
+		usedEquipement * getUsedEquipment();
+		property * getProperty();
 
-		void setSequenceValue(int value);
-		void setId(int id);
-		int getSequenceValue();
-		int getId();
 };
 
 #endif

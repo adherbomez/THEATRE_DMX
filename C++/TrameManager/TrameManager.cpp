@@ -9,42 +9,30 @@
 #pragma hdrstop
 
 #include "TrameManager.h"
+#include <algorithm>
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 
 //constructeur
 	trameManager::trameManager()
 	{
-
+		 dmx = new char[512];
+		 for (int i = 0; i < 512; i++)
+		 {
+			 this->dmx[i]=0;
+		 }
 	}
 //insere dans dmx[512] l'equipement à  l'adresse choisi
-	bool trameManager::insertEquipement(equipement*equip,int adresse)
+	bool trameManager::insertEquipement(usedEquipement*usedEquip)
 	{
-//		int i,j;
-//
-//		adresse-=1;
-//
-//		for (i = 0; i < 512; i++)
-//		{
-//			while(dmx[i]==dmx[adresse])
-//			{
-//				for (j = adresse; j < adresse+equip->getNbVoies(); j++)
-//				{
-//					for (std::map<>,allocator<pair<>)
-//					{
-//						dmx[j]=trame->getValues[j];
-//					}
-//
-//				}
-//
-//			}
-//
-//		}
+        trame.push_back(usedEquip);
 	}
 //suppression d'un équipement au canal choisis
-	void trameManager::removeEquipement(int adresse)
+	void trameManager::removeEquipement(usedEquipement*usedEquip)
 	{
-
+		std::vector<usedEquipement*>::iterator it = std::find(trame.begin(), trame.end(), usedEquip);
+		if(it != trame.end())
+            trame.erase(it);
 	}
 //verifie si des trames ne se superposes pas et si il n'y a pas d'erreurs
 	bool trameManager::checkConflict()
@@ -65,9 +53,26 @@
 		}
 		return true;
 	}
-//récupère la trame
+//récupère et planifie la trame
 	char* trameManager::getTrame()
 	{
+		for(int iEquip = 0; iEquip < trame.size(); iEquip++)
+		{
+			usedEquipement * usedEquip = trame[iEquip];
+			int address = usedEquip->getAdresse();
+			std::map<property*, int> & props = usedEquip->getValues();
+
+			if(props.size() > 0)
+			{
+				std::vector<property*> orderedProperties = usedEquip->getOrderedProperties();
+
+				for (int i = 0; i < orderedProperties.size(); i++)
+				{
+					dmx[address + i]=props[orderedProperties[i]];
+				}
+			}
+		}
+
 		return dmx;
 	}
 //renvoi un vecteur avec toutes les informations utilent à la trame
