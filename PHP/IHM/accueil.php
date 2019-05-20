@@ -55,12 +55,12 @@ $scen= new scenemanager();
 								</li>
 							</a>
 							<a onclick="popup('./progadd.php#deleteprog');">
-							<li class="tagset">
+							<li class="tag1">
 								supprimer un programme 
 							</li>
 							</a>
 							<a onclick="popup('./progadd.php#setprog');">
-							<li class="tagdelete">
+							<li class="tag1">
 								modifier un programme
 							</li>
 							</a>	
@@ -73,17 +73,17 @@ $scen= new scenemanager();
 					<li class=tag>SCENE
 						<ul>
 							<a onclick="popup('./progadd.php#addscene');">
-							<li class="tagadd">
+							<li class="tag1">
 								ajouter une scene
 							</li>
 							</a>
 							<a onclick="popup('./progadd.php#deletescene');">
-							<li class="tagset">
+							<li class="tag1">
 								supprimer une scene
 							</li>
 							</a>
 							<a onclick="popup('./progadd.php#setscene');">
-							<li class="tagdelete">
+							<li class="tag1">
 								modifier une scene
 							</li>
 							</a>
@@ -115,18 +115,6 @@ $scen= new scenemanager();
 	if (!empty($_POST['nomprog']) && isset($_POST['ajouterprogramme']))
 	{
 		$prog->AjouterProgramme($bdd,$_POST['nomprog']);
-		echo "programme OK ajout (IHM)";
-	}
-	else
-	{
-		echo "ECHEC AJOUT PROG (IHM)";
-	}
-
-///////////////////////////////////////////////////////////////////////
-	// modification de programme via le formulaire
-	if (!empty($_POST['setprog']) && isset($_POST['modifprog']))
-	{
-		$prog->ModifierProgramme($bdd,$_POST['nomprog'],);
 		echo "programme OK ajout (IHM)";
 	}
 	else
