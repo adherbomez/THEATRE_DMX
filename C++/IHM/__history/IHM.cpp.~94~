@@ -5,8 +5,11 @@
 #pragma hdrstop
 
 #include "IHM.h"
+
 #include "./TCPServer/ServerStructs.h"
 #include "/TCPServer/Parser.h"
+
+
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 #pragma resource "*.dfm"
@@ -16,6 +19,7 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 	: TForm(Owner)
 {
 	server = NULL;
+
     this->form = new TForm2(Owner);
 
 
@@ -82,6 +86,52 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 
 	/*
 //vecteurs
+
+	this->form = new TForm2(Owner);
+	//simul=new simulation();
+
+}
+
+
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button1Click(TObject *Sender)
+{
+//---------------------------------------------------------------------------
+//Connexion TCPServeur
+	server= new TCPServer();
+	if (edtPort->Text!="")
+	{
+		server->bindSocket(edtPort->Text.ToInt());
+	}
+	else
+	{
+		Label16->Visible=true;
+    }
+	DWORD dwThreadId;
+
+	CreateThread(
+		NULL,
+		0,
+		TCPServer::connexion,
+		server,
+		0,
+		&dwThreadId);
+
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TForm1::Timer1Timer(TObject *Sender)
+{
+//-------------------------------lumière---------------------------------------
+//chargement pour la dll
+	HINSTANCE g_dasusbdll = NULL;
+	typedef int (*DASHARDCOMMAND)(int, int, unsigned char*);
+	DASHARDCOMMAND  DasUsbCommand = NULL;
+//-------------------------------------------------------------------------------------------------------
+/*   //vecteurs
+
 std::vector<sequence*>seq;
 
 
@@ -99,6 +149,7 @@ tableau[2] = new char[512];
 
 	//on implémente une trame dmx
 	//bleu
+
 		tableau[0][0]=116;
 		tableau[0][1]=0;
 		tableau[0][2]=0;
@@ -121,6 +172,30 @@ trame1->dmx=tableau[1];
 		tableau[2][3]=0;
 		tableau[2][4]=255;
 		tableau[2][5]=120;
+
+		tableau[0][0]=bar1->Position;
+		tableau[0][1]=bar2->Position;
+		tableau[0][2]=bar3->Position;
+		tableau[0][3]=bar4->Position;
+		tableau[0][4]=bar5->Position;
+		tableau[0][5]=bar6->Position;
+trame->dmx=tableau[0];
+	//vert
+		tableau[1][0]=bar1->Position;
+		tableau[1][1]=bar2->Position;
+		tableau[1][2]=bar3->Position;
+		tableau[1][3]=bar4->Position;
+		tableau[1][4]=bar5->Position;
+		tableau[1][5]=bar6->Position;
+trame1->dmx=tableau[1];
+	//rouge
+		tableau[2][0]=bar1->Position;
+		tableau[2][1]=bar2->Position;
+		tableau[2][2]=bar3->Position;
+		tableau[2][3]=bar4->Position;
+		tableau[2][4]=bar5->Position;
+		tableau[2][5]=bar6->Position;
+
 trame2->dmx=tableau[2];
 
 
@@ -128,7 +203,11 @@ trame2->dmx=tableau[2];
 seq1=new sequence(1,2000,trame);
 seq2=new sequence(2,3000,trame1);
 seq3=new sequence(3,4000,trame2);
+
 	//on remplie le vector avec les séquences
+
+ //on remplie le vector avec les séquences
+
 	seq.push_back(seq1);
 	seq.push_back(seq2);
 	seq.push_back(seq3);
@@ -142,6 +221,7 @@ scn1=new scene(1,name,20);
 	scn1->setSequences(seq3);
 	scn1->planifyScene();
 	scn.push_back(scn1);
+
 	*/
 }
 
@@ -187,6 +267,10 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
 	std::string name_prog= "test";
 	prog=new programme(1,name_prog,scn);
 
+
+//-------------------------------------------------------------------------------------------------------
+
+
 //chargement de la dll
 	g_dasusbdll = LoadLibrary("DasHard2006.dll");
 	if (g_dasusbdll)
@@ -197,16 +281,26 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
 //connexion à l'usb dmx
 	DasUsbCommand(DHC_INIT,0,NULL);
 	if (DasUsbCommand(DHC_OPEN,0,0)>0)
+
 	{
 		if(scn.size() > 0)
 		{
 			scene * curScene = scn.front();
 
 			// Si la scene est terminée, on la retire de la liste de scene à executer
+
+	{  /*
+		if(scn.size() > 0)
+		{
+			scene * curScene = scn.front();
+			// Si la scene est terminée, on la retire de la liste de scene à executer
+
+
 			if(curScene->updateScene())
 			{
 				scn.pop_back();
 			}
+
 
 			//
 			if(scn.size() == 0)
@@ -216,9 +310,24 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
 			}
             //*/
 
+			if(scn.size() == 0)
+			{
+				 scn1->planifyScene();
+				 scn.push_back(scn1);
+			}
+
+
+
 			DasUsbCommand(DHC_DMXOUT, 512, curScene->getSequences()[curScene->getSeqIndex()]->getTrame()->getTrame());
 		}
 		Shape2->Brush->Color=clGreen;
+
+
+
+         
+
+
+		//DasUsbCommand(DHC_DMXOUT, 512, trame->dmx );
 
 	}
 
@@ -470,6 +579,13 @@ void __fastcall TForm1::btnAdrClick(TObject *Sender)
 		  lblAjoutSucc->Visible=true;
 		}
 	}
+}
+//---------------------------------------------------------------------------
+
+
+void __fastcall TForm1::Button3Click(TObject *Sender)
+{
+//sql->Insert("INSERT INTO `program`( `Nom`) VALUES ('Champ eparse')");
 }
 //---------------------------------------------------------------------------
 

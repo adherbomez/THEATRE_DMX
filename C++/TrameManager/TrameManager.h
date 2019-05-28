@@ -22,10 +22,10 @@ class trameManager
 {
 	private:
 		std::vector<usedEquipement*> trame;
-		char * dmx;
+
 	public:
 		Graph*graph;
-
+        char * dmx;
 
 		trameManager();
 

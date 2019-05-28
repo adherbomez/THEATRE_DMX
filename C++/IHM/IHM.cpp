@@ -16,133 +16,12 @@ __fastcall TForm1::TForm1(TComponent* Owner)
 	: TForm(Owner)
 {
 	server = NULL;
-    this->form = new TForm2(Owner);
+	this->form = new TForm2(Owner);
+	simul=new simulation();
+    //Récupération d'un programme
 
 
-	equipement * equip = new equipement(1, "Lampe");
 
-	equip->addProperty("Strobo", new property(1, 0, "Strobo"));
-	equip->addProperty("Rouge", new property(2, 1, "Composante rouge"));
-	equip->addProperty("Vert", new property(3, 2, "Composante verte"));
-	equip->addProperty("Bleu", new property(4, 3, "Composante bleue"));
-	equip->addProperty("Blanc", new property(5, 4, "Composante blanche"));
-	equip->addProperty("Intensité", new property(6, 5, "Intensité"));
-
-	trameManager*trame=new trameManager();
-	std::vector<property*> orderedProps = equip->getOrderedProperties();
-	usedEquipement * usedEquip = new usedEquipement(0, equip);
-	trame->insertEquipement(usedEquip);
-
-	// Sequence rouge
-	sequenceUsedEquipement * seqUsedEquip1[6];
-	seqUsedEquip1[0] = new sequenceUsedEquipement(usedEquip, orderedProps[0], 116);
-	seqUsedEquip1[1] = new sequenceUsedEquipement(usedEquip, orderedProps[1], 255);
-	seqUsedEquip1[2] = new sequenceUsedEquipement(usedEquip, orderedProps[2], 0);
-	seqUsedEquip1[3] = new sequenceUsedEquipement(usedEquip, orderedProps[3], 0);
-	seqUsedEquip1[4] = new sequenceUsedEquipement(usedEquip, orderedProps[4], 0);
-	seqUsedEquip1[5] = new sequenceUsedEquipement(usedEquip, orderedProps[5], 120);
-
-	sequence * seq1 = new sequence(1, 500, trame);
-	for(int i = 0; i < 6; i++)
-		seq1->addSequenceUsedEquipment(seqUsedEquip1[i]);
-
-	// Sequence verte
-	sequenceUsedEquipement * seqUsedEquip2[6];
-	seqUsedEquip2[0] = new sequenceUsedEquipement(usedEquip, orderedProps[0], 116);
-	seqUsedEquip2[1] = new sequenceUsedEquipement(usedEquip, orderedProps[1], 0);
-	seqUsedEquip2[2] = new sequenceUsedEquipement(usedEquip, orderedProps[2], 255);
-	seqUsedEquip2[3] = new sequenceUsedEquipement(usedEquip, orderedProps[3], 0);
-	seqUsedEquip2[4] = new sequenceUsedEquipement(usedEquip, orderedProps[4], 0);
-	seqUsedEquip2[5] = new sequenceUsedEquipement(usedEquip, orderedProps[5], 120);
-
-	sequence * seq2 = new sequence(2, 500, trame);
-	for(int i = 0; i < 6; i++)
-		seq2->addSequenceUsedEquipment(seqUsedEquip2[i]);
-
-
-	// Sequence bleue
-	sequenceUsedEquipement * seqUsedEquip3[6];
-	seqUsedEquip3[0] = new sequenceUsedEquipement(usedEquip, orderedProps[0], 116);
-	seqUsedEquip3[1] = new sequenceUsedEquipement(usedEquip, orderedProps[1], 0);
-	seqUsedEquip3[2] = new sequenceUsedEquipement(usedEquip, orderedProps[2], 0);
-	seqUsedEquip3[3] = new sequenceUsedEquipement(usedEquip, orderedProps[3], 255);
-	seqUsedEquip3[4] = new sequenceUsedEquipement(usedEquip, orderedProps[4], 0);
-	seqUsedEquip3[5] = new sequenceUsedEquipement(usedEquip, orderedProps[5], 120);
-
-	sequence * seq3 = new sequence(3, 500, trame);
-	for(int i = 0; i < 6; i++)
-		seq3->addSequenceUsedEquipment(seqUsedEquip3[i]);
-
-	scn1 = new scene(1, "RGB", 20);
-	scn1->setSequences(seq1);
-	scn1->setSequences(seq2);
-	scn1->setSequences(seq3);
-    scn1->planifyScene();
-    scn.push_back(scn1);
-
-	/*
-//vecteurs
-std::vector<sequence*>seq;
-
-
-//déclaration des attributs
-trameManager*trame=new trameManager();
-trameManager*trame1=new trameManager();
-trameManager*trame2=new trameManager();
-
-char*tableau[3];
-
-int i;
-tableau[0] = new char[512];
-tableau[1] = new char[512];
-tableau[2] = new char[512];
-
-	//on implémente une trame dmx
-	//bleu
-		tableau[0][0]=116;
-		tableau[0][1]=0;
-		tableau[0][2]=0;
-		tableau[0][3]=255;
-		tableau[0][4]=255;
-		tableau[0][5]=120;
-trame->dmx=tableau[0];
-	//vert
-		tableau[1][0]=116;
-		tableau[1][1]=0;
-		tableau[1][2]=255;
-		tableau[1][3]=0;
-		tableau[1][4]=255;
-		tableau[1][5]=120;
-trame1->dmx=tableau[1];
-	//rouge
-		tableau[2][0]=116;
-		tableau[2][1]=255;
-		tableau[2][2]=0;
-		tableau[2][3]=0;
-		tableau[2][4]=255;
-		tableau[2][5]=120;
-trame2->dmx=tableau[2];
-
-
-//sequences
-seq1=new sequence(1,2000,trame);
-seq2=new sequence(2,3000,trame1);
-seq3=new sequence(3,4000,trame2);
-	//on remplie le vector avec les séquences
-	seq.push_back(seq1);
-	seq.push_back(seq2);
-	seq.push_back(seq3);
-
-//scene
-std::string name= "soleil";
-scn1=new scene(1,name,20);
-	//on implémente le vecteur scène
-	scn1->setSequences(seq1);
-	scn1->setSequences(seq2);
-	scn1->setSequences(seq3);
-	scn1->planifyScene();
-	scn.push_back(scn1);
-	*/
 }
 
 
@@ -182,10 +61,70 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
 	HINSTANCE g_dasusbdll = NULL;
 	typedef int (*DASHARDCOMMAND)(int, int, unsigned char*);
 	DASHARDCOMMAND  DasUsbCommand = NULL;
+//-------------------------------------------------------------------------------------------------------
+/*   //vecteurs
+std::vector<sequence*>seq;
 
-//programme
-	std::string name_prog= "test";
-	prog=new programme(1,name_prog,scn);
+
+//déclaration des attributs
+trameManager*trame=new trameManager();
+trameManager*trame1=new trameManager();
+trameManager*trame2=new trameManager();
+
+char*tableau[3];
+
+int i;
+tableau[0] = new char[512];
+tableau[1] = new char[512];
+tableau[2] = new char[512];
+
+	//on implémente une trame dmx
+	//bleu
+		tableau[0][0]=bar1->Position;
+		tableau[0][1]=bar2->Position;
+		tableau[0][2]=bar3->Position;
+		tableau[0][3]=bar4->Position;
+		tableau[0][4]=bar5->Position;
+		tableau[0][5]=bar6->Position;
+trame->dmx=tableau[0];
+	//vert
+		tableau[1][0]=bar1->Position;
+		tableau[1][1]=bar2->Position;
+		tableau[1][2]=bar3->Position;
+		tableau[1][3]=bar4->Position;
+		tableau[1][4]=bar5->Position;
+		tableau[1][5]=bar6->Position;
+trame1->dmx=tableau[1];
+	//rouge
+		tableau[2][0]=bar1->Position;
+		tableau[2][1]=bar2->Position;
+		tableau[2][2]=bar3->Position;
+		tableau[2][3]=bar4->Position;
+		tableau[2][4]=bar5->Position;
+		tableau[2][5]=bar6->Position;
+trame2->dmx=tableau[2];
+
+
+//sequences
+seq1=new sequence(1,2000,trame);
+seq2=new sequence(2,3000,trame1);
+seq3=new sequence(3,4000,trame2);
+ //on remplie le vector avec les séquences
+	seq.push_back(seq1);
+	seq.push_back(seq2);
+	seq.push_back(seq3);
+
+//scene
+std::string name= "soleil";
+scn1=new scene(1,name,20);
+	//on implémente le vecteur scène
+	scn1->setSequences(seq1);
+	scn1->setSequences(seq2);
+	scn1->setSequences(seq3);
+	scn1->planifyScene();
+	scn.push_back(scn1);
+ */
+//-------------------------------------------------------------------------------------------------------
 
 //chargement de la dll
 	g_dasusbdll = LoadLibrary("DasHard2006.dll");
@@ -200,26 +139,34 @@ void __fastcall TForm1::Timer1Timer(TObject *Sender)
 	{
 		if(scn.size() > 0)
 		{
+			//lblNbCan->Caption=scn.size();
 			scene * curScene = scn.front();
-
 			// Si la scene est terminée, on la retire de la liste de scene à executer
+
 			if(curScene->updateScene())
 			{
-				scn.pop_back();
+				scn.erase(scn.begin());
+				if(scn.size() > 0)
+                    scn.front()->planifyScene();
 			}
 
-			//
 			if(scn.size() == 0)
 			{
-				scn1->planifyScene();
-				scn.push_back(scn1);
+				 scn = simul->getProgramme()->getScenes();
+				 scn.front()->planifyScene();
 			}
-            //*/
 
 			DasUsbCommand(DHC_DMXOUT, 512, curScene->getSequences()[curScene->getSeqIndex()]->getTrame()->getTrame());
 		}
+		else
+		{   programme*progID=manager->getProg(8);
+			scn = progID->getScenes();//simul->getProgramme()->getScenes();
+			scn.front()->planifyScene();
+		}
+
 		Shape2->Brush->Color=clGreen;
 
+		//DasUsbCommand(DHC_DMXOUT, 512, trame->dmx );
 	}
 
 	if (DasUsbCommand(DHC_OPEN,0,0)>0)
@@ -470,6 +417,12 @@ void __fastcall TForm1::btnAdrClick(TObject *Sender)
 		  lblAjoutSucc->Visible=true;
 		}
 	}
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm1::Button3Click(TObject *Sender)
+{
+//sql->Insert("INSERT INTO `program`( `Nom`) VALUES ('Champ eparse')");
 }
 //---------------------------------------------------------------------------
 

@@ -52,7 +52,6 @@
 	{
 		return nbScene;
 	}
-//(à voir)	int getOrder();
 //récupération des scènes d'un programme et leurs séquences
 	std::vector<scene*> programme::getScenes()
 	{
