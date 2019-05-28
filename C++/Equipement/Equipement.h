@@ -8,9 +8,10 @@
 
 #ifndef EquipementH
 #define EquipementH
-#include "Property.h"
+#include "./Property/Property.h"
 #include <map>
 #include <vector>
+#include <string>
 #include "String.h"
 //---------------------------------------------------------------------------
 

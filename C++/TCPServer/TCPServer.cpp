@@ -40,6 +40,7 @@
 		listen(listening,SOMAXCONN);
 	}
 //on attend la connexion avec le client
+
 	DWORD WINAPI TCPServer::connexion(LPVOID params)
 	{
 		TCPServer * server = (TCPServer*)params;

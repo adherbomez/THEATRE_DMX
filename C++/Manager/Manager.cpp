@@ -47,34 +47,32 @@
 		char *buffer;
 		buffer = new char[100];
 		this->prog = new programme();
+		//Construction de la requête :
 		std::string request = "SELECT * FROM `program` WHERE `idProgram`='";
 		itoa(idProg,buffer,10);
 		request +=buffer;
 		request += "';";
-		// On va rechercher en base les informations du programme
-		// select Nom from Programme
-		//mettre les infos de la base dans la variable nom
 
 
+		//Envoie de la requête :
 		vector < vector < string > > results = this->mysql->Select(request);
-
 			afficheDoubleVector(results);
 
+		//stockage des données récéptionnée
 		this->prog->setId(idProg);
 		this->prog->setName(results[0][1]);
-		//Je vais en base chercher les scène du programme N°  idProg
-		//  SELECT * FROM `scene`,`compoprogram`,`program` WHERE  `scene`.`Id`=`compoprogram`.`IdScene` AND `compoprogram`.`IdProgram` = `program`.`IdProgram` AND `compoprogram`.`IdProgram`='1' order by `compoprogram`.`Place`
-		//mettre les infos des scenes de la base dans des variable
+
+		//Construction de la seconde requête visant à récupérer le nombre de scenes :
 		request.clear();
 		request = "SELECT * FROM `scene`,`compoprogram`,`program` WHERE  `scene`.`IdScene`=`compoprogram`.`IdScene` AND `compoprogram`.`IdProgram` = `program`.`IdProgram` AND `compoprogram`.`IdProgram`='";
 		request +=buffer;
 		request += "';";
 
+		//Utilisation de la nouvelle requête :
 		vector < vector < string > > results2 = this->mysql->Select(request);
+			afficheDoubleVector(results2);
 
-		afficheDoubleVector(results2);
 
-		//récupérer le nombre de ligne ou faire un while
 		int NbRow = results2.size();
 		this->prog->setNbScene(NbRow);
 		//je simule les valeurs de la base
@@ -110,23 +108,52 @@
 //permet de récupérer une scène dans la bdd grace à son id
 	scene*manager::getScn(idScn)
 	{
-	char *buffer;
-	buffer = new char[100];
-	this->scn = new scene();
-	std::string request = "SELECT * FROM `scene` WHERE `IdScene`='";
-	itoa(idScn,buffer,10);
-	request +=buffer;
-	request += "';";
+		char *buffer;
+		buffer = new char[100];
+		this->scn = new scene();
+		std::string request = "SELECT * FROM `scene` WHERE `IdScene`='";
+		itoa(idScn,buffer,10);
+		request +=buffer;
+		request += "';";
 
-	vector < vector < string > > results = this->mysql->Select(request);
+		vector < vector < string > > results = this->mysql->Select(request);
 
-	afficheDoubleVector(results);
-	this->scn->setId(idScn);
-	this->scn->setName(results[0][1]);
-	request.clear();
+		afficheDoubleVector(results);
+		this->scn->setId(idScn);
+		this->scn->setName(results[0][1]);
+		request.clear();
 
 
 	}
+	void manager::InsertEquipment(std::string Name, std::map<std::string,property*>properties)
+	{
+		vector< vector<string> > test;
+		std::map< std::string, int  > firstMap;
+        firstMap["josh"]=2;
+		char *buffer;
+		buffer = new char[100];
+		std::string result;
+		int idEquipement=0;
+		std::string request = "INSERT INTO `equipment`(`Nom`) VALUES ('";
+		request += Name;
+		request += "');";
+		this->mysql->Insert(request);
+		request.clear();
+
+		request = "SELECT `IdEquipment` FROM `equipment` WHERE `equipment`.`Nom`='";
+		request += Name;
+		request += "';";
+
+		test = this->mysql->Select(request);
+
+		idEquipement = atoi(test[0][0].c_str());
+		 const char *temp = Name.c_str();
+         char * Nom =(char*)temp;
+		equipement *e = new equipement(idEquipement,Nom);
+	}
+
+
+
 //permet de vérifier et de remplacer les bons éléments d'une scene dans la bdd
 	scene*manager::updateScene(scene*scn)
 	{

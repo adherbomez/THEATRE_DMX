@@ -26,8 +26,8 @@ if (M1->CheckEtat()==true)
 	DisconnectButton->Visible=true;
 
 	//ON FAIT APPARAITRE LA VRAIE IHM
-	GetProgButton->Visible=true;
-	GetSceneButton->Visible=true;
+	InsertModeButton->Visible=true;
+    SelectModeButton->Visible=true;
 	}
 }
 //---------------------------------------------------------------------------
@@ -46,11 +46,11 @@ PanelCheckConnection->Color=clRed;
 	GetSceneButton->Visible=false;
 	GetProgEdit->Visible=false;
 	GetSceneEdit->Visible=false;
-	ValiderProgIdButton->Visible=false;
+	OkButton->Visible=false;
 	ValiderSceneIdButton->Visible=false;
-	GetProgLabel1->Visible=false;
-	GetProgLabel2->Visible=false;
-	GetProgLabel3->Visible=false;
+	IdLabel->Visible=false;
+	NomLabel->Visible=false;
+	NbrScnLabel->Visible=false;
 	GetProgDataEdit1->Visible=false;
 	GetProgDataEdit2->Visible=false;
 	GetProgDataEdit3->Visible=false;
@@ -62,17 +62,17 @@ PanelCheckConnection->Color=clRed;
 void __fastcall TForm2::GetProgButtonClick(TObject *Sender)
 {
 //AFFICHAGE DE LA PARTIE DE L'IHM PERMETTANT LA RECUPERATION D'UN PROGRAMME EN BASE
-ValiderProgIdButton->Visible=true;
+OkButton->Visible=true;
 GetProgEdit->Visible=true;
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm2::ValiderProgIdButtonClick(TObject *Sender)
+void __fastcall TForm2::OkButtonClick(TObject *Sender)
 {
 //AFFICHAGE DES CHAMPS DE L'IHM PERMETTANT L'AFFICHAGE DES DONNEES DU PROGRAMME
-GetProgLabel1->Visible=true;
-GetProgLabel2->Visible=true;
-GetProgLabel3->Visible=true;
+IdLabel->Visible=true;
+NomLabel->Visible=true;
+NbrScnLabel->Visible=true;
 GetProgDataEdit1->Visible=true;
 GetProgDataEdit2->Visible=true;
 GetProgDataEdit3->Visible=true;
@@ -95,6 +95,19 @@ GetProgDataEdit3->Text=P1->getNbScene();
 
 std::string ChaineMemo;
 Scenes=P1->getScenes();
+
+if (InsertEquipmentEdit->Visible==true)
+	{
+	std::string converted;
+    wchar_t * tmp;
+	tmp = InsertEquipmentEdit->Text.w_str();
+	int len = wcslen(tmp);
+	char * rep = new char[len+1];
+	wcstombs(rep, tmp, len);
+    converted = *rep;
+
+	M1->InsertEquipment(converted)   ;
+	}
 //for (int i = 0; i < Scenes.size(); i++)
 //	{
 //	ChaineMemo="Scene numero : ";
@@ -124,6 +137,29 @@ void __fastcall TForm2::FormDestroy(TObject *Sender)
 {
 delete P1;
 delete M1;
+}
+//---------------------------------------------------------------------------
+
+
+
+
+
+void __fastcall TForm2::SelectModeButtonClick(TObject *Sender)
+{
+InsertModeButton->Visible=false;
+SelectModeButton->Visible=false;
+GetProgButton->Visible=true;
+GetSceneButton->Visible=true;
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm2::InsertModeButtonClick(TObject *Sender)
+{
+InsertModeButton->Visible=false;
+SelectModeButton->Visible=false;
+OkButton->Visible=true;
+InsertEquipmentEdit->Visible=true;
+
 }
 //---------------------------------------------------------------------------
 

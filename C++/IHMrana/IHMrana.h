@@ -18,9 +18,9 @@
 class TForm2 : public TForm
 {
 __published:	// Composants gérés par l'EDI
-	TLabel *GetProgLabel1;
-	TLabel *GetProgLabel2;
-	TLabel *GetProgLabel3;
+	TLabel *IdLabel;
+	TLabel *NomLabel;
+	TLabel *NbrScnLabel;
 	TButton *ConnectButton;
 	TButton *DisconnectButton;
 	TPanel *PanelCheckConnection;
@@ -28,17 +28,22 @@ __published:	// Composants gérés par l'EDI
 	TButton *GetSceneButton;
 	TEdit *GetProgEdit;
 	TEdit *GetSceneEdit;
-	TButton *ValiderProgIdButton;
+	TButton *OkButton;
 	TButton *ValiderSceneIdButton;
 	TEdit *GetProgDataEdit1;
 	TEdit *GetProgDataEdit2;
 	TEdit *GetProgDataEdit3;
 	TMemo *GetDataMemo;
+	TButton *SelectModeButton;
+	TButton *InsertModeButton;
+	TEdit *InsertEquipmentEdit;
 	void __fastcall ConnectButtonClick(TObject *Sender);
 	void __fastcall DisconnectButtonClick(TObject *Sender);
 	void __fastcall GetProgButtonClick(TObject *Sender);
-	void __fastcall ValiderProgIdButtonClick(TObject *Sender);
+	void __fastcall OkButtonClick(TObject *Sender);
 	void __fastcall FormDestroy(TObject *Sender);
+	void __fastcall SelectModeButtonClick(TObject *Sender);
+	void __fastcall InsertModeButtonClick(TObject *Sender);
 private:	// Déclarations utilisateur
 public:		// Déclarations utilisateur
 	manager*M1;
