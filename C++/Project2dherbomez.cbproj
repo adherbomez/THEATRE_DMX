@@ -41,13 +41,13 @@
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
         <Icon_MainIcon>$(BDS)\bin\cbuilder_PROJECTICON.ico</Icon_MainIcon>
-        <ILINK_LibraryPath>IHMrana\;Graph\;Utils\;BDD\;Manager\;include\;IHM\;Equipement\;UsedEquipement\;TrameManager\;TCPServer\;SequenceUsedEquipement\;Sequence\;Scene\;Property\;Programme\;MySQL\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <ILINK_LibraryPath>Simulation\;IHMrana\;Graph\;Utils\;BDD\;Manager\;include\;IHM\;Equipement\;UsedEquipement\;TrameManager\;TCPServer\;SequenceUsedEquipement\;Sequence\;Scene\;Property\;Programme\;MySQL\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
         <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
         <AllPackageLibs>rtl.lib;vcl.lib</AllPackageLibs>
         <ProjectType>CppVCLApplication</ProjectType>
         <Multithreaded>true</Multithreaded>
         <_TCHARMapping>char</_TCHARMapping>
-        <IncludePath>IHMrana\;Graph\;Utils\;BDD\;Manager\;include\;IHM\;Equipement\;UsedEquipement\;TrameManager\;TCPServer\;SequenceUsedEquipement\;Sequence\;Scene\;Property\;Programme\;MySQL\;$(IncludePath)</IncludePath>
+        <IncludePath>Simulation\;IHMrana\;Graph\;Utils\;BDD\;Manager\;include\;IHM\;Equipement\;UsedEquipement\;TrameManager\;TCPServer\;SequenceUsedEquipement\;Sequence\;Scene\;Property\;Programme\;MySQL\;$(IncludePath)</IncludePath>
         <SanitizedProjectName>Project2dherbomez</SanitizedProjectName>
         <DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
         <DynamicRTL>true</DynamicRTL>
@@ -354,6 +354,10 @@
             <BuildOrder>14</BuildOrder>
         </None>
         <None Include="Sequence\__history"/>
+        <CppCompile Include="Simulation\Simulation.cpp">
+            <DependentOn>Simulation\Simulation.h</DependentOn>
+            <BuildOrder>101</BuildOrder>
+        </CppCompile>
         <CppCompile Include="SUIDI.cpp">
             <DependentOn>SUIDI.h</DependentOn>
             <BuildOrder>84</BuildOrder>
@@ -400,8 +404,8 @@
         <None Include="_DasHard.h">
             <BuildOrder>83</BuildOrder>
         </None>
-        <FormResources Include="IHMrana\IHMrana.dfm"/>
         <FormResources Include="IHM\IHM.dfm"/>
+        <FormResources Include="IHMrana\IHMrana.dfm"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -960,13 +964,13 @@
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
-                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
-                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
-                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
             </Deployment>
             <Platforms>
                 <Platform value="Win32">True</Platform>

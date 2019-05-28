@@ -31,10 +31,7 @@ class usedEquipement
 		int getNbVoies();
 		std::map<property*,int> & getValues();
 
-		std::vector<property*> getOrderedProperties()
-		{
-            return equip->getOrderedProperties();
-        }
+		std::vector<property*> getOrderedProperties();
 };
 
 #endif

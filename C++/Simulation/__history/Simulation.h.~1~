@@ -1,0 +1,33 @@
+//---------------------------------------------------------------------------
+
+#ifndef SimulationH
+#define SimulationH
+#include "Property.h"
+#include "Equipement.h"
+#include "UsedEquipement.h"
+#include "SequenceUsedEquipement.h"
+#include "Sequence.h"
+#include "Scene.h"
+#include "Programme.h"
+#include "TrameManager.h"
+//---------------------------------------------------------------------------
+
+class simulation
+{
+	private:
+
+		programme*prog;
+		scene*scn1;
+		scene*scn2;
+		sequence*seq1;
+		sequence*seq2;
+		sequence*seq3;
+		std::vector<scene*>scn;
+	public:
+
+		std::vector<programme*>getProgramme();
+
+
+
+};
+#endif

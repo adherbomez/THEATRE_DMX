@@ -46,9 +46,14 @@
 	{
 		return values;
 	}
-
+//retourne le nombre de voies
 	int usedEquipement::getNbVoies()
 	{
         return equip->getNbVoies();
-    }
+	}
+//retourne les propriétés dans l'ordre
+	std::vector<property*> usedEquipement::getOrderedProperties()
+	{
+		return equip->getOrderedProperties();
+	}
 

@@ -24,7 +24,6 @@ class scene
 		std::vector<unsigned long> times;
 		int sequenceIndex;
 
-
 	public:
 		scene(int id, std::string name, int tpsPause);
 		scene();
@@ -37,7 +36,6 @@ class scene
 		void planifyScene(); //calcul les temps de changement de sequences
 		bool updateScene(); //renvoi true la scene est terminée
 		int getSeqIndex();
-
 		//récupération des attributs
 		int getId();
 		std::string getName();

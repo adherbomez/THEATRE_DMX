@@ -11,7 +11,7 @@
 #include "Property.h"
 #include <map>
 #include <vector>
-#include "String.h"
+#include <string>
 //---------------------------------------------------------------------------
 
 class equipement
@@ -31,40 +31,40 @@ class equipement
 		int equipement::getNbVoies();
 		std::map<std::string,property*> getProperties();
 		int getId();
+	//ajoute une propriété à un équipement
+	void  addProperty(std::string name, property * prop)
+	{
+		properties[name] = prop;
+	}
+	//retourne les propriétés ordonnées
+	std::vector<property*>  equipement::getOrderedProperties()
+	{
+		std::vector<property*> nonOrderedProperties;
 
-		void addProperty(std::string name, property * prop)
+		for(std::map<std::string,property*>::iterator it = properties.begin(); it != properties.end(); it++)
 		{
-            properties[name] = prop;
-        }
-
-		std::vector<property*> getOrderedProperties()
-		{
-			std::vector<property*> nonOrderedProperties;
-
-			for(std::map<std::string,property*>::iterator it = properties.begin(); it != properties.end(); it++)
-			{
-				nonOrderedProperties.push_back((*it).second);
-			}
-
-			std::vector<property*> orderedProperties;
-
-			while(nonOrderedProperties.size() > 0)
-			{
-				int minIdx = 0;
-				for(int i = 1; i < nonOrderedProperties.size(); i++)
-				{
-					if(nonOrderedProperties[i]->getOrder() < nonOrderedProperties[minIdx]->getOrder())
-					{
-						minIdx = i;
-					}
-				}
-
-				orderedProperties.push_back(nonOrderedProperties[minIdx]);
-				nonOrderedProperties.erase(nonOrderedProperties.begin() + minIdx);
-			}
-
-			return orderedProperties;
+			nonOrderedProperties.push_back((*it).second);
 		}
+
+		std::vector<property*> orderedProperties;
+
+		while(nonOrderedProperties.size() > 0)
+		{
+			int minIdx = 0;
+			for(int i = 1; i < nonOrderedProperties.size(); i++)
+			{
+				if(nonOrderedProperties[i]->getOrder() < nonOrderedProperties[minIdx]->getOrder())
+				{
+					minIdx = i;
+				}
+			}
+
+			orderedProperties.push_back(nonOrderedProperties[minIdx]);
+			nonOrderedProperties.erase(nonOrderedProperties.begin() + minIdx);
+		}
+
+		return orderedProperties;
+	}
 };
 
 #endif

@@ -19,6 +19,10 @@
 #include "String.h"
 #include "_DasHard.h"
 #include "IHMrana.h"
+#include "MySQL.h"
+#include "ServerStructs.h"
+#include "Parser.h"
+#include "Simulation.h"
 //---------------------------------------------------------------------------
 class TForm1 : public TForm
 {
@@ -116,18 +120,17 @@ __published:	// Composants gérés par l'IHM
 	void __fastcall btnScnSuppClick(TObject *Sender);
 	void __fastcall GroupBox4Click(TObject *Sender);
 	void __fastcall btnAdrClick(TObject *Sender);
+	void __fastcall Button3Click(TObject *Sender);
 private: clientMessage cl;
 	// Déclarations utilisateur
 	TForm2 *form;
+	simulation*simul;
 public:		// Déclarations utilisateur
 
-	programme*prog;
-	scene*scn1;
-	sequence*seq1;
-	sequence*seq2;
-	sequence*seq3;
+    manager*manager;
 	std::vector<scene*>scn;
 	TCPServer*server;
+	MySQL*sql;
 
 
 	__fastcall TForm1(TComponent* Owner);

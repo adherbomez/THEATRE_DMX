@@ -121,7 +121,7 @@
             }
 		}
 		//retourne un boléen
-		return sequenceIndex==seq.size();
+		return sequenceIndex>=seq.size();
 	}
 //retourne le nombre de séquences
 	int scene::getSeqIndex()

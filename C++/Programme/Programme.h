@@ -31,14 +31,11 @@ class programme
 		void setId(int id);
 		void setName(std::string name);
 		void setNbScene(int nbScene);
-// (à voir)		void setOrder(int Order);
-
 
 		//récupération des attributs
 		int getId();
 		std::string getName();
 		int getNbScene();
-//(à voir)	int getOrder();
 		std::vector<scene*>getScenes();
 		void AjouterUneSceneAuProgramme(scene * s1);
 
