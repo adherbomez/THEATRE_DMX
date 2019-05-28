@@ -73,22 +73,26 @@ div#container{
 }
 
 #scene{
-    display: table;
-    padding: 10px;
+ 	display: table;
+    width: 500px;
+    margin: 100px auto;
+    padding: 0;
 
 }
 #scene .btnscene{
     display: table-cell;
     padding: 10px;
-    border: 2px ridge;
-    width: 120px; 
+    border: 2px;
+    
+
 }
 
 #scene .btnscene a {
-    display: block ;
-    text-align: center ;
+  	display: block;
+    text-align: center;
     color: rgba(0, 0, 0, .7); 
-    text-decoration: none ;
+    text-decoration: none;
+    padding: 8px 8px 17px 8px;
   
 }
 
@@ -96,11 +100,10 @@ div#container{
 {
 	margin-top: 15px;
 	border:2px;
-	box-shadow:2px 2px 5px #000000;
 	background-color:#DDcdf4;
 	width:1000px;
 	margin-right:100px;
-	overflow-y:scroll; 
+	overflow-y:scroll;
 	height:600px;
 	float:bottom;
 }
@@ -128,6 +131,7 @@ div#container{
 	width: 300px;
 	position: relative;
 	margin-top: 5px;
+	border: black solid 1px ;
 }
 .tag:hover{
 	box-shadow: 0px 2px 2px  #000000;
@@ -148,3 +152,22 @@ div#container{
 .tag1:hover{
 	box-shadow: 0px 2px 2px  #000000;
 }
+
+
+.btnprog a {
+	text-decoration: none;
+	color:#000000;
+    width: 80px;
+    height: 60px;
+    text-align: center;
+    cursor: move;
+    transition: all 200ms linear;
+    user-select: none;
+    float:left;
+
+}
+
+
+/*************************************include bootstrap lib***************************************************************/
+
+

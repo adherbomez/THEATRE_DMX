@@ -55,55 +55,7 @@ $bdd = new BDD('maxime','mdp','192.168.65.97','theater','root','root');
 	<div id="setscene"></div>
 	
 	<div>
-	<?php
-///////////////////////////////////////////////////////////////////////
-	// ajout de programme via le formulaire
-	if (!empty($_POST['nomprog']) && isset($_POST['ajouterprogramme']))
-	{
-		$prog->AjouterProgramme($bdd,$_POST['nomprog']);
-		echo "programme OK ajout (IHM)";
-	}
-	else
-	{
-		echo "ECHEC AJOUT PROG (IHM)";
-	}
-
-///////////////////////////////////////////////////////////////////////
-	// suppression de programme via le formulaire
-	if (!empty($_POST['DeleteProg']) && isset($_POST['idp']))
-	{		
-			$prog->SupprimerProgramme($bdd,$_POST['idp']);
-			echo "programme OK suppression (IHM)";
-	}
-	else
-	{
-		echo "ECHEC SUPPRESSION PROG (IHM)";
-	}
-///////////////////////////////////////////////////////////////////////
-	// ajout de scene via le formulaire
-	if (!empty($_POST['nomscene']) && isset($_POST['ajouterscene']))
-	{
-		$scen->Ajouterscene($bdd,$_POST['nomscene']);
-		echo "scene OK ajout (IHM)";
-	}
-	else
-	{
-		echo "ECHEC AJOUT scene (IHM)";
-	}
-
-///////////////////////////////////////////////////////////////////////
-	// suppression de programme via le formulaire
-	if (!empty($_POST['DeleteScene']) && isset($_POST['ids']))
-	{		
-			$scen->SupprimerScene($bdd,$_POST['ids']);
-			echo "programme OK suppression (IHM)";
-	}
-	else
-	{
-		echo "ECHEC SUPPRESSION Scene (IHM)";
-	}	
-///////////////////////////////////////////////////////////////////////
-	?>	
+	
 	<div>
 </body>
 </html>
