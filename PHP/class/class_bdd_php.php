@@ -84,24 +84,28 @@ class BDD{
 			echo"Echec de l'inscription";
 		}
 	}
-
+//fonction de modelisation de l'ihm , permet l'affichage des programmes et des scenes dynamiquement
 	public function Modelaccueil($_Bdd)
 	{
+		//on cherche en base de données les programmes
 		echo'<ul id="prog" type="circle">';
 		foreach($this->_Bdd->query('SELECT * FROM `program` ORDER BY`IdProgram`') as $row) 
 	    {
-	        echo '<li class="btnprog"><a href="programme"'.$row['IdProgram'].'><h2>'.$row['Nom'].'</h2></a></li><br>';
+	    	//on les affiche dans des div draggables , en les classant par id
+	        echo '<li class="btnprog"><a href="accueil.php?item=PRG;'.$row['IdProgram'].'"><h2>'.$row['Nom'].'<br></h2></a></li><br>';
 	        echo '<ul Id="scene">';
-	        foreach($this->_Bdd->query("SELECT `Nomscene` FROM `scene` INNER JOIN `program` INNER join `compoprogram` ON program.IdProgram = compoprogram.IdProgram and scene.IdScene=compoprogram.IdScene and compoprogram.IdProgram=".$row['IdProgram']." ORDER by compoprogram.Place") as $row) 
+	        // puis on recherche les scenes en les ordonnant selon leur place dans leur programmess
+        foreach($this->_Bdd->query("SELECT * FROM `scene` INNER JOIN `program` INNER join `compoprogram` ON program.IdProgram =compoprogram.IdProgram and scene.IdScene = compoprogram.IdScenecompo and compoprogram.IdProgram = ".$row['IdProgram']." ORDER by compoprogram.Place") as $row) 
 		    {
-		      	echo "<li class='btnscene'><a href='scene'>".$row['Nomscene']."</a></li><br>";
+		   		echo '<li class="btnscen"><a href="accueil.php?item=SCN;'.$row['IdScenecompo'].' name=".$row["IdScenecompo"].">".$row["Nomscene"]."</a></li><br>';
 		    }
+		    
 		   	echo "</ul>";
 	    }
 	    echo'</ul>'; 
 	   
 	}
-
+//cree un formulaire select avec les programmes de la base de données
     public function listprog($_Bdd,$name)
 	{
 		echo'<SELECT name='.$name.' size="1">';
@@ -112,6 +116,7 @@ class BDD{
 	    }
 	    echo '</SELECT>';
 	}
+//cree un formulaire select avec les scenes de la base de données
 	 public function listscene($_Bdd,$name)
 	{
 		echo'<SELECT name='.$name.' size="1">';
@@ -123,7 +128,7 @@ class BDD{
 	    echo '</SELECT>';
 	}
 			
-
+//permet de reccuperer le dernier ID
     public function Lastid($_champ,$_table)
 	{	
 		$maxid=0;
@@ -134,7 +139,7 @@ class BDD{
 		}
 		return $maxid;
 	}
-
+//retourne la bdd utilisée
 	public function GetBDD()
 	{
 		return $this->_Bdd;
