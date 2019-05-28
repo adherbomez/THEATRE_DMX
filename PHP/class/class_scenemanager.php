@@ -19,9 +19,9 @@ il s'agit la de pouvoir ajouter des
 
 
 // fonction qui permet d'ajouter une scene sur l'ihm
-	public function AjouterScene($bdd,$_Scene)
+	public function AjouterScene($bdd,$_nomScene)
 	{
-		$this->_Scene=$_Scene;
+		$this->_nomScene=$_Scene;
 		$bdd = new BDD('maxime','mdp','192.168.65.97','theater','root','root');
 		$req='INSERT INTO scene (Nomscene) VALUES (:Nomscene)';
 		$valeurs = ['Nomscene'=>$_Scene];
@@ -38,9 +38,22 @@ il s'agit la de pouvoir ajouter des
 		
 	
 // fonction qui permet de modifier une scene sur l'ihm
-		public function ModifierScene()
+		public function ModifierScene($bdd,$_idprog,$_idscene)
 		{
-		
+			$this->_idprog=$_idprog;
+			$this->_idscene=$_idscene;
+			foreach($this->_Bdd->query('SELECT IdScenecompo FROM `compoprogram` where IdProgram = '.$_idprog.'')) 
+			{
+					$max++;
+					if ($row['IdScenecompo'] == $_idscene)
+					{
+
+					}
+			}
+			}
+			{ 
+				$req='UPDATE `compoprogram` SET `IdScenecompo`=[value-2],`Place`=[value-3], WHERE `IdProgram`='.$max.'';
+			}
 		
 		}
 // fonction qui permet de supprimer une scene sur l'ihm
@@ -59,13 +72,7 @@ il s'agit la de pouvoir ajouter des
 		}			
 		$bdd = NULL;	
 		}
-// fonction qui permet de lancer une scene a partir de l'ihm		
-		public function RunScene()
-		{
-			
-			
-		}
-	
+
 }
 
 ?>

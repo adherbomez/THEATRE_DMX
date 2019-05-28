@@ -56,9 +56,11 @@
     var elements = document.querySelectorAll('.draggable'),
         elementsLen = elements.length;
 
-    for (var i = 0; i < elementsLen; i++) {
+    for (var i = 0; i < elementsLen; i++) 
+    {
         dndHandler.applyDragEvents(elements[i]); // Application des paramètres nécessaires aux éléments déplaçables
-    }
+    }    
+
 
     var droppers = document.querySelectorAll('.dropper'),
         droppersLen = droppers.length;
