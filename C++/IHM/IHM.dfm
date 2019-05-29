@@ -17,16 +17,15 @@
   PixelsPerInch = 96
   TextHeight = 13
   object GroupBox2: TGroupBox
-    Left = 970
-    Top = 57
-    Width = 114
-    Height = 22
+    Left = 728
+    Top = 8
+    Width = 297
+    Height = 247
     Caption = 'Module de test 2'
     Color = clMoneyGreen
     ParentBackground = False
     ParentColor = False
     TabOrder = 0
-    Visible = False
     object Label3: TLabel
       Left = 78
       Top = 157
@@ -118,8 +117,8 @@
   object GroupBox1: TGroupBox
     Left = 537
     Top = 34
-    Width = 459
-    Height = 303
+    Width = 152
+    Height = 313
     Caption = 'Module de test 1'
     Color = clCream
     ParentBackground = False

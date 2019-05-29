@@ -125,9 +125,10 @@ private: clientMessage cl;
 	// Déclarations utilisateur
 	TForm2 *form;
 	simulation*simul;
-public:		// Déclarations utilisateur
 
-    manager*manager;
+public:		// Déclarations utilisateur
+	char* recup;
+	manager*manager;
 	std::vector<scene*>scn;
 	TCPServer*server;
 	MySQL*sql;

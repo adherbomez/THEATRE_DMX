@@ -39,6 +39,8 @@ class programme
 		std::vector<scene*>getScenes();
 		void AjouterUneSceneAuProgramme(scene * s1);
 
+
+
 };
 
 #endif
