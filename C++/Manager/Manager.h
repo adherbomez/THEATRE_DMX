@@ -20,6 +20,7 @@
 #include <stdlib.h>
 #include <string>
 #include <stdio.h>
+#include "String.h"
 #include "./property/property.h"
 #include "./Equipement/Equipement.h"
 #include <sstream>
@@ -52,7 +53,8 @@ class manager
 		bool Connect();
 
 
-		void InsertEquipment(std::string Name, std::map<std::string,property*>properties);
+		void InsertEquipment(std::string Name);
+		void InsertProperties(std::string Description, std::string IdEquipement, std::string Order);
 };
 
 #endif

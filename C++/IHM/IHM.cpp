@@ -123,6 +123,55 @@ scn1=new scene(1,name,20);
  */
 //-------------------------------------------------------------------------------------------------------
 
+
+//chargement de la dll
+	g_dasusbdll = LoadLibrary("DasHard2006.dll");
+	if (g_dasusbdll)
+		DasUsbCommand  = (DASHARDCOMMAND)::GetProcAddress((HMODULE)g_dasusbdll, "DasUsbCommand");
+	if (DasUsbCommand)
+		Shape1->Brush->Color=clGreen;
+
+//connexion à l'usb dmx
+	DasUsbCommand(DHC_INIT,0,NULL);
+	if (DasUsbCommand(DHC_OPEN,0,0)>0)
+	{
+		if(scn.size() > 0)
+		{
+			//lblNbCan->Caption=scn.size();
+			scene * curScene = scn.front();
+			// Si la scene est terminée, on la retire de la liste de scene à executer
+
+			if(curScene->updateScene())
+			{
+				scn.erase(scn.begin());
+				if(scn.size() > 0)
+                    scn.front()->planifyScene();
+			}
+
+			if(scn.size() == 0)
+			{
+				 scn = simul->getProgramme()->getScenes();
+				 scn.front()->planifyScene();
+			}
+
+			DasUsbCommand(DHC_DMXOUT, 512, curScene->getSequences()[curScene->getSeqIndex()]->getTrame()->getTrame());
+		}
+		else
+		{   //programme*progID=manager->getProg(8);
+			scn = simul->getProgramme()->getScenes();//progID->getScenes();
+			scn.front()->planifyScene();
+		}
+
+		Shape2->Brush->Color=clGreen;
+
+		//DasUsbCommand(DHC_DMXOUT, 512, trame->dmx );
+	}
+
+	if (DasUsbCommand(DHC_OPEN,0,0)>0)
+	DasUsbCommand(DHC_CLOSE,0,0);
+	DasUsbCommand(DHC_EXIT,0, NULL);
+
+
 //-------------------------------serveur---------------------------------------
 	if(server != NULL)
 	{

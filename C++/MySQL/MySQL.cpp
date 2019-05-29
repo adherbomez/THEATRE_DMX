@@ -8,7 +8,7 @@
 
 MySQL::MySQL()
 {
-    SQL= new MYSQL();
+	SQL= new MYSQL();
 	mysql_init(SQL);       //initialise la connexion
 }
 

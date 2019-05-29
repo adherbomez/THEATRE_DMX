@@ -2,7 +2,7 @@ object Form2: TForm2
   Left = 0
   Top = 0
   Caption = 'Form2'
-  ClientHeight = 454
+  ClientHeight = 357
   ClientWidth = 322
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -35,6 +35,22 @@ object Form2: TForm2
     Width = 44
     Height = 13
     Caption = 'Nbr Scn :'
+    Visible = False
+  end
+  object AddPropertiesLabel: TLabel
+    Left = 76
+    Top = 84
+    Width = 166
+    Height = 13
+    Caption = 'Voulez vous entrer les propri'#233't'#233's ?'
+    Visible = False
+  end
+  object DescriptionLabel: TLabel
+    Left = 8
+    Top = 192
+    Width = 63
+    Height = 13
+    Caption = 'Description : '
     Visible = False
   end
   object ConnectButton: TButton
@@ -122,7 +138,7 @@ object Form2: TForm2
     Visible = False
   end
   object GetProgDataEdit1: TEdit
-    Left = 58
+    Left = 72
     Top = 103
     Width = 101
     Height = 21
@@ -130,7 +146,7 @@ object Form2: TForm2
     Visible = False
   end
   object GetProgDataEdit2: TEdit
-    Left = 58
+    Left = 72
     Top = 130
     Width = 101
     Height = 21
@@ -138,7 +154,7 @@ object Form2: TForm2
     Visible = False
   end
   object GetProgDataEdit3: TEdit
-    Left = 58
+    Left = 72
     Top = 157
     Width = 101
     Height = 21
@@ -147,7 +163,7 @@ object Form2: TForm2
   end
   object GetDataMemo: TMemo
     Left = -24
-    Top = 344
+    Top = 248
     Width = 363
     Height = 113
     Lines.Strings = (
@@ -176,11 +192,38 @@ object Form2: TForm2
     OnClick = InsertModeButtonClick
   end
   object InsertEquipmentEdit: TEdit
-    Left = 58
+    Left = 72
     Top = 130
     Width = 101
     Height = 21
     TabOrder = 15
+    Visible = False
+  end
+  object NoButton: TButton
+    Left = 176
+    Top = 53
+    Width = 75
+    Height = 25
+    Caption = 'Non'
+    TabOrder = 16
+    Visible = False
+  end
+  object YesButton: TButton
+    Left = 72
+    Top = 53
+    Width = 75
+    Height = 25
+    Caption = 'Oui'
+    TabOrder = 17
+    Visible = False
+    OnClick = YesButtonClick
+  end
+  object InsertPropertiesEdit: TEdit
+    Left = 72
+    Top = 189
+    Width = 101
+    Height = 21
+    TabOrder = 18
     Visible = False
   end
 end
