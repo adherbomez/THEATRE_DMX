@@ -69,44 +69,64 @@ GetProgEdit->Visible=true;
 
 void __fastcall TForm2::OkButtonClick(TObject *Sender)
 {
-//AFFICHAGE DES CHAMPS DE L'IHM PERMETTANT L'AFFICHAGE DES DONNEES DU PROGRAMME
-IdLabel->Visible=true;
-NomLabel->Visible=true;
-NbrScnLabel->Visible=true;
-GetProgDataEdit1->Visible=true;
-GetProgDataEdit2->Visible=true;
-GetProgDataEdit3->Visible=true;
+if (GetProgEdit->Visible==true)
+	{
 
-//CREATION DU PROGRAMME RECUPERANT LES DONNEES DE LA BDD
-P1 = new programme();
-P1 = M1->getProg(GetProgEdit->Text.ToInt());
 
-//INCREMENTATIONS DES VARIABLES DE STOCKAGE
-std::string ProgName;
-char* buffer;
-buffer = new char[100];
-itoa(P1->getId(),buffer,10);
-ProgName=P1->getName();
+	//AFFICHAGE DES CHAMPS DE L'IHM PERMETTANT L'AFFICHAGE DES DONNEES DU PROGRAMME
+	IdLabel->Visible=true;
+	NomLabel->Visible=true;
+	NbrScnLabel->Visible=true;
+	GetProgDataEdit1->Visible=true;
+	GetProgDataEdit2->Visible=true;
+	GetProgDataEdit3->Visible=true;
 
-//UTILISATION DES VARIABLES DE STOCKAGE POUR REMPLIR LES CHAMPS DE L'IHM
-GetProgDataEdit1->Text=buffer;
-GetProgDataEdit2->Text=ProgName.c_str();
-GetProgDataEdit3->Text=P1->getNbScene();
+	//CREATION DU PROGRAMME RECUPERANT LES DONNEES DE LA BDD
+	P1 = new programme();
+	P1 = M1->getProg(GetProgEdit->Text.ToInt());
 
-std::string ChaineMemo;
-Scenes=P1->getScenes();
+	//INCREMENTATIONS DES VARIABLES DE STOCKAGE
+	std::string ProgName;
+	char* buffer;
+	buffer = new char[100];
+	itoa(P1->getId(),buffer,10);
+	ProgName=P1->getName();
+
+	//UTILISATION DES VARIABLES DE STOCKAGE POUR REMPLIR LES CHAMPS DE L'IHM
+
+	GetProgDataEdit1->Text=buffer;
+	GetProgDataEdit2->Text=ProgName.c_str();
+	GetProgDataEdit3->Text=P1->getNbScene();
+
+	std::string ChaineMemo;
+	Scenes=P1->getScenes();
+	}
 
 if (InsertEquipmentEdit->Visible==true)
 	{
 	std::string converted;
-    wchar_t * tmp;
+	wchar_t * tmp;
 	tmp = InsertEquipmentEdit->Text.w_str();
 	int len = wcslen(tmp);
 	char * rep = new char[len+1];
 	wcstombs(rep, tmp, len);
-    converted = *rep;
+	converted = rep;
 
-	M1->InsertEquipment(converted)   ;
+	M1->InsertEquipment(converted);
+	YesButton->Visible=true;
+	NoButton->Visible=true;
+	AddPropertiesLabel->Visible=true;
+	}
+
+if (InsertPropertiesEdit->Visible==true)
+	{
+	std::string convertie;
+	wchar_t * stock;
+	stock = InsertPropertiesEdit->Text.w_str();
+	int length = wcslen(stock);
+	char * result = new char[length+1];
+	wcstombs(result, stock, length);
+	convertie = result;
 	}
 //for (int i = 0; i < Scenes.size(); i++)
 //	{
@@ -159,7 +179,18 @@ InsertModeButton->Visible=false;
 SelectModeButton->Visible=false;
 OkButton->Visible=true;
 InsertEquipmentEdit->Visible=true;
+NomLabel->Visible=true;
 
+}
+//---------------------------------------------------------------------------
+
+void __fastcall TForm2::YesButtonClick(TObject *Sender)
+{
+YesButton->Visible=false;
+NoButton->Visible=false;
+AddPropertiesLabel->Visible=false;
+DescriptionLabel->Visible=true;
+InsertPropertiesEdit->Visible=true;
 }
 //---------------------------------------------------------------------------
 

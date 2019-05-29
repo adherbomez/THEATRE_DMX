@@ -46,8 +46,8 @@
         <Base>true</Base>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Base)'!=''">
-        <ILINK_LibraryPath>Utils\;Graph\;IHMrana\;Scene\;Property\;Programme\;MySQL\;Manager\;include\;Equipement\;BDD\;UsedEquipement\;TrameManager\;TCPServer\;SequenceUsedEquipement\;Sequence\;IHM\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
-        <IncludePath>Utils\;Graph\;IHMrana\;Scene\;Property\;Programme\;MySQL\;Manager\;include\;Equipement\;BDD\;UsedEquipement\;TrameManager\;TCPServer\;SequenceUsedEquipement\;Sequence\;IHM\;$(IncludePath)</IncludePath>
+        <ILINK_LibraryPath>Simulation\;Utils\;Graph\;IHMrana\;Scene\;Property\;Programme\;MySQL\;Manager\;include\;Equipement\;BDD\;UsedEquipement\;TrameManager\;TCPServer\;SequenceUsedEquipement\;Sequence\;IHM\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+        <IncludePath>Simulation\;Utils\;Graph\;IHMrana\;Scene\;Property\;Programme\;MySQL\;Manager\;include\;Equipement\;BDD\;UsedEquipement\;TrameManager\;TCPServer\;SequenceUsedEquipement\;Sequence\;IHM\;$(IncludePath)</IncludePath>
         <_TCHARMapping>char</_TCHARMapping>
         <Multithreaded>true</Multithreaded>
         <AllPackageLibs>rtl.lib;vcl.lib</AllPackageLibs>
@@ -350,6 +350,13 @@
         <None Include="Sequence\Sequence.h">
             <BuildOrder>4</BuildOrder>
         </None>
+        <CppCompile Include="Simulation\Simulation.cpp">
+            <DependentOn>Simulation\Simulation.h</DependentOn>
+            <BuildOrder>85</BuildOrder>
+        </CppCompile>
+        <None Include="Simulation\Simulation.h">
+            <BuildOrder>86</BuildOrder>
+        </None>
         <CppCompile Include="TCPServer\Parser.cpp">
             <DependentOn>TCPServer\Parser.h</DependentOn>
             <BuildOrder>80</BuildOrder>
@@ -389,8 +396,8 @@
             <DependentOn>Utils\Utils.h</DependentOn>
             <BuildOrder>84</BuildOrder>
         </CppCompile>
-        <FormResources Include="IHMrana\IHMrana.dfm"/>
         <FormResources Include="IHM\IHM.dfm"/>
+        <FormResources Include="IHMrana\IHMrana.dfm"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -865,13 +872,13 @@
                         <Operation>1</Operation>
                     </Platform>
                 </DeployClass>
-                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
                 <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
                 <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
-                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
             </Deployment>
             <Platforms>
                 <Platform value="Win32">True</Platform>

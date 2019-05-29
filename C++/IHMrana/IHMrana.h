@@ -37,6 +37,11 @@ __published:	// Composants gérés par l'EDI
 	TButton *SelectModeButton;
 	TButton *InsertModeButton;
 	TEdit *InsertEquipmentEdit;
+	TLabel *AddPropertiesLabel;
+	TButton *NoButton;
+	TButton *YesButton;
+	TLabel *DescriptionLabel;
+	TEdit *InsertPropertiesEdit;
 	void __fastcall ConnectButtonClick(TObject *Sender);
 	void __fastcall DisconnectButtonClick(TObject *Sender);
 	void __fastcall GetProgButtonClick(TObject *Sender);
@@ -44,6 +49,7 @@ __published:	// Composants gérés par l'EDI
 	void __fastcall FormDestroy(TObject *Sender);
 	void __fastcall SelectModeButtonClick(TObject *Sender);
 	void __fastcall InsertModeButtonClick(TObject *Sender);
+	void __fastcall YesButtonClick(TObject *Sender);
 private:	// Déclarations utilisateur
 public:		// Déclarations utilisateur
 	manager*M1;

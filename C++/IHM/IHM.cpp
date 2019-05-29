@@ -159,8 +159,8 @@ scn1=new scene(1,name,20);
 			DasUsbCommand(DHC_DMXOUT, 512, curScene->getSequences()[curScene->getSeqIndex()]->getTrame()->getTrame());
 		}
 		else
-		{   programme*progID=manager->getProg(8);
-			scn = progID->getScenes();//simul->getProgramme()->getScenes();
+		{   //programme*progID=manager->getProg(8);
+			scn = simul->getProgramme()->getScenes();//progID->getScenes();
 			scn.front()->planifyScene();
 		}
 

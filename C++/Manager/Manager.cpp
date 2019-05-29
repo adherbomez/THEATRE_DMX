@@ -64,7 +64,7 @@
 
 		//Construction de la seconde requête visant à récupérer le nombre de scenes :
 		request.clear();
-		request = "SELECT * FROM `scene`,`compoprogram`,`program` WHERE  `scene`.`IdScene`=`compoprogram`.`IdScene` AND `compoprogram`.`IdProgram` = `program`.`IdProgram` AND `compoprogram`.`IdProgram`='";
+		request = "SELECT * FROM `scene`,`compoprogram`,`program` WHERE  `scene`.`IdScene`=`compoprogram`.`IdScenecompo` AND `compoprogram`.`IdProgram` = `program`.`IdProgram` AND `compoprogram`.`IdProgram`='";
 		request +=buffer;
 		request += "';";
 
@@ -125,11 +125,9 @@
 
 
 	}
-	void manager::InsertEquipment(std::string Name, std::map<std::string,property*>properties)
+	void manager::InsertEquipment(std::string Name)
 	{
 		vector< vector<string> > test;
-		std::map< std::string, int  > firstMap;
-        firstMap["josh"]=2;
 		char *buffer;
 		buffer = new char[100];
 		std::string result;
@@ -148,11 +146,26 @@
 
 		idEquipement = atoi(test[0][0].c_str());
 		 const char *temp = Name.c_str();
-         char * Nom =(char*)temp;
+		 char * Nom =(char*)temp;
 		equipement *e = new equipement(idEquipement,Nom);
+
+		afficheDoubleVector(test);
 	}
 
+	void manager::InsertProperties(std::string Description, std::string IdEquipement, std::string Order)
+	{
+		std::string request = "INSERT INTO `properties`(`Description`, `Order`, `IdEquipment`) VALUES ('";
+		request += Description;
+		request += "','";
+		request += Order;
+		request += "','";
+		request += IdEquipement;
+		request += "');";
+		this->mysql->Insert(request);
+		request.clear();
 
+
+	}
 
 //permet de vérifier et de remplacer les bons éléments d'une scene dans la bdd
 	scene*manager::updateScene(scene*scn)
