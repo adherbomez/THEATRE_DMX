@@ -23,7 +23,7 @@ class simulation
 		std::vector<scene*> scn;
 	public:
 
-		programme* getProgramme();
+		programme* getProgramme(int id);
 
 
 
