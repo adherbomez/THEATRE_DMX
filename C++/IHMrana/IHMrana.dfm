@@ -53,6 +53,14 @@ object Form2: TForm2
     Caption = 'Description : '
     Visible = False
   end
+  object OrdreLabel: TLabel
+    Left = 8
+    Top = 224
+    Width = 38
+    Height = 13
+    Caption = 'Ordre : '
+    Visible = False
+  end
   object ConnectButton: TButton
     Left = 126
     Top = 0
@@ -224,6 +232,14 @@ object Form2: TForm2
     Width = 101
     Height = 21
     TabOrder = 18
+    Visible = False
+  end
+  object InsertOrdreEdit: TEdit
+    Left = 72
+    Top = 221
+    Width = 101
+    Height = 21
+    TabOrder = 19
     Visible = False
   end
 end

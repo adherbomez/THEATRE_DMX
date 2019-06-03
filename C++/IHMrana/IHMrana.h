@@ -42,6 +42,8 @@ __published:	// Composants gérés par l'EDI
 	TButton *YesButton;
 	TLabel *DescriptionLabel;
 	TEdit *InsertPropertiesEdit;
+	TLabel *OrdreLabel;
+	TEdit *InsertOrdreEdit;
 	void __fastcall ConnectButtonClick(TObject *Sender);
 	void __fastcall DisconnectButtonClick(TObject *Sender);
 	void __fastcall GetProgButtonClick(TObject *Sender);
@@ -54,7 +56,9 @@ private:	// Déclarations utilisateur
 public:		// Déclarations utilisateur
 	manager*M1;
 	programme*P1;
+	equipement*E1;
 	std::vector<scene*>Scenes;
+	int IncrementatorProperties;
 	__fastcall TForm2(TComponent* Owner);
 };
 //---------------------------------------------------------------------------
