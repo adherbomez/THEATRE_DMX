@@ -115,139 +115,21 @@
     end
   end
   object GroupBox1: TGroupBox
-    Left = 537
-    Top = 34
-    Width = 152
-    Height = 313
+    Left = 993
+    Top = 351
+    Width = 112
+    Height = 22
     Caption = 'Module de test 1'
     Color = clCream
     ParentBackground = False
     ParentColor = False
     TabOrder = 1
-    object Label7: TLabel
-      Left = 8
-      Top = 16
-      Width = 60
-      Height = 13
-      Caption = 'Stroboscope'
-    end
-    object Label8: TLabel
-      Left = 8
-      Top = 64
-      Width = 31
-      Height = 13
-      Caption = 'Rouge'
-    end
-    object Label9: TLabel
-      Left = 10
-      Top = 114
-      Width = 20
-      Height = 13
-      Caption = 'Vert'
-    end
-    object Label10: TLabel
-      Left = 10
-      Top = 157
-      Width = 20
-      Height = 13
-      Caption = 'Bleu'
-    end
-    object Label11: TLabel
-      Left = 12
-      Top = 202
-      Width = 25
-      Height = 13
-      Caption = 'Blanc'
-    end
-    object Intensité: TLabel
-      Left = 8
-      Top = 240
-      Width = 43
-      Height = 13
-      Caption = 'Intensit'#233
-    end
-    object Label1: TLabel
-      Left = 279
-      Top = 172
-      Width = 44
-      Height = 13
-      Caption = 'Etat DLL:'
-    end
-    object Label2: TLabel
-      Left = 329
-      Top = 172
-      Width = 46
-      Height = 13
-      Caption = 'Etat USB:'
-    end
-    object Shape1: TShape
-      Left = 279
-      Top = 190
-      Width = 44
-      Height = 38
-      Brush.Color = clRed
-    end
-    object Shape2: TShape
-      Left = 329
-      Top = 191
-      Width = 44
-      Height = 37
-      Brush.Color = clRed
-    end
-    object bar1: TTrackBar
-      Left = 3
-      Top = 40
-      Width = 150
-      Height = 17
-      Max = 255
-      TabOrder = 0
-    end
-    object bar2: TTrackBar
-      Left = 3
-      Top = 85
-      Width = 150
-      Height = 23
-      Max = 255
-      TabOrder = 1
-    end
-    object bar3: TTrackBar
-      Left = 3
-      Top = 133
-      Width = 150
-      Height = 23
-      Max = 255
-      TabOrder = 2
-    end
-    object bar5: TTrackBar
-      Left = 3
-      Top = 221
-      Width = 150
-      Height = 16
-      Max = 255
-      TabOrder = 3
-    end
-    object bar6: TTrackBar
-      Left = 3
-      Top = 259
-      Width = 150
-      Height = 22
-      Max = 255
-      TabOrder = 4
-    end
-    object bar4: TTrackBar
-      Left = 3
-      Top = 176
-      Width = 150
-      Height = 17
-      Max = 255
-      TabOrder = 5
-    end
   end
   object gbEqp: TGroupBox
-    Left = 42
-    Top = 11
-    Width = 489
-    Height = 315
+    Left = 66
+    Top = 30
+    Width = 607
+    Height = 532
     Caption = 'Equipement'
     Color = clCream
     ParentBackground = False
@@ -261,15 +143,15 @@
       Caption = 'Nom:'
     end
     object lblNbCan: TLabel
-      Left = 24
-      Top = 133
+      Left = 23
+      Top = 193
       Width = 122
       Height = 13
       Caption = 'Nombre de propri'#233't'#233'e(s):'
     end
     object lblProp: TLabel
       Left = 298
-      Top = 46
+      Top = 8
       Width = 107
       Height = 13
       Caption = 'Valeur de la propri'#233't'#233':'
@@ -277,11 +159,88 @@
     end
     object lblEqpValide: TLabel
       Left = 304
-      Top = 224
+      Top = 442
       Width = 96
       Height = 13
       Caption = 'Valid'#233' l'#39#233'quipement?'
       Visible = False
+    end
+    object Intensité: TLabel
+      Left = 305
+      Top = 341
+      Width = 53
+      Height = 13
+      Caption = 'Propri'#233't'#233' 6'
+    end
+    object Label1: TLabel
+      Left = 42
+      Top = 450
+      Width = 44
+      Height = 13
+      Caption = 'Etat DLL:'
+    end
+    object Label10: TLabel
+      Left = 305
+      Top = 220
+      Width = 53
+      Height = 13
+      Caption = 'Propri'#233't'#233' 4'
+    end
+    object Label11: TLabel
+      Left = 305
+      Top = 277
+      Width = 53
+      Height = 13
+      Caption = 'Propri'#233't'#233' 5'
+    end
+    object Label2: TLabel
+      Left = 92
+      Top = 450
+      Width = 46
+      Height = 13
+      Caption = 'Etat USB:'
+    end
+    object Label7: TLabel
+      Left = 303
+      Top = 27
+      Width = 53
+      Height = 13
+      Caption = 'Propri'#233't'#233' 1'
+    end
+    object Label8: TLabel
+      Left = 304
+      Top = 94
+      Width = 53
+      Height = 13
+      Caption = 'Propri'#233't'#233' 2'
+    end
+    object Label9: TLabel
+      Left = 305
+      Top = 153
+      Width = 53
+      Height = 13
+      Caption = 'Propri'#233't'#233' 3'
+    end
+    object Shape1: TShape
+      Left = 42
+      Top = 468
+      Width = 44
+      Height = 38
+      Brush.Color = clRed
+    end
+    object Shape2: TShape
+      Left = 92
+      Top = 469
+      Width = 44
+      Height = 37
+      Brush.Color = clRed
+    end
+    object lblAdr: TLabel
+      Left = 24
+      Top = 112
+      Width = 39
+      Height = 13
+      Caption = 'Adresse'
     end
     object edtNameEqp: TEdit
       Left = 24
@@ -291,65 +250,112 @@
       TabOrder = 0
     end
     object edtNbCan: TEdit
-      Left = 23
-      Top = 152
+      Left = 24
+      Top = 212
       Width = 121
       Height = 21
       TabOrder = 1
     end
     object btnValideEqp: TButton
-      Left = 48
-      Top = 219
+      Left = 42
+      Top = 270
       Width = 75
       Height = 25
       Caption = 'Valid'#233
       TabOrder = 2
       OnClick = btnValideEqpClick
     end
-    object edtProp: TEdit
-      Left = 298
-      Top = 71
-      Width = 121
-      Height = 21
-      TabOrder = 3
-      Visible = False
-    end
     object btnPropEqp: TButton
-      Left = 298
-      Top = 107
+      Left = 307
+      Top = 411
       Width = 75
       Height = 25
       Caption = 'Valid'#233
-      TabOrder = 4
+      TabOrder = 3
       Visible = False
       OnClick = btnPropEqpClick
     end
     object btnOkEqp: TButton
       Left = 298
-      Top = 264
+      Top = 482
       Width = 75
       Height = 25
       Caption = 'Oui'
-      TabOrder = 5
+      TabOrder = 4
       Visible = False
       OnClick = btnOkEqpClick
     end
     object btnNokEqp: TButton
       Left = 386
-      Top = 264
+      Top = 482
       Width = 75
       Height = 25
       Caption = 'Non'
-      TabOrder = 6
+      TabOrder = 5
       Visible = False
       OnClick = btnNokEqpClick
     end
+    object bar1: TTrackBar
+      Left = 298
+      Top = 71
+      Width = 150
+      Height = 17
+      Max = 255
+      TabOrder = 6
+    end
+    object bar2: TTrackBar
+      Left = 298
+      Top = 130
+      Width = 150
+      Height = 23
+      Max = 255
+      TabOrder = 7
+    end
+    object bar3: TTrackBar
+      Left = 298
+      Top = 197
+      Width = 150
+      Height = 23
+      Max = 255
+      TabOrder = 8
+    end
+    object bar4: TTrackBar
+      Left = 298
+      Top = 254
+      Width = 150
+      Height = 17
+      Max = 255
+      TabOrder = 9
+    end
+    object bar5: TTrackBar
+      Left = 298
+      Top = 319
+      Width = 150
+      Height = 16
+      Max = 255
+      TabOrder = 10
+    end
+    object bar6: TTrackBar
+      Left = 298
+      Top = 383
+      Width = 150
+      Height = 22
+      Max = 255
+      TabOrder = 11
+    end
+    object edtAdr: TEdit
+      Left = 24
+      Top = 131
+      Width = 121
+      Height = 21
+      TabOrder = 12
+    end
   end
   object gpSeq: TGroupBox
-    Left = 537
-    Top = 353
-    Width = 410
-    Height = 302
+    Left = 1010
+    Top = 417
+    Width = 68
+    Height = 24
     Caption = 'S'#233'quence'
     Color = clCream
     ParentBackground = False
@@ -431,10 +437,10 @@
     end
   end
   object gpScene: TGroupBox
-    Left = 42
-    Top = 332
-    Width = 489
-    Height = 302
+    Left = 1010
+    Top = 390
+    Width = 63
+    Height = 21
     Caption = 'Sc'#232'ne'
     Color = clCream
     ParentBackground = False
@@ -509,10 +515,10 @@
     end
   end
   object GroupBox4: TGroupBox
-    Left = 537
-    Top = 8
-    Width = 80
-    Height = 20
+    Left = 686
+    Top = 323
+    Width = 365
+    Height = 220
     Caption = 'Adressage'
     Color = clCream
     ParentBackground = False
@@ -520,13 +526,6 @@
     TabOrder = 5
     Visible = False
     OnClick = GroupBox4Click
-    object Label13: TLabel
-      Left = 289
-      Top = 60
-      Width = 46
-      Height = 13
-      Caption = 'Adresse: '
-    end
     object lblAjoutSucc: TLabel
       Left = 237
       Top = 172
@@ -535,20 +534,13 @@
       Caption = 'Adressage effectu'#233' avec succ'#232's'
       Visible = False
     end
-    object edtAdr: TEdit
-      Left = 266
-      Top = 87
-      Width = 121
-      Height = 21
-      TabOrder = 0
-    end
     object btnAdr: TButton
       Left = 280
       Top = 128
       Width = 75
       Height = 25
       Caption = 'Valid'#233
-      TabOrder = 1
+      TabOrder = 0
       OnClick = btnAdrClick
     end
     object lbAdressage: TListBox
@@ -558,19 +550,77 @@
       Height = 125
       ItemHeight = 13
       MultiSelect = True
-      TabOrder = 2
+      TabOrder = 1
     end
   end
   object Button6: TButton
-    Left = 492
-    Top = 489
+    Left = 774
+    Top = 537
     Width = 75
     Height = 25
     Caption = 'IHM ARMEL'
     TabOrder = 6
     OnClick = Button6Click
   end
+  object btnLancerSimulation: TButton
+    Left = 832
+    Top = 296
+    Width = 145
+    Height = 25
+    Caption = 'Lancer La Simulation'
+    TabOrder = 7
+    OnClick = btnLancerSimulationClick
+  end
+  object Edit2: TEdit
+    Left = 371
+    Top = 390
+    Width = 121
+    Height = 21
+    TabOrder = 8
+    Text = 'Edit2'
+  end
+  object Edit3: TEdit
+    Left = 371
+    Top = 326
+    Width = 121
+    Height = 21
+    TabOrder = 9
+    Text = 'Edit3'
+  end
+  object Edit4: TEdit
+    Left = 371
+    Top = 264
+    Width = 121
+    Height = 21
+    TabOrder = 10
+    Text = 'Edit4'
+  end
+  object Edit5: TEdit
+    Left = 369
+    Top = 202
+    Width = 121
+    Height = 21
+    TabOrder = 11
+    Text = 'Edit5'
+  end
+  object Edit6: TEdit
+    Left = 369
+    Top = 143
+    Width = 121
+    Height = 21
+    TabOrder = 12
+    Text = 'Edit6'
+  end
+  object Edit7: TEdit
+    Left = 369
+    Top = 76
+    Width = 121
+    Height = 21
+    TabOrder = 13
+    Text = 'Edit7'
+  end
   object Timer1: TTimer
+    Enabled = False
     Interval = 23
     OnTimer = Timer1Timer
     Left = 8

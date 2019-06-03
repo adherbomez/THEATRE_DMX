@@ -31,6 +31,7 @@ class trameManager
 
 		bool insertEquipement(usedEquipement*usedEquip);
 		void removeEquipement(usedEquipement*usedEquip);
+		void removeAllEquipement();
 		bool checkConflict();
 
 		char*getTrame();

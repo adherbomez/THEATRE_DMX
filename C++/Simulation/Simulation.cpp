@@ -11,11 +11,18 @@
 #include "Scene.h"
 #include "Programme.h"
 #include "TrameManager.h"
+#include "Manager.h"
+
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
 
 	programme*simulation::getProgramme(int id)
 	{
+
+//	manage= new manager();
+//    manage->Connect();
+//	prog=manage->getProg(0);
+//	scn=prog->getScenes();
 	if (id==0)
 	{
 	//SCENE1-----------------------------------------------------------------------------------------------------------------------------
@@ -74,7 +81,7 @@
 		for(int i = 0; i < 6; i++)
 			seq3->addSequenceUsedEquipment(seqUsedEquip3[i]);
 
-		scn1= new scene(1, "RGB", 20);
+		scn1= new scene(1, "ROUGE", 20);
 		scn1->setSequences(seq1);
 		scn1->setSequences(seq2);
 		scn1->setSequences(seq3);
@@ -199,7 +206,7 @@
 		for(int i = 0; i < 6; i++)
 			seq6->addSequenceUsedEquipment(seqUsedEquip3[i]);
 
-		scn2= new scene(1, "RGB", 20);
+		scn2= new scene(1, "BLEU", 20);
 		scn2->setSequences(seq4);
 		scn2->setSequences(seq5);
 		scn2->setSequences(seq6);
@@ -267,7 +274,6 @@
 		//scn2->planifyScene();
 		scn.push_back(scn2);
 
-		return new programme(3, "Simulation", scn);
 	}
-		return NULL;
+		return new programme(5,"cycle binaire", scn);
 }

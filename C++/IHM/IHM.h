@@ -62,13 +62,10 @@ __published:	// Composants gérés par l'IHM
 	TGroupBox *gbEqp;
 	TLabel *Label12;
 	TEdit *edtNameEqp;
-	TLabel *Label13;
-	TEdit *edtAdr;
 	TEdit *edtNbCan;
 	TLabel *lblNbCan;
 	TLabel *lblProp;
 	TButton *btnValideEqp;
-	TEdit *edtProp;
 	TButton *btnPropEqp;
 	TLabel *lblEqpValide;
 	TButton *btnOkEqp;
@@ -101,6 +98,15 @@ __published:	// Composants gérés par l'IHM
 	TEdit *Edit1;
 	TListBox *lbScene;
 	TListBox *lb2Scene;
+	TButton *btnLancerSimulation;
+	TLabel *lblAdr;
+	TEdit *edtAdr;
+	TEdit *Edit2;
+	TEdit *Edit3;
+	TEdit *Edit4;
+	TEdit *Edit5;
+	TEdit *Edit6;
+	TEdit *Edit7;
 	void __fastcall Button1Click(TObject *Sender);
 	void __fastcall Timer1Timer(TObject *Sender);
 	void __fastcall menuEqpClick(TObject *Sender);
@@ -120,7 +126,7 @@ __published:	// Composants gérés par l'IHM
 	void __fastcall btnScnSuppClick(TObject *Sender);
 	void __fastcall GroupBox4Click(TObject *Sender);
 	void __fastcall btnAdrClick(TObject *Sender);
-	void __fastcall Button3Click(TObject *Sender);
+	void __fastcall btnLancerSimulationClick(TObject *Sender);
 private: clientMessage cl;
 	// Déclarations utilisateur
 	TForm2 *form;
@@ -129,9 +135,12 @@ private: clientMessage cl;
 public:		// Déclarations utilisateur
 	char* recup;
 	manager*manager;
+	programme *ProgrammeEnCours;
 	std::vector<scene*>scn;
 	TCPServer*server;
 	MySQL*sql;
+	trameManager*tramePrincipale;
+
 
 
 	__fastcall TForm1(TComponent* Owner);

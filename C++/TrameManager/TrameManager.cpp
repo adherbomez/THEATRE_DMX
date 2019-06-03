@@ -80,3 +80,9 @@
 	{
 		return trame;
 	}
+
+	void trameManager::removeAllEquipement(){
+
+		   trame.clear();
+	}
+

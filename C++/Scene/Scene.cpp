@@ -118,7 +118,9 @@
 					usedEquipement * usedEquip = (*it);
 					usedEquip->getValues()[seqUsedEquips[i]->getProperty()] = seqUsedEquips[i]->getValue();
 				}
-            }
+			}
+
+
 		}
 		//retourne un boléen
 		return sequenceIndex>=seq.size();

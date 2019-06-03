@@ -15,10 +15,13 @@ TForm1 *Form1;
 __fastcall TForm1::TForm1(TComponent* Owner)
 	: TForm(Owner)
 {
+//-------------------------------lumière---------------------------------------
+
 	server = NULL;
 	this->form = new TForm2(Owner);
 	simul=new simulation();
 	recup="0";
+    tramePrincipale =new trameManager();
 }
 
 
@@ -53,124 +56,14 @@ void __fastcall TForm1::Button1Click(TObject *Sender)
 
 void __fastcall TForm1::Timer1Timer(TObject *Sender)
 {
-//-------------------------------lumière---------------------------------------
-//chargement pour la dll
-	HINSTANCE g_dasusbdll = NULL;
-	typedef int (*DASHARDCOMMAND)(int, int, unsigned char*);
-	DASHARDCOMMAND  DasUsbCommand = NULL;
+
 //-------------------------------------------------------------------------------------------------------
-/*   //vecteurs
-std::vector<sequence*>seq;
-
-
-//déclaration des attributs
-trameManager*trame=new trameManager();
-trameManager*trame1=new trameManager();
-trameManager*trame2=new trameManager();
-
-char*tableau[3];
-
-int i;
-tableau[0] = new char[512];
-tableau[1] = new char[512];
-tableau[2] = new char[512];
-
-	//on implémente une trame dmx
-	//bleu
-		tableau[0][0]=bar1->Position;
-		tableau[0][1]=bar2->Position;
-		tableau[0][2]=bar3->Position;
-		tableau[0][3]=bar4->Position;
-		tableau[0][4]=bar5->Position;
-		tableau[0][5]=bar6->Position;
-trame->dmx=tableau[0];
-	//vert
-		tableau[1][0]=bar1->Position;
-		tableau[1][1]=bar2->Position;
-		tableau[1][2]=bar3->Position;
-		tableau[1][3]=bar4->Position;
-		tableau[1][4]=bar5->Position;
-		tableau[1][5]=bar6->Position;
-trame1->dmx=tableau[1];
-	//rouge
-		tableau[2][0]=bar1->Position;
-		tableau[2][1]=bar2->Position;
-		tableau[2][2]=bar3->Position;
-		tableau[2][3]=bar4->Position;
-		tableau[2][4]=bar5->Position;
-		tableau[2][5]=bar6->Position;
-trame2->dmx=tableau[2];
-
-
-//sequences
-seq1=new sequence(1,2000,trame);
-seq2=new sequence(2,3000,trame1);
-seq3=new sequence(3,4000,trame2);
- //on remplie le vector avec les séquences
-	seq.push_back(seq1);
-	seq.push_back(seq2);
-	seq.push_back(seq3);
-
-//scene
-std::string name= "soleil";
-scn1=new scene(1,name,20);
-	//on implémente le vecteur scène
-	scn1->setSequences(seq1);
-	scn1->setSequences(seq2);
-	scn1->setSequences(seq3);
-	scn1->planifyScene();
-	scn.push_back(scn1);
- */
-//-------------------------------------------------------------------------------------------------------
-
-
-//chargement de la dll
-	g_dasusbdll = LoadLibrary("DasHard2006.dll");
-	if (g_dasusbdll)
-		DasUsbCommand  = (DASHARDCOMMAND)::GetProcAddress((HMODULE)g_dasusbdll, "DasUsbCommand");
-	if (DasUsbCommand)
-		Shape1->Brush->Color=clGreen;
-
-//connexion à l'usb dmx
-	DasUsbCommand(DHC_INIT,0,NULL);
-	if (DasUsbCommand(DHC_OPEN,0,0)>0)
+	if (btnValideEqp->OnClick)
 	{
-		if(scn.size() > 0)
-		{
-			//lblNbCan->Caption=scn.size();
-			scene * curScene = scn.front();
-			// Si la scene est terminée, on la retire de la liste de scene à executer
-
-			if(curScene->updateScene())
-			{
-				scn.erase(scn.begin());
-				if(scn.size() > 0)
-                    scn.front()->planifyScene();
-			}
-
-			if(scn.size() == 0)
-			{
-				 scn = simul->getProgramme()->getScenes();
-				 scn.front()->planifyScene();
-			}
-
-			DasUsbCommand(DHC_DMXOUT, 512, curScene->getSequences()[curScene->getSeqIndex()]->getTrame()->getTrame());
-		}
-		else
-		{   //programme*progID=manager->getProg(8);
-			scn = simul->getProgramme()->getScenes();//progID->getScenes();
-			scn.front()->planifyScene();
-		}
-
-		Shape2->Brush->Color=clGreen;
-
-		//DasUsbCommand(DHC_DMXOUT, 512, trame->dmx );
+//		equipement* equip;
+//        equip->addProperty(
 	}
-
-	if (DasUsbCommand(DHC_OPEN,0,0)>0)
-	DasUsbCommand(DHC_CLOSE,0,0);
-	DasUsbCommand(DHC_EXIT,0, NULL);
-
+//-------------------------------------------------------------------------------------------------------
 
 //-------------------------------serveur---------------------------------------
 	if(server != NULL)
@@ -208,6 +101,11 @@ scn1=new scene(1,name,20);
 //---------------------------------------------------------------------------
 
 //chargement de la dll
+    //chargement pour la dll
+	HINSTANCE g_dasusbdll = NULL;
+	typedef int (*DASHARDCOMMAND)(int, int, unsigned char*);
+	DASHARDCOMMAND  DasUsbCommand = NULL;
+
 	g_dasusbdll = LoadLibrary("DasHard2006.dll");
 	if (g_dasusbdll)
 		DasUsbCommand  = (DASHARDCOMMAND)::GetProcAddress((HMODULE)g_dasusbdll, "DasUsbCommand");
@@ -219,7 +117,7 @@ scn1=new scene(1,name,20);
 	if (DasUsbCommand(DHC_OPEN,0,0)>0)
 	{
 
-	int val=0;
+	/*int val=0;
 //	val = atoi(recup);
 //	if (val != 0)
 //		{
@@ -242,7 +140,7 @@ scn1=new scene(1,name,20);
 					 scn.front()->planifyScene();
 				}
 
-				DasUsbCommand(DHC_DMXOUT, 512, curScene->getSequences()[curScene->getSeqIndex()]->getTrame()->getTrame());
+				//DasUsbCommand(DHC_DMXOUT, 512, curScene->getSequences()[curScene->getSeqIndex()]->getTrame()->getTrame());
 			}
 			else
 			{   //programme*progID=manager->getProg(8);
@@ -253,6 +151,37 @@ scn1=new scene(1,name,20);
 		Shape2->Brush->Color=clGreen;
 		//}
 		//DasUsbCommand(DHC_DMXOUT, 512, trame->dmx );
+		*/
+
+		if(scn.size() > 0)
+		{
+			//lblNbCan->Caption=scn.size();
+			scene * curScene = scn.front();
+			// Si la scene est terminée, on la retire de la liste de scene à executer
+
+			if(curScene->updateScene())
+			{
+				scn.erase(scn.begin());
+				if(scn.size() > 0)
+					scn.front()->planifyScene();
+			}
+
+			if(scn.size() == 0)
+			{
+				 scn = ProgrammeEnCours->getScenes();
+				 scn.front()->planifyScene();
+			}
+
+			DasUsbCommand(DHC_DMXOUT, 512, curScene->getSequences()[curScene->getSeqIndex()]->getTrame()->getTrame());
+		}
+		else
+		{   //programme*progID=manager->getProg(8);
+			scn = ProgrammeEnCours->getScenes(); //progID->getScenes();
+			scn.front()->planifyScene();
+		}
+
+
+
 	}
 
 	if (DasUsbCommand(DHC_OPEN,0,0)>0)
@@ -279,8 +208,8 @@ void __fastcall TForm1::btnValideEqpClick(TObject *Sender)
 	if (edtNameEqp->Text!="" && edtNbCan->Text!="" && btnValideEqp->OnClick)
 	{
 		lblProp->Visible=true;
-		edtProp->Visible=true;
 		btnPropEqp->Visible=true;
+
 	}
 	else
 	{
@@ -291,12 +220,12 @@ void __fastcall TForm1::btnValideEqpClick(TObject *Sender)
 
 void __fastcall TForm1::btnPropEqpClick(TObject *Sender)
 {
-	if (edtProp->Text!="" && btnPropEqp->OnClick)
-	{
-		lblEqpValide->Visible=true;
-		btnOkEqp->Visible=true;
-        btnNokEqp->Visible=true;
-	}
+//	if (edtAdr->Text!="" && btnPropEqp->OnClick)
+//	{
+//		lblEqpValide->Visible=true;
+//		btnOkEqp->Visible=true;
+//		btnNokEqp->Visible=true;
+//	}
 }
 //---------------------------------------------------------------------------
 
@@ -472,9 +401,24 @@ void __fastcall TForm1::btnAdrClick(TObject *Sender)
 }
 //---------------------------------------------------------------------------
 
-void __fastcall TForm1::Button3Click(TObject *Sender)
+
+
+void __fastcall TForm1::btnLancerSimulationClick(TObject *Sender)
 {
-//sql->Insert("INSERT INTO `program`( `Nom`) VALUES ('Champ eparse')");
+	simulation * P1simul ;
+	if (Timer1->Enabled == false)
+	{
+		btnLancerSimulation->Caption ="Stoper la simulation";
+		P1simul= new simulation();
+		ProgrammeEnCours = P1simul->getProgramme(0);
+		Timer1->Enabled = true;
+	}else
+	{
+		Timer1->Enabled = false;
+		btnLancerSimulation->Caption ="Lancer la simulation";
+	}
+
+
 }
 //---------------------------------------------------------------------------
 

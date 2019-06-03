@@ -35,8 +35,7 @@ class scene
 		void setSequences(sequence*sequ); //récupère les séquences de la scène
 		void planifyScene(); //calcul les temps de changement de sequences
 		bool updateScene(); //renvoi true la scene est terminée
-		int getSeqIndex();
-		//récupération des attributs
+		int getSeqIndex(); //récupération des attributs
 		int getId();
 		std::string getName();
 		int getTime();
