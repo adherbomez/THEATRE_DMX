@@ -112,7 +112,7 @@ if (InsertEquipmentEdit->Visible==true)
 	wcstombs(rep, tmp, len);
 	converted = rep;
 
-	M1->InsertEquipment(converted);
+	E1 = M1->InsertEquipment(converted);
 	YesButton->Visible=true;
 	NoButton->Visible=true;
 	AddPropertiesLabel->Visible=true;
@@ -120,13 +120,33 @@ if (InsertEquipmentEdit->Visible==true)
 
 if (InsertPropertiesEdit->Visible==true)
 	{
-	std::string convertie;
-	wchar_t * stock;
-	stock = InsertPropertiesEdit->Text.w_str();
-	int length = wcslen(stock);
-	char * result = new char[length+1];
-	wcstombs(result, stock, length);
-	convertie = result;
+	InsertOrdreEdit->Text=IncrementatorProperties;
+
+	std::string convertie1;
+	wchar_t * stock1;
+	stock1 = InsertPropertiesEdit->Text.w_str();
+	int length1 = wcslen(stock1);
+	char * result1 = new char[length1+1];
+	wcstombs(result1, stock1, length1);
+	convertie1 = result1;
+
+	std::string convertie2;
+	char *buffer;
+	buffer = new char[100];
+	itoa(this->IncrementatorProperties,buffer,10);
+	convertie2 = buffer;
+
+	std::string convertie3;
+	wchar_t * stock3;
+	stock3 = GetProgDataEdit1->Text.w_str();
+	int length3 = wcslen(stock3);
+	char * result3 = new char[length3+1];
+	wcstombs(result3, stock3, length3);
+	convertie3 = result3;
+
+	this->IncrementatorProperties++;
+	InsertOrdreEdit->Text=IncrementatorProperties;
+	M1->InsertProperties(convertie1,convertie2,convertie3);
 	}
 //for (int i = 0; i < Scenes.size(); i++)
 //	{
@@ -186,11 +206,24 @@ NomLabel->Visible=true;
 
 void __fastcall TForm2::YesButtonClick(TObject *Sender)
 {
+this->IncrementatorProperties=0;
+InsertOrdreEdit->Text=IncrementatorProperties;
+IdLabel->Visible=true;
+GetProgDataEdit1->Visible=true;
+GetProgDataEdit1->Text=E1->getId();
+GetProgDataEdit1->Enabled=false;
 YesButton->Visible=false;
 NoButton->Visible=false;
 AddPropertiesLabel->Visible=false;
 DescriptionLabel->Visible=true;
 InsertPropertiesEdit->Visible=true;
+InsertEquipmentEdit->Visible=false;
+NomLabel->Visible=false;
+InsertOrdreEdit->Visible=true;
+OrdreLabel->Visible=true;
+InsertOrdreEdit->Enabled=false;
+
 }
 //---------------------------------------------------------------------------
+
 

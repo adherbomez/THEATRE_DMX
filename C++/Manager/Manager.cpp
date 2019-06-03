@@ -125,7 +125,7 @@
 
 
 	}
-	void manager::InsertEquipment(std::string Name)
+	equipement*manager::InsertEquipment(std::string Name)
 	{
 		vector< vector<string> > test;
 		char *buffer;
@@ -147,12 +147,14 @@
 		idEquipement = atoi(test[0][0].c_str());
 		 const char *temp = Name.c_str();
 		 char * Nom =(char*)temp;
-		equipement *e = new equipement(idEquipement,Nom);
+		this->equip = new equipement(idEquipement,Nom);
 
 		afficheDoubleVector(test);
+
+		return this->equip;
 	}
 
-	void manager::InsertProperties(std::string Description, std::string IdEquipement, std::string Order)
+	void manager::InsertProperties(std::string Description, std::string Order, std::string IdEquipement)
 	{
 		std::string request = "INSERT INTO `properties`(`Description`, `Order`, `IdEquipment`) VALUES ('";
 		request += Description;

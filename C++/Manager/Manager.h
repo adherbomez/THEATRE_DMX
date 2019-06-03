@@ -31,6 +31,7 @@ using namespace std;
 class manager
 {
 	private:
+		equipement*equip;
 		programme*prog;
 		scene*scn;
 		MySQL* mysql;
@@ -53,8 +54,8 @@ class manager
 		bool Connect();
 
 
-		void InsertEquipment(std::string Name);
-		void InsertProperties(std::string Description, std::string IdEquipement, std::string Order);
+		equipement*InsertEquipment(std::string Name);
+		void InsertProperties(std::string Description, std::string Order, std::string IdEquipement);
 };
 
 #endif
