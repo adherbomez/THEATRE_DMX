@@ -1,5 +1,6 @@
 <?php
 require_once  ('../class/class_bdd_php.php');
+require_once  ('../class/class_scenemanager.php');
 
 /*----------------------------------------------------------------/
 PROJET THEATRE DMX512
@@ -15,28 +16,30 @@ ces derniers composent les programmes (objet du fichier class_programme.php)
 
 
 	Class progmanager 
-	{ 
+	{ 	
+		private $scene;
 		private $bdd;
 		function __construct()
 		{
-			echo "lien prog ok <br>";
+			
 		}
 
 		// fonction qui permet d'ajouter un Programme sur l'ihm
 		public function AjouterProgramme($bdd,$_nomprog)
 		{
 			$this->_nomprog=$_nomprog;
-			$bdd = new BDD('maxime','mdp','192.168.65.97','theater','root','root');
+			$bdd = new BDD('maxime','mdp',ipadress,'theater','maxime','mdp');
 			$req='INSERT INTO program (Nom) VALUES (:Nom)';
 			$valeurs = ['Nom'=>$_nomprog];
 			$pdo = $bdd->GetBDD();
 			$prepareinsert=$pdo->prepare($req);
 			if($prepareinsert->execute($valeurs))
 			{
-					echo "programme ajouté (fct)";
+					echo "programme ajouté a la base de données";
 			}
 			
 			$bdd = NULL;
+			
 		}
 		
 
@@ -44,16 +47,8 @@ ces derniers composent les programmes (objet du fichier class_programme.php)
 		public function ModifierProgramme($bdd,$_idprog)
 		{
 			$this->_idprog=$_idprog;
-			$bdd = new BDD('maxime','mdp','192.168.65.97','theater','root','root');
-			$req='SELECT MAX( `Place` ) FROM `compoprogram` WHERE `IdProgram`= :_idprog';
-			$valeurs = ['_idprog'=>$_idprog];
-			$pdo = $bdd->GetBDD();
-			$prepareinsert=$pdo->prepare($req);
-			if($prepareinsert->execute($valeurs))
-			{
-				
-			}
-			
+		
+			// modifier le nom
 
 		}
 
@@ -62,18 +57,54 @@ ces derniers composent les programmes (objet du fichier class_programme.php)
 		{
 
 			$this->_idprog=$_idprog;
-			$bdd = new BDD('maxime','mdp','192.168.65.97','theater','root','root');
+			$bdd = new BDD('maxime','mdp',ipadress,'theater','maxime','mdp');
 			$req='DELETE FROM `program` WHERE `IdProgram`= :idp ';
-			$valeurs = ['idp'=>$this->_idprog];
 			$pdo = $bdd->GetBDD();
 			$preparedelete=$pdo->prepare($req);
 			$preparedelete->bindParam('idp',$this->_idprog);
 			if($preparedelete->execute($valeurs))
 			{
-					echo "programme supprimé (fct)";
-			}			
+					$scene->SuppimerScene($bdd,$_idprog,'');				
+					echo "programme et contenu supprimé ";
+			}	
+			else 
+			{
+					echo "probleme suppression du programme";
+			}
+
 			$bdd = NULL;
 		}
+
+		public function	compoexist($_idprog,$place)
+		{	
+			$this->_idprog=$_idprog;
+			$this->place=$place;
+			$bdd = new BDD('maxime','mdp',ipadress,'theater','maxime','mdp');
+			$varexist='SELECT * FROM `compoprogram` WHERE idProgramcompo = :idp and place = :place';
+			$pdo = $bdd->GetBDD();
+			$preparereq=$pdo->prepare($varexist);
+			$preparereq->bindParam('idp',$_idprog);
+			$preparereq->bindParam('place',$place);
+			if($preparereq->execute())
+			{
+				if($preparereq->rowCount() > 0)
+				{
+	 				return true;
+				}
+				else
+				{
+					return false;
+				}	
+
+					echo "deja existant";
+			}	
+			else 
+			{
+					echo "probleme suppression prog (fct)";
+			}
+			
+		}
+
 
 
 	}

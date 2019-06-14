@@ -1,7 +1,7 @@
+    
 <?php 
 session_start();
 include("../class/class_bdd_php.php");
-
 ?>
 
 <!DOCTYPE html>
@@ -15,14 +15,11 @@ include("../class/class_bdd_php.php");
 				
 	<?php 
 	
-
 		//on vérifie que le formulaire est rempli et qu'on appuie bien sur le bouton
 		if (isset($_POST['button']) && !empty($_POST['username']) && !empty($_POST['password']))
 		{
-
-			$Utilisateur = new BDD($_POST['username'],$_POST['password'],'192.168.65.97','theater','root','root');
+			$Utilisateur = new BDD($_POST['username'],$_POST['password'],'localhost','theater','root','root');
 			$Utilisateur->compare('login');
-
 			if($Utilisateur->isConnect())
 			{
 				echo"Connexion réussi!";
@@ -34,17 +31,13 @@ include("../class/class_bdd_php.php");
 				echo "Erreur: Login ou password incorrect!";
 			}
 		}
-
 		//instance de l'objet de la classe utilisateur pour stocker dans la Session
 		if(isset($_SESSION['username']))
 		{
-
-			$Utilisateur = new BDD($_SESSION['username'],$_SESSION['password'],'192.168.65.97','theater','root','root');
+			$Utilisateur = new BDD($_SESSION['username'],$_SESSION['password'],'localhost','theater','root','root');
 			
 			?>
-				<form action="index.php" method="post">	
-					<input type="submit" id="button" name="deconnexion" value="DECONNEXION">
-				</form>
+			
 			<?php
 		}
 		else
@@ -70,8 +63,8 @@ include("../class/class_bdd_php.php");
 		{
 				session_unset();
 				session_destroy();
+				
 		}
-
 		?>
 
 <script>
@@ -81,7 +74,6 @@ include("../class/class_bdd_php.php");
 	{
 		$('#nomdiv').load('coordonées du fichier de ref');
 	}
-
 </script>			
 
 

@@ -1,4 +1,5 @@
 <?php
+
 //debut de session -- reccuperation des informations 
 session_start();
 require_once ('../class/class_bdd_php.php');
@@ -9,9 +10,9 @@ require_once ("../class/class_scenemanager.php");
 require_once("../class/class_socket.php");
 
 $sock= new TCP();
-$sock->connexion('192.168.64.117','9999');
+//$sock->connexion('192.168.64.117','9999');
 
-$bdd = new BDD('maxime','mdp','192.168.65.97','theater','root','root');
+$bdd = new BDD('maxime','mdp','localhost','theater','maxime','mdp');
 $prog = new progmanager();
 $scen= new scenemanager();
 
@@ -27,8 +28,7 @@ $scen= new scenemanager();
 
 </head>
 <body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js">
-</script>		
+		
 	<?php 
 
 	//test pour savoir si les variables de session sont disponibles
@@ -162,8 +162,8 @@ $scen= new scenemanager();
 
 ///////////////////////////////////////////////////////////////////////
 ?>
-	<!-- <script type="text/javascript" src="../class/javascript.js"></script>
-	<script src="jquery.js"></script> -->
+	<script type="text/javascript" src="../class/javascript.js"></script>
+	<script src="jquery.js"></script>
 	<script>
 		
 	function popup(url)

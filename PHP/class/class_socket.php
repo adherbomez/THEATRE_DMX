@@ -15,10 +15,10 @@ class TCP
 		$this->socket = socket_create(AF_INET, SOCK_STREAM, 0);
 
 		if ($this->socket === false) {
-			echo "socket_connect() a échoué : ($result)".socket_strerror(socket_last_error($this->socket))."<br>";
+			echo "socket_connect() a échoué : ($result)".socket_strerror(socket_last_error($this->socket))."<br>  verifiez que l'application est allumée";
 		}
 		else {
-			echo "OK socket.<br>";
+			
 		}
 	}
 

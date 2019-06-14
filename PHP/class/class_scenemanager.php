@@ -19,17 +19,20 @@ il s'agit la de pouvoir ajouter des
 
 
 // fonction qui permet d'ajouter une scene sur l'ihm
-	public function AjouterScene($bdd,$_nomScene)
+	public function AjouterScene($bdd,$IdProg,$_idscene,$nb)
 	{
-		$this->_nomScene=$_Scene;
-		$bdd = new BDD('maxime','mdp','192.168.65.97','theater','root','root');
-		$req='INSERT INTO scene (Nomscene) VALUES (:Nomscene)';
-		$valeurs = ['Nomscene'=>$_Scene];
+		$this->_idscene=$_idscene;
+		$this->IdProg=$IdProg;
+		$this->nb=$nb;
+
+		$bdd = new BDD('maxime','mdp',ipadress,'theater','maxime','mdp');
+		$req='INSERT INTO `compoprogram`(`IdProgramCompo`,`IdSceneCompo`, `Place`,`TempsPause`) VALUES (:id_prog , :id_scene , :place , 0)';
+		$valeurs = ['id_scene'=>$_idscene ,'id_prog'=>$IdProg ,'place'=>$nb ];
 		$pdo = $bdd->GetBDD();
 		$prepareinsert=$pdo->prepare($req);
 		if($prepareinsert->execute($valeurs))
 		{
-				echo "scene ajoutée (fct)";
+				echo "scenes ajoutées au programme";
 		}
 		
 		$bdd = NULL;
@@ -38,39 +41,75 @@ il s'agit la de pouvoir ajouter des
 		
 	
 // fonction qui permet de modifier une scene sur l'ihm
-		public function ModifierScene($bdd,$_idprog,$_idscene)
+		public function ModifierScene($bdd,$_IdProg,$_idscene,$nb)
 		{
-			$this->_idprog=$_idprog;
 			$this->_idscene=$_idscene;
-			foreach($this->_Bdd->query('SELECT IdScenecompo FROM `compoprogram` where IdProgram = '.$_idprog.'')) 
+			$this->_IdProg=$_IdProg;
+			$this->nb=$nb;
+//
+			$bdd = new BDD('maxime','mdp',ipadress,'theater','maxime','mdp');
+			$req='UPDATE `compoprogram` SET `IdProgramCompo`= :id_prog ,`IdSceneCompo`= :id_scene,`Place`= :place  WHERE IdProgramCompo = :id_prog and place = :place';
+			$valeurs = ['id_scene'=>$_idscene ,'id_prog'=>$_IdProg ,'place'=>$nb ];
+			$pdo = $bdd->GetBDD();
+			$prepareinsert=$pdo->prepare($req);
+			if($prepareinsert->execute($valeurs))
 			{
-					$max++;
-					if ($row['IdScenecompo'] == $_idscene)
-					{
-
-					}
+					echo "scènes du programme modifiée";
 			}
-			}
-			{ 
-				$req='UPDATE `compoprogram` SET `IdScenecompo`=[value-2],`Place`=[value-3], WHERE `IdProgram`='.$max.'';
-			}
-		
+			
+			$bdd = NULL;
+			
 		}
+
 // fonction qui permet de supprimer une scene sur l'ihm
-		public function SupprimerScene($bdd,$_idscene)
+		public function SupprimerScene($bdd,$_IdProg,$nb)
 		{
-		$this->_idscene=$_idscene;
-		$bdd = new BDD('maxime','mdp','192.168.65.97','theater','root','root');
-		$req='DELETE FROM `scene` WHERE `IdScene`= :ids ';
-		$valeurs = ['idp'=>$this->_idscene];
-		$pdo = $bdd->GetBDD();
-		$preparedelete=$pdo->prepare($req);
-		$preparedelete->bindParam('idp',$this->_idscene);
-		if($preparedelete->execute($valeurs))
-		{
-			echo "scene supprimée (fct)";
-		}			
-		$bdd = NULL;	
+
+			$this->_IdProg=$_IdProg;
+			$this->nb = $nb;
+
+			if ($nb == '' ) 
+			{
+				
+				$bdd = new BDD('maxime','mdp',ipadress,'theater','maxime','mdp');
+				$req='DELETE FROM `compoprogram` WHERE `IdProgramCompo`= :id_prog ';
+				$valeurs = ['id_prog' => $_IdProg];
+				$pdo = $bdd->GetBDD();
+				$preparedelete=$pdo->prepare($req);
+				if($preparedelete->execute($valeurs))
+				{
+					echo "contenu du progamme effacé";
+				}
+			}
+			else
+			{
+				$bdd = new BDD('maxime','mdp',ipadress,'theater','maxime','mdp');
+				$req='DELETE FROM `compoprogram` WHERE `place`= :place and `IdProgramCompo`= :id_prog ';
+				$valeurs = ['id_prog' => $_IdProg ,'place' => $nb ];
+				$pdo = $bdd->GetBDD();
+				$preparedelete=$pdo->prepare($req);
+				if($preparedelete->execute($valeurs))
+				{	
+
+					$nb = $bdd->Nbplace('',$_IdProg);
+
+					for ( $i = 1 ; $i <= $nb; $i++)
+					{
+						$req='UPDATE `compoprogram` SET `Place`= :place  WHERE IdProgramCompo = :id_prog and place = :place  where place = :indice';
+						$valeurs = ['place' => $nb , 'id_prog' => $_IdProg, 'indice'=> $nb+1];
+						$pdo = $bdd->GetBDD();
+						$preparedelete=$pdo->prepare($req);
+						if($preparedelete->execute($valeurs))
+						{
+							echo "bla";
+						}
+					}
+					echo "scene supprimée du programme";
+				}			
+
+			}
+			
+			$bdd = NULL;	
 		}
 
 }
